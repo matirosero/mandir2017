@@ -16,37 +16,22 @@ get_header(); ?>
 
 <div class="row">
 
-	<div class="medium-8 columns">
+	<div class="medium-10 large-8 medium-centered columns">
 
 		<div id="primary" class="content-area">
-
 			<main id="main" class="site-main" role="main">
-				<?php
-				while ( have_posts() ) :
 
-					the_post();
+				<?php while ( have_posts() ) : the_post(); ?>
 
-					get_template_part( 'template-parts/content', 'page' );
+					<?php get_template_part( 'template-parts/content', 'page' ); ?>
 
-						if ( comments_open() || get_comments_number() ) :
-							comments_template();
-						endif;
+				<?php endwhile; // End of the loop. ?>
 
-				endwhile; ?>
+			</main><!-- #main -->
+		</div><!-- #primary -->
 
-			</main>
+	</div><!-- .columns -->
 
-		</div>
+</div><!-- .row -->
 
-	</div>
-
-	<div class="medium-4 columns">
-
-		<?php get_sidebar(); ?>
-
-	</div>
-
-</div>
-
-<?php
-get_footer();
+<?php get_footer();

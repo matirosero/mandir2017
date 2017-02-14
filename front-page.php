@@ -11,43 +11,22 @@ get_header(); ?>
 
 <div class="row">
 
-	<div class="medium-8 columns">
+	<div class="medium-10 large-8 medium-centered columns">
 
 		<div id="primary" class="content-area">
-
 			<main id="main" class="site-main" role="main">
-			<?php
-			if ( have_posts() ) :
 
-				while ( have_posts() ) :
+				<?php while ( have_posts() ) : the_post(); ?>
 
-					the_post();
+					<?php get_template_part( 'template-parts/content', 'page' ); ?>
 
-					get_template_part( 'template-parts/content', get_post_format() );
+				<?php endwhile; // End of the loop. ?>
 
-				endwhile;
+			</main><!-- #main -->
+		</div><!-- #primary -->
 
-				the_posts_navigation();
+	</div><!-- .columns -->
 
-			else :
+</div><!-- .row -->
 
-				get_template_part( 'template-parts/content', 'none' );
-
-			endif; ?>
-
-			</main>
-
-		</div>
-
-	</div>
-
-	<div class="medium-4 columns">
-
-		<?php get_sidebar(); ?>
-
-	</div>
-
-</div>
-
-<?php
-get_footer();
+<?php get_footer();
