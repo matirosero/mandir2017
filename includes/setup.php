@@ -39,6 +39,10 @@ add_action( 'after_setup_theme', function() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary Menu', 'mandir' ),
+		'secondary' => esc_html__( 'Secondary Menu', 'mandir' ),
+		'visible-tablet' => esc_html__( 'Tablet Visible Menu', 'mandir' ),
+		'visible-mobile' => esc_html__( 'Mobile VIsible Menu', 'mandir' ),
+		'mobile' => esc_html__( 'Mobile Menu', 'mandir' ),
 	) );
 
 	/*
