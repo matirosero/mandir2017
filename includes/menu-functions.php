@@ -11,7 +11,7 @@
  *
  * http://www.billerickson.net/customize-which-menu-item-is-marked-active/
  */
-function be_menu_item_classes( $classes, $item, $args ) {
+function mro_menu_top_item_classes( $classes, $item, $args ) {
 
 	if( 'primary' !== $args->theme_location )
 		return $classes;
@@ -42,4 +42,4 @@ function be_menu_item_classes( $classes, $item, $args ) {
 
 	return array_unique( $classes );
 }
-add_filter( 'nav_menu_css_class', 'be_menu_item_classes', 10, 3 );
+add_filter( 'nav_menu_css_class', 'mro_menu_top_item_classes', 10, 3 );
