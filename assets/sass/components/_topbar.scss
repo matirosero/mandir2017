@@ -20,7 +20,7 @@ $topbar-toplevel-bg: color('blue', 'dark');
 		a {
 			color: $white;
 			transition: $button-transition;
-			&:hover, &:active {
+			@include hover {
 				background-color: $topbar-bg-hover;
 			}
 		}
@@ -34,7 +34,9 @@ $topbar-toplevel-bg: color('blue', 'dark');
 			padding: 6px 1rem;
 		}
 		ul {
-			display: none;
+			// display: none;
+			opacity: 0;
+			visibility: hidden;
 		}
 	}
 }
@@ -81,45 +83,48 @@ $topbar-toplevel-bg: color('blue', 'dark');
 		}
 		.menu {
 			margin-top: 10px;
-
-
-			.menu-item:not(.current-menu-item) {
-				// background-color: $topbar-toplevel-bg;
-				&:hover {
+			> li > a {
+				line-height: 30px;
+				padding: 6px 1rem 10px;
+			}
+		}
+		.menu-item {
+			@include hover {
+				&:not(.current-menu-item) {
 					a {
 						background-color: $topbar-bg-hover;
 					}
 					> .sub-menu {
 						background-color: $topbar-bg-hover;
-						display: block;
-						z-index: 99999;
+						opacity: 1;
+						visibility: visible;
+						z-index: 99;
 						a:hover {
 							background-color: $topbar-bg;
 						}
 					}
 				}
 			}
-
-			.current-menu-item,
-			.current-menu-parent {
+			&.current-menu-item,
+			&.current-menu-parent {
 				a {
 					background-color: $topbar-bg;
 				}
 				> .sub-menu {
-					display: block;
-					padding-left: 8px;
+					opacity: 1;
+					visibility: visible;
 				}
 			}
-			> li > a {
-				line-height: 30px;
-				padding: 6px 1rem 10px;
-			}
+
 		}
+
 		.sub-menu {
 			position: absolute;
+			display: block;
 			left: 252px;
 			width: 100%;
-			transition: $button-transition;
+			padding-left: 8px;
+			transition: opacity 0.25s ease-out;
 			@include reset-list;
 			.menu-item {
 				display: table-cell;
