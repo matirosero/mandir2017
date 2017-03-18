@@ -42,6 +42,7 @@
 //  37. Top Bar
 
 @import '../../node_modules/foundation-sites/scss/util/util';
+@import "base/colors";
 
 // 1. Global
 // ---------
@@ -613,9 +614,9 @@ $tooltip-radius: $global-radius;
 // 37. Top Bar
 // -----------
 
-$topbar-padding: 0.5rem;
-$topbar-background: $light-gray;
+$topbar-padding: 0;
+$topbar-background: color('blue', 'base'); //$light-gray;
 $topbar-submenu-background: $topbar-background;
-$topbar-title-spacing: 0.5rem 1rem 0.5rem 0;
+$topbar-title-spacing: 0 0.5rem;//0.9rem 1rem 0.9rem 1.25rem;
 $topbar-input-width: 200px;
 $topbar-unstack-breakpoint: medium;

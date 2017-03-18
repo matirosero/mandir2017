@@ -40,8 +40,8 @@ add_action( 'after_setup_theme', function() {
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary Menu', 'mandir' ),
 		'secondary' => esc_html__( 'Secondary Menu', 'mandir' ),
-		'visible-tablet' => esc_html__( 'Tablet Visible Menu', 'mandir' ),
-		'visible-mobile' => esc_html__( 'Mobile VIsible Menu', 'mandir' ),
+		'primary-medium' => esc_html__( 'Tablet Primary Menu', 'mandir' ),
+		'primary-small' => esc_html__( 'Mobile Primary Menu', 'mandir' ),
 		'mobile' => esc_html__( 'Mobile Menu', 'mandir' ),
 	) );
 

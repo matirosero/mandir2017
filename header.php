@@ -26,7 +26,7 @@
 
 <div class="off-canvas-wrapper">
   <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
-    <div class="title-bar show-for-small-only">
+<!--     <div class="title-bar show-for-small-only">
       <div class="title-bar-left">
         <button class="menu-icon" type="button" data-toggle="offCanvasLeft"></button>
         <span class="title-bar-title"><?php bloginfo( 'name' ); ?></span>
@@ -50,7 +50,7 @@
 
 			<header id="masthead" class="" role="banner">
 
-				<nav id="site-navigation" class="top-bar show-for-medium" data-topbar role="navigation">
+				<nav id="site-navigation" class="top-bar" data-topbar role="navigation">
 					<div class="top-bar-title">
 						<h1 class="site-title">
 							<a href="<?php esc_attr_e( home_url( '/' ) ); ?>" rel="home">
@@ -58,15 +58,38 @@
 							</a>
 						</h1>
 					</div>
-					<section class="top-bar-left">
-						<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-					</section>
-					<div class="top-bar-right">
-						Social
-					</div>
+					<div class="top-bar-section">
+						<section class="top-bar-left">
+							<?php
+							wp_nav_menu(
+								array(
+									'theme_location' 	=> 'primary',
+									'container_class'	=> 'show-for-large',
+								)
+							);
+
+							wp_nav_menu(
+								array(
+									'theme_location' 	=> 'primary-medium',
+									'container_class'	=> 'show-for-medium hide-for-large',
+								)
+							);
+
+							wp_nav_menu(
+								array(
+									'theme_location' 	=> 'primary-small',
+									'container_class'	=> 'show-for-small-only',
+								)
+							);
+							?>
+						</section>
+						<div class="top-bar-right">
+							<button class="menu-icon" type="button" data-toggle="offCanvasLeft"></button>
+						</div>
 					<!-- <section class="top-bar-section"> -->
 						<?php //wp_nav_menu( array( 'theme_location' => 'secondary' ) ); ?>
 					<!-- </section> -->
+					</div>
 				</nav><!-- #site-navigation -->
 			</header><!-- #masthead -->
 
