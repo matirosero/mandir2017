@@ -14,6 +14,12 @@ add_action( 'wp_enqueue_scripts', function() {
 		HEISENBERG_VERSION,
 		''
 	);
+
+	//Google fonts: Noto Sans & Oswald Regular
+	// font-family: 'Noto Sans', sans-serif;
+	// font-family: 'Oswald', sans-serif;
+	wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i|Oswald', false );
+
 } );
 
 /**
