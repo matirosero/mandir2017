@@ -1,14 +1,17 @@
+$topbar-bg: color('blue', 'base');
+$topbar-bg-hover: color('blue', 'med');
+$topbar-toplevel-bg: color('blue', 'dark');
+
 #site-navigation {
 	height: 50px;
-	// height: 112px;
 
 	.top-bar-title {
-		background-color: $light-gray;
+		background-color: $bgcolor;
 		height: inherit;
 		width: 120px;
-		.site-title {
-			font-size: 2rem;
-		}
+	}
+	.site-title {
+		font-size: 2rem;
 	}
 
 	.top-bar-left,
@@ -16,31 +19,28 @@
 		width: auto;
 		a {
 			color: $white;
+			transition: $button-transition;
 			&:hover, &:active {
-				background-color: color('blue', 'dark');
+				background-color: $topbar-bg-hover;
 			}
 		}
 	}
-
-	.top-bar-left {
-		margin-left: 8px;
-	}
-
 	.menu {
 		background-color: transparent;
-		> li {
-			// position: relative;
-			> a {
-				line-height: 38px;
-				padding: 6px 1rem;
-			}
+	}
+	.menu-item {
+		a {
+			line-height: 38px;
+			padding: 6px 1rem;
 		}
 		ul {
 			display: none;
 		}
 	}
+}
 
-	@include breakpoint(medium) {
+@include breakpoint(medium) {
+	#site-navigation {
 		height: 60px;
 
 		.top-bar-title {
@@ -55,50 +55,63 @@
 			}
 		}
 	}
+}
 
-	@include breakpoint(large) {
+@include breakpoint(large) {
+
+	#site-navigation {
 		background: linear-gradient(
 			to bottom,
-			color('blue', 'dark') 0%,
-			color('blue', 'dark') 50%,
-			color('blue', 'dark') 50%,
-			color('blue', 'base') 50%,
-			color('blue', 'base') 100%
+			$topbar-toplevel-bg 0%,
+			$topbar-toplevel-bg 50%,
+			$topbar-toplevel-bg 50%,
+			$topbar-bg 50%,
+			$topbar-bg 100%
 		);
 		height: 112px;
-		.top-bar-left,
-		.top-bar-right {
-			a {
-				&:hover, &:active {
-					background-color: color('blue', 'base');
-				}
-			}
-		}
+
 		.top-bar-title {
 			width: auto;
-			.site-title {
-				padding: 1.25rem .85rem 1.25rem 1rem;
-			}
+		}
+		.site-title {
+			padding: 1.25rem .85rem 1.25rem 1rem;
+		}
+		.top-bar-left {
+			margin-left: 8px;
 		}
 		.menu {
-			margin-top: 8px;
-			.current-menu-item,
-			.current-menu-parent {
-				background-color: color('blue', 'base');
-				> .sub-menu {
-					display: block;
-				}
-			}
-			.menu-item {
+			margin-top: 10px;
+
+
+			.menu-item:not(.current-menu-item) {
+				// background-color: $topbar-toplevel-bg;
 				&:hover {
+					a {
+						background-color: $topbar-bg-hover;
+					}
 					> .sub-menu {
+						background-color: $topbar-bg-hover;
 						display: block;
 						z-index: 99999;
+						a:hover {
+							background-color: $topbar-bg;
+						}
 					}
 				}
 			}
+
+			.current-menu-item,
+			.current-menu-parent {
+				a {
+					background-color: $topbar-bg;
+				}
+				> .sub-menu {
+					display: block;
+					padding-left: 8px;
+				}
+			}
 			> li > a {
-				line-height: 32px;
+				line-height: 30px;
 				padding: 6px 1rem 10px;
 			}
 		}
@@ -106,6 +119,7 @@
 			position: absolute;
 			left: 252px;
 			width: 100%;
+			transition: $button-transition;
 			@include reset-list;
 			.menu-item {
 				display: table-cell;
