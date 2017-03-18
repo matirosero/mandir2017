@@ -38,10 +38,10 @@
 			</button>
 			<?php
 			 $args = array (
-				 'theme_location' 	=> 'primary',
-				 'container' 				=> 'nav',
+				 'theme_location' 	=> 'mobile',
+				 'container' 		=> 'nav',
 				 'container_class'	=> 'offcanvas-navigation',
-				 'menu_class' 			=> 'mobile-menu',
+				 'menu_class' 		=> 'mobile-menu',
 			 );
 				wp_nav_menu( $args );
 			?>
@@ -55,11 +55,13 @@
 							<?php bloginfo( 'name' ); ?>
 						</a>
 					</h1>
-					<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 				</section>
 				<nav id="site-navigation" class="top-bar show-for-medium" data-topbar role="navigation">
 					<section class="top-bar-section row column">
 						<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+					</section>
+					<section class="top-bar-section">
+						<?php //wp_nav_menu( array( 'theme_location' => 'secondary' ) ); ?>
 					</section>
 				</nav><!-- #site-navigation -->
 			</header><!-- #masthead -->
