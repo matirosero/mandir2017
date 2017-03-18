@@ -49,20 +49,24 @@
     <div class="off-canvas-content" data-off-canvas-content>
 
 			<header id="masthead" class="" role="banner">
-				<section class="row column">
-					<h1 class="site-title">
-						<a href="<?php esc_attr_e( home_url( '/' ) ); ?>" rel="home">
-							<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/dist/svg/logo-mandir.svg" alt="<?php bloginfo( 'name' ); ?>" />
-						</a>
-					</h1>
-				</section>
+
 				<nav id="site-navigation" class="top-bar show-for-medium" data-topbar role="navigation">
-					<section class="top-bar-section row column">
+					<div class="top-bar-title">
+						<h1 class="site-title">
+							<a href="<?php esc_attr_e( home_url( '/' ) ); ?>" rel="home">
+								<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/dist/svg/logo-mandir.svg" alt="<?php bloginfo( 'name' ); ?>" />
+							</a>
+						</h1>
+					</div>
+					<section class="top-bar-left">
 						<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 					</section>
-					<section class="top-bar-section">
+					<div class="top-bar-right">
+						Social
+					</div>
+					<!-- <section class="top-bar-section"> -->
 						<?php //wp_nav_menu( array( 'theme_location' => 'secondary' ) ); ?>
-					</section>
+					<!-- </section> -->
 				</nav><!-- #site-navigation -->
 			</header><!-- #masthead -->
 
