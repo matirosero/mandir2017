@@ -28,9 +28,12 @@
 
 	.menu {
 		background-color: transparent;
-		> li > a {
-			line-height: 38px;
-			padding: 6px 1rem;
+		> li {
+			// position: relative;
+			> a {
+				line-height: 38px;
+				padding: 6px 1rem;
+			}
 		}
 		ul {
 			display: none;
@@ -79,12 +82,40 @@
 		}
 		.menu {
 			margin-top: 8px;
-			.current-menu-item {
+			.current-menu-item,
+			.current-menu-parent {
 				background-color: color('blue', 'base');
+				> .sub-menu {
+					display: block;
+				}
+			}
+			.menu-item {
+				&:hover {
+					> .sub-menu {
+						display: block;
+						z-index: 99999;
+					}
+				}
 			}
 			> li > a {
 				line-height: 32px;
 				padding: 6px 1rem 10px;
+			}
+		}
+		.sub-menu {
+			position: absolute;
+			left: 252px;
+			width: 100%;
+			@include reset-list;
+			.menu-item {
+				display: table-cell;
+				vertical-align: middle;
+				width: auto;
+				white-space: nowrap;
+				a {
+					line-height: 56px;
+					padding: 8px 1rem;
+				}
 			}
 		}
 	}
