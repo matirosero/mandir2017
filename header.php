@@ -52,7 +52,7 @@
 				<section class="row column">
 					<h1 class="site-title">
 						<a href="<?php esc_attr_e( home_url( '/' ) ); ?>" rel="home">
-							<?php bloginfo( 'name' ); ?>
+							<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/dist/svg/logo-mandir.svg" alt="<?php bloginfo( 'name' ); ?>" />
 						</a>
 					</h1>
 				</section>
