@@ -3,6 +3,22 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 $colors: (
+ 'blue': (
+   base: #0069AA,
+   light: #76D8FF,
+   dark: #051C35,
+   trans: transparentize(#0069AA, .7),
+   trans-light: transparentize(#76D8FF, .7),
+   trans-dark: transparentize(#051C35, .7),
+ ),
+ 'gold': (
+   base: #825B17,
+   light: #B28E24,
+   dark: #352200,
+   trans: transparentize(#825B17, .7),
+   trans-light: transparentize(#B28E24, .7),
+   trans-dark: transparentize(#352200, .7),
+ ),
  'red': (
    base: #f00,
    light: #de4b39
@@ -13,8 +29,8 @@ $colors: (
    light: #ececec
  ),
  'black': (
-   base: #000,
-   trans: transparentize(#000, .3)
+   base: #4A4A4A,
+   trans: transparentize(#4A4A4A, .3)
  ),
  'white': (
    base: #fff,
