@@ -51,51 +51,48 @@
 			<header id="masthead" class="" role="banner">
 
 				<nav id="site-navigation" class="top-bar" data-topbar role="navigation">
-					<div class="top-bar-title">
+					<section class="top-bar-title">
 						<h1 class="site-title">
 							<a href="<?php esc_attr_e( home_url( '/' ) ); ?>" rel="home">
 								<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/dist/svg/logo-mandir.svg" alt="<?php bloginfo( 'name' ); ?>" />
 							</a>
-						</h1>
-					</div>
-					<div class="top-bar-section">
-						<section class="top-bar-left">
-							<?php
-							wp_nav_menu(
-								array(
-									'theme_location' 	=> 'primary',
-									'container_class'	=> 'show-for-large',
-								)
-							);
+						</h1><!-- .site-title -->
+					</section><!-- .top-bar-title -->
+					<section class="top-bar-left">
+						<?php
+						wp_nav_menu(
+							array(
+								'theme_location' 	=> 'primary',
+								'container_class'	=> 'show-for-large',
+								'depth'				=> 2,
+							)
+						);
 
-							wp_nav_menu(
-								array(
-									'theme_location' 	=> 'primary-medium',
-									'container_class'	=> 'show-for-medium hide-for-large',
-								)
-							);
+						wp_nav_menu(
+							array(
+								'theme_location' 	=> 'primary-medium',
+								'container_class'	=> 'show-for-medium hide-for-large',
+								'depth'				=> 1,
+							)
+						);
 
-							wp_nav_menu(
-								array(
-									'theme_location' 	=> 'primary-small',
-									'container_class'	=> 'show-for-small-only',
-								)
-							);
-							?>
-						</section>
-						<div class="top-bar-right">
-							<ul class="menu">
-								<?php mandir_socialmedia_topbar_output(); ?>
-								<li class="menu-item hide-for-large">
-									<a href="#" data-toggle="offCanvasLeft"><i class="icon-menu"></i></a>
-								</li>
-							</ul>
-
-						</div>
-					<!-- <section class="top-bar-section"> -->
-						<?php //wp_nav_menu( array( 'theme_location' => 'secondary' ) ); ?>
-					<!-- </section> -->
-					</div>
+						wp_nav_menu(
+							array(
+								'theme_location' 	=> 'primary-small',
+								'container_class'	=> 'show-for-small-only',
+								'depth'				=> 1,
+							)
+						);
+						?>
+					</section><!-- .top-bar-left -->
+					<section class="top-bar-right">
+						<ul class="menu">
+							<?php mandir_socialmedia_topbar_output(); ?>
+							<li class="menu-item hide-for-large">
+								<a href="#" data-toggle="offCanvasLeft"><i class="icon-menu"></i></a>
+							</li>
+						</ul>
+					</section><!-- .top-bar-right -->
 				</nav><!-- #site-navigation -->
 			</header><!-- #masthead -->
 

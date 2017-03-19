@@ -133,6 +133,9 @@ $topbar-toplevel-bg: color('blue', 'dark');
 			&.current-menu-parent {
 				a {
 					background-color: $topbar-bg;
+					// @include hover {
+					// 	cursor: default;
+					// }
 				}
 				> .sub-menu {
 					opacity: 1;
