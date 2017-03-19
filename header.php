@@ -84,7 +84,13 @@
 							?>
 						</section>
 						<div class="top-bar-right">
-							<button class="menu-icon" type="button" data-toggle="offCanvasLeft"></button>
+							<ul class="menu">
+								<?php mandir_socialmedia_topbar_output(); ?>
+								<li class="menu-item hide-for-large">
+									<a href="#" data-toggle="offCanvasLeft"><i class="icon-menu"></i></a>
+								</li>
+							</ul>
+
 						</div>
 					<!-- <section class="top-bar-section"> -->
 						<?php //wp_nav_menu( array( 'theme_location' => 'secondary' ) ); ?>

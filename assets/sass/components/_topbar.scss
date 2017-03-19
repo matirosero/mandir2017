@@ -25,6 +25,22 @@ $topbar-toplevel-bg: color('blue', 'dark');
 			}
 		}
 	}
+	.top-bar-left {
+		a {
+			// line-height: 38px;
+			padding: 6px 1rem;
+		}
+	}
+	.top-bar-right {
+		a {
+			i {
+				vertical-align: baseline;
+			}
+			[class^="icon-"]:before, [class*=" icon-"]:before {
+				font-size: 1.25rem; //MRo edit
+			}
+		}
+	}
 	.menu {
 		background-color: transparent;
 	}
@@ -88,6 +104,14 @@ $topbar-toplevel-bg: color('blue', 'dark');
 				padding: 6px 1rem 10px;
 			}
 		}
+		.top-bar-right {
+			margin-right: 8px;
+			.menu > li > a {
+				line-height: 30px;
+				padding: 6px 1rem 4px;
+			}
+		}
+
 		.menu-item {
 			@include hover {
 				&:not(.current-menu-item) {
