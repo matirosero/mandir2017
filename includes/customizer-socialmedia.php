@@ -22,7 +22,7 @@ function ct_mandir_social_array() {
 	return apply_filters( 'ct_mandir_social_array_filter', $social_sites );
 }
 
-function my_add_customizer_sections( $wp_customize ) {
+function ct_mandir_add_customizer_sections( $wp_customize ) {
 
 	$social_sites = ct_mandir_social_array();
 
@@ -63,7 +63,7 @@ function my_add_customizer_sections( $wp_customize ) {
 		$priority = $priority + 5;
 	}
 }
-add_action( 'customize_register', 'my_add_customizer_sections' );
+add_action( 'customize_register', 'ct_mandir_add_customizer_sections' );
 
 
 /*
