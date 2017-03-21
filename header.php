@@ -48,6 +48,10 @@
     </div><!-- #offCanvasLeft -->
     <div class="off-canvas-content" data-off-canvas-content>
 
+			<?php 
+			//Action to insert things at the top (i.e. announcement bar from plugin)
+			do_action('mro_body_top'); ?>
+
 			<header id="masthead" class="" role="banner">
 
 				<nav id="site-navigation" class="top-bar" data-topbar role="navigation">
