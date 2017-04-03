@@ -89,18 +89,20 @@ get_header(); ?>
 
 				while ( $query->have_posts() ) : $query->the_post();
 
-					$meta = get_post_meta(get_the_ID());
+					$all_meta = get_post_meta(get_the_ID());
 
-					$get_post_meta = get_post_meta($post->ID, 'mro_event_date', false);
+					$individual_dates_meta = get_post_meta($post->ID, 'mro_event_date', false);
 					$get_post_custom = get_post_custom($post->ID);
 
 					echo '<h3>';
 					the_title();
 					echo '</h3>';
 
-					var_dump($get_post_meta);
+					var_dump($individual_dates_meta);
 
-					var_dump($meta);
+					echo '<hr />';
+
+					var_dump($all_meta);
 
 					echo '<hr />';
 
