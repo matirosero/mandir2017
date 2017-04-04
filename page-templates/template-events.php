@@ -15,6 +15,7 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
+
 			<?php while ( have_posts() ) : the_post(); ?>
 
 				<?php get_template_part( 'template-parts/content', 'page-stripped' ); ?>
@@ -25,10 +26,8 @@ get_header(); ?>
 				$firstofmonth = date('Y/m/01');
 				$currentmonth = date('F Y');
 
-				$eq_row = '<div class="row" data-equalizer data-equalize-on="medium">';
-				$eq_row_end = '</div';
 
-				//echo '<h2 class="eventlist-month">'.$currentmonth.'</h2>';
+				echo '<section class="events-list row" data-equalizer data-equalize-on="medium">';
 
 
 				/**
@@ -76,40 +75,64 @@ get_header(); ?>
 
 				while ( $query->have_posts() ) : $query->the_post();
 
-					$all_meta = get_post_meta(get_the_ID());
+					// $all_meta = get_post_meta(get_the_ID());
+					// $get_post_custom = get_post_custom($post->ID);
 
-					$individual_dates_meta = get_post_meta($post->ID, 'mro_event_date', false);
-					$first_date_meta = get_post_meta($post->ID, 'mro_event_date', true);
-					$get_post_custom = get_post_custom($post->ID);
+					$dates = get_post_meta($post->ID, 'mro_event_date', false);
+					$first_date = get_post_meta($post->ID, 'mro_event_date', true);
 
-
-
-					$firstdate = DateTime::createFromFormat('Y-m-d', get_post_meta( $post->ID, 'mro_event_date', true) );
-					$month =  $firstdate->format('F Y');
+					$dateformatstring = 'F Y';
+					$month = date_i18n( $dateformatstring, strtotime( $first_date ) );
 
 					// - determine if it's a new month -
 					if ($monthcheck == null || $monthcheck != $month ) :
-						echo '<h2 class="full-events">' . $month . '</h2>'; 
+						echo '<h2 class="full-events medium-12 columns">' . $month . '</h2>';
+						// echo $eq_row_start;
 					endif;
-
-					// - fill monthcheck with the current month -
-					$monthcheck = $month;
-
 
 					?>
 
-					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+					<article id="post-<?php the_ID(); ?>" <?php post_class('medium-6 columns'); ?> data-equalizer-watch>
 						<h6><?php the_title(); ?></h6>
-						<?php var_dump($individual_dates_meta); ?>
+
+						<?php
+
+						//Change to nice date format
+						foreach ($dates as $key => $date) {
+							$dateformatstring = 'j \d\e F';
+							$newdate = date_i18n( $dateformatstring, strtotime( $date ) );
+							$dates[$key] = $newdate;
+						}
+
+						$is_date_range = get_post_meta($post->ID, 'mro_daterange_checkbox', true);
+
+						if ( $is_date_range == 1 && count($dates) == 2 ) :
+							$datestring = 'Del '.implode(' al ', $dates);
+						elseif ( count($dates) == 1 ):
+							$datestring = $dates[0];
+						else:
+							$last_date = array_pop($dates);
+							$datestring = implode(', ', $dates).' y '.$last_date;
+						endif;
+
+				    	echo $datestring;
+						?>
 						<a href="<?php the_permalink(); ?>"><?php _e('More information', 'mandir'); ?></a>
 					</article>
 
 
-				<?php
+					<?php
+
+					// - fill monthcheck with the current month -
+					$monthcheck = $month;
 
 				endwhile; //end of events loop
 
+				// echo $eq_row_end;
+
 				wp_reset_postdata();
+
+				echo '</section';
 
 				?>
 
