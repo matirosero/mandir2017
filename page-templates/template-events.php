@@ -24,7 +24,6 @@ get_header(); ?>
 
 				$today = date('Y/m/d');
 				$firstofmonth = date('Y/m/01');
-				$currentmonth = date('F Y');
 
 
 				echo '<section class="events-list row" data-equalizer data-equalize-on="medium">';
@@ -78,7 +77,7 @@ get_header(); ?>
 					// $all_meta = get_post_meta(get_the_ID());
 					// $get_post_custom = get_post_custom($post->ID);
 
-					$dates = get_post_meta($post->ID, 'mro_event_date', false);
+
 					$first_date = get_post_meta($post->ID, 'mro_event_date', true);
 
 					$dateformatstring = 'F Y';
@@ -87,36 +86,16 @@ get_header(); ?>
 					// - determine if it's a new month -
 					if ($monthcheck == null || $monthcheck != $month ) :
 						echo '<h2 class="full-events medium-12 columns">' . $month . '</h2>';
-						// echo $eq_row_start;
 					endif;
 
 					?>
 
 					<article id="post-<?php the_ID(); ?>" <?php post_class('medium-6 columns'); ?> data-equalizer-watch>
-						<h6><?php the_title(); ?></h6>
 
-						<?php
+						<?php the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' ); ?>
 
-						//Change to nice date format
-						foreach ($dates as $key => $date) {
-							$dateformatstring = 'j \d\e F';
-							$newdate = date_i18n( $dateformatstring, strtotime( $date ) );
-							$dates[$key] = $newdate;
-						}
+						<span class="event-dates"><?php echo mandir_pretty_event_dates(); ?></span>
 
-						$is_date_range = get_post_meta($post->ID, 'mro_daterange_checkbox', true);
-
-						if ( $is_date_range == 1 && count($dates) == 2 ) :
-							$datestring = 'Del '.implode(' al ', $dates);
-						elseif ( count($dates) == 1 ):
-							$datestring = $dates[0];
-						else:
-							$last_date = array_pop($dates);
-							$datestring = implode(', ', $dates).' y '.$last_date;
-						endif;
-
-				    	echo $datestring;
-						?>
 						<a href="<?php the_permalink(); ?>"><?php _e('More information', 'mandir'); ?></a>
 					</article>
 
@@ -128,20 +107,13 @@ get_header(); ?>
 
 				endwhile; //end of events loop
 
-				// echo $eq_row_end;
-
 				wp_reset_postdata();
 
-				echo '</section';
+				echo '</section>';
 
 				?>
 
-				<?php //get_template_part( 'template-parts/content', 'page-stripped-end' ); ?>
-
-
-
 			<?php endwhile; // End of the ORIGINAL loop. ?>
-
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
