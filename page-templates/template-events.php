@@ -1,7 +1,7 @@
 <?php
 /**
  * Template Name: Event calendar
- * The template for displaying a full width page.
+ * The template for displaying a list of events, by month, on a full width page.
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
