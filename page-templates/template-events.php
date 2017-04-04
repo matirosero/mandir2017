@@ -94,6 +94,19 @@ get_header(); ?>
 
 						<?php the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' ); ?>
 
+						<?php 
+						$start_times = get_post_meta($post->ID, 'mro_event_time_start', false);
+						$end_times = get_post_meta($post->ID, 'mro_event_time_end', false);
+						var_dump($start_times);
+
+						if ( count($start_times) == 1 && count($end_times) == 1 ) :
+							echo 'ONE time';
+						else:
+							echo 'more than one time';
+						endif;
+
+						?>
+
 						<span class="event-dates"><?php echo mandir_pretty_event_dates(); ?></span>
 
 						<a href="<?php the_permalink(); ?>"><?php _e('More information', 'mandir'); ?></a>
