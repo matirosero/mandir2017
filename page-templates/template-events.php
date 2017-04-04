@@ -94,7 +94,8 @@ get_header(); ?>
 
 						<?php the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' ); ?>
 
-						<?php 
+						<?php
+						/*
 						$start_times = get_post_meta($post->ID, 'mro_event_time_start', false);
 						$end_times = get_post_meta($post->ID, 'mro_event_time_end', false);
 						var_dump($start_times);
@@ -104,7 +105,7 @@ get_header(); ?>
 						else:
 							echo 'more than one time';
 						endif;
-
+						*/
 						?>
 
 						<span class="event-dates"><?php echo mandir_pretty_event_dates(); ?></span>
