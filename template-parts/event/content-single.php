@@ -11,8 +11,14 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="medium-7 large-8 columns">
 		<header class="entry-header">
-			FEATURED IMAGE HERE
-
+			<?php
+			// If a regular post or page, and not the front page, show the featured image.
+			if ( has_post_thumbnail() ) :
+				echo '<div class="single-featured-image-header">';
+				the_post_thumbnail();
+				echo '</div><!-- .single-featured-image-header -->';
+			endif;
+			?>
 
 			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
