@@ -19,6 +19,9 @@ function mro_menu_top_item_classes( $classes, $item, $args ) {
 	if( is_front_page() && ( 'Clases de Yoga' == $item->title  || 'Clases' == $item->title ) )
 		$classes[] = 'current-menu-item';
 
+	if( is_singular( 'mro-event' ) && 'Actividades' == $item->title )
+		$classes[] = 'current-menu-item';
+
 	// if( ( is_singular( 'code' ) || is_tax( 'code-tag' ) ) && 'Talleres' == $item->title )
 		// $classes[] = 'current-menu-item';
 

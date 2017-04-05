@@ -22,8 +22,8 @@ get_header(); ?>
 
 				<?php
 
-				$today = date('Y/m/d');
-				$firstofmonth = date('Y/m/01');
+				$today = date('Y-m-d');
+				$firstofmonth = date('Y-m-01');
 
 
 				echo '<section class="events-list row" data-equalizer data-equalize-on="medium">';

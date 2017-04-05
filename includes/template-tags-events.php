@@ -68,3 +68,60 @@ function mandir_pretty_event_dates() {
 		endif;
 	endif;
 }
+
+
+/**
+ * Check that dates, end times and start times array have same number of values.
+ *
+ * @return true
+ */
+function mro_events_validate_datetimes() {
+	global $post;
+	$id = $post->ID;
+
+	$dates = mandir_convert_dates_array( get_post_meta($id, 'mro_event_date', false), $dateformatstring = 'j \d\e F, Y' );
+
+	$start_times = get_post_meta($id, 'mro_event_time_start', false);
+	$end_times = get_post_meta($id, 'mro_event_time_end', false);
+
+	if ( ( count($dates) == count($start_times) ) && ( count($end_times) == count($start_times) ) ) :
+		return true;
+	else:
+		return false;
+	endif;
+
+}
+
+
+/**
+ * Returns multidimensional array with the events' dates and their respective start and end times.
+ *
+ * @return $datetimes
+ */
+function mro_events_join_datetime($dateformatstring = 'j \d\e F') {
+	global $post;
+	$id = $post->ID;
+
+	if ( mro_events_validate_datetimes() == true ) :
+
+		//Array with dates from custom fields, prettified
+		$dates = mandir_convert_dates_array( get_post_meta($id, 'mro_event_date', false), $dateformatstring = $dateformatstring );
+
+		$start_times = get_post_meta($id, 'mro_event_time_start', false);
+		$end_times = get_post_meta($id, 'mro_event_time_end', false);
+
+		$datetimes = array();
+
+		foreach ($dates as $i => $val) {
+		    $datetimes[] = array(
+		    	'date'	=> $val,
+		    	'start'	=> $start_times[$i],
+		    	'end'	=> $end_times[$i],
+		    );
+		}
+
+		return $datetimes;
+	else:
+		return false;
+	endif;
+}
