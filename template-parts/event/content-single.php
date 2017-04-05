@@ -126,7 +126,7 @@
 
 					<?php
 					if ( get_post_meta($post->ID, 'mro_event_pricing_notes', true) ) :
-						$pricing_notes = get_post_meta($post->ID, 'mro_event_pricing_notes', true);
+						$pricing_notes = nl2br( get_post_meta($post->ID, 'mro_event_pricing_notes', true) );
 						?>
 						<span class="event-pricing-notes"><?php echo $pricing_notes; ?></span>
 					<?php endif; ?>
