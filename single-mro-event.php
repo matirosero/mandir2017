@@ -25,3 +25,5 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 </div><!-- .row -->
+
+<?php get_footer();
