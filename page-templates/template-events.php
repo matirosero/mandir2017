@@ -92,6 +92,13 @@ get_header(); ?>
 
 					<article id="post-<?php the_ID(); ?>" <?php post_class('medium-6 columns'); ?> data-equalizer-watch>
 
+			<?php
+			// If a regular post or page, and not the front page, show the featured image.
+			if ( has_post_thumbnail() ) : ?>
+				<a href="<?php the_permalink(); ?>" class="featured-image">
+					<?php the_post_thumbnail(); ?>
+				</a><!-- .featured-image -->
+			<?php endif; ?>
 						<?php the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' ); ?>
 
 						<?php
@@ -108,7 +115,7 @@ get_header(); ?>
 						*/
 						?>
 
-						<span class="event-dates"><?php echo mandir_pretty_event_dates(); ?></span>
+						<span class="event-date"><?php echo mandir_pretty_event_dates(); ?></span>
 
 						<a href="<?php the_permalink(); ?>"><?php _e('More information', 'mandir'); ?></a>
 					</article>

@@ -21,7 +21,7 @@
 
 <body <?php body_class(); ?>>
 
-<?php echo file_get_contents( get_template_directory() . '/assets/dist/sprite/sprite.svg' ); ?>
+<?php //echo file_get_contents( get_template_directory() . '/assets/dist/sprite/sprite.svg' ); ?>
 
 
 <div class="off-canvas-wrapper">

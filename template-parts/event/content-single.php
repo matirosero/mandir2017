@@ -53,7 +53,7 @@
 
 		<div class="sidebar">
 
-			<h2><?php _e('Important information','mandir'); ?></h2>
+			<h2 class="sidebar-title"><?php _e('Important information','mandir'); ?></h2>
 
 			<section class="sidebar-module">
 				<h3 class="module-title"><?php _e('Dates','mandir'); ?></h3>
@@ -135,6 +135,13 @@
 
 			<?php endif; ?>
 
+		</div><!-- .sidebar -->
+
+		<div class="sidebar">
+			<h2 class="sidebar-title"><?php _e('Reservation','mandir'); ?></h2>
+			<section class="sidebar-module">
+				<?php echo do_shortcode( '[caldera_form id="CF58e57f617099d"]' ); ?>
+			</section><!-- .sidebar-module -->
 		</div><!-- .sidebar -->
 
 	</div><!-- #secondary -->
