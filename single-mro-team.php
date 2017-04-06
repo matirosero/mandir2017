@@ -15,24 +15,20 @@
 
 get_header(); ?>
 
-<div class="row">
+<div class="row column">
 
-	<div class="medium-10 large-8 medium-centered columns">
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
 
-		<div id="primary" class="content-area">
-			<main id="main" class="site-main" role="main">
+			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php while ( have_posts() ) : the_post(); ?>
+				<?php get_template_part( 'template-parts/team/content', 'single' ); ?>
 
-					<?php get_template_part( 'template-parts/team/content', 'single' ); ?>
+			<?php endwhile; // End of the loop. ?>
 
-				<?php endwhile; // End of the loop. ?>
+		</main><!-- #main -->
+	</div><!-- #primary -->
 
-			</main><!-- #main -->
-		</div><!-- #primary -->
-
-	</div><!-- .columns -->
-
-</div><!-- .row -->
+</div><!-- .row.column -->
 
 <?php get_footer();
