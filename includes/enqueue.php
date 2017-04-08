@@ -7,6 +7,13 @@ namespace Mandir;
  */
 add_action( 'wp_enqueue_scripts', function() {
 
+	if (!is_admin()) {
+		// comment out the next two lines to load the local copy of jQuery
+		wp_deregister_script('jquery');
+		wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js', false, '3.0.0', true);
+		wp_enqueue_script('jquery');
+	}
+
 	wp_enqueue_style(
 		'mandir_styles',
 		HEISENBERG_URL . '/assets/dist/css/app.css',
@@ -21,6 +28,16 @@ add_action( 'wp_enqueue_scripts', function() {
 	wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i|Oswald', false );
 
 } );
+
+
+/**
+ * Modify jquery version
+ */
+// function modify_jquery() {
+
+// }
+// add_action('init', 'modify_jquery');
+
 
 /**
  * Enqueue scripts
