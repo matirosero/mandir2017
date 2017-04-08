@@ -1,13 +1,15 @@
 msgid ""
 msgstr ""
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Project-Id-Version: Mandir\n"
-"POT-Creation-Date: 2017-04-07 18:42-0600\n"
-"PO-Revision-Date: 2017-04-07 18:42-0600\n"
+"POT-Creation-Date: 2017-04-08 01:02-0600\n"
+"PO-Revision-Date: 2017-04-08 12:23-0600\n"
+"Last-Translator: \n"
 "Language-Team: \n"
+"Language: es_MX\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 2.0\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
@@ -16,29 +18,29 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
 "_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
-"Last-Translator: \n"
-"Language: es_MX\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
 #: 404.php:21
 msgid "Oops! That page can&rsquo;t be found."
-msgstr ""
+msgstr "¡Oops! Esa página no fue encontrada."
 
 #: 404.php:25
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links "
 "below or a search?"
 msgstr ""
+"Parece que no hay nada aquí. ¿Talvez probando unos de los enlaces de abajo o "
+"una búsqueda?"
 
 #: 404.php:35
 msgid "Most Used Categories"
-msgstr ""
+msgstr "Categorías más utilizadas"
 
 #: 404.php:52
 #, php-format
 msgid "Try looking in the monthly archives. %1$s"
-msgstr ""
+msgstr "Intentá buscar en los archivos mensuales. %1$s"
 
 #: comments.php:31
 #, php-format
@@ -50,172 +52,196 @@ msgstr[1] ""
 
 #: comments.php:40 comments.php:61
 msgid "Comment navigation"
-msgstr ""
+msgstr "Navegación de comentarios"
 
 #: comments.php:43 comments.php:64
 msgid "Older Comments"
-msgstr ""
+msgstr "Comentarios más antiguos"
 
 #: comments.php:44 comments.php:65
 msgid "Newer Comments"
-msgstr ""
+msgstr "Comentarios más recientes"
 
 #: comments.php:77
 msgid "Comments are closed."
-msgstr ""
+msgstr "Comentarios cerrados."
 
 #: includes/customizer-socialmedia.php:34
 msgid "Social Media Icons"
-msgstr ""
+msgstr "Iconos de redes sociales"
 
 #: includes/customizer-socialmedia.php:36
 msgid "Add the URL for each of your social profiles."
-msgstr ""
+msgstr "Agregá la dirección URL para cada uno de tus perfiles sociales."
 
 #: includes/setup.php:41
 msgid "Primary Menu"
-msgstr ""
+msgstr "Menú Principal"
 
 #: includes/setup.php:42
 msgid "Secondary Menu"
-msgstr ""
+msgstr "Menú Secundario"
 
 #: includes/setup.php:43
 msgid "Tablet Primary Menu"
-msgstr ""
+msgstr "Menú principal de tableta"
 
 #: includes/setup.php:44
 msgid "Mobile Primary Menu"
-msgstr ""
+msgstr "Menú principal móvil"
 
 #: includes/setup.php:45
 msgid "Mobile Menu"
-msgstr ""
+msgstr "Menú para móvil:"
 
 #: includes/sidebars.php:11
 msgid "Sidebar"
-msgstr ""
+msgstr "Barra lateral"
 
 #: includes/template-tags.php:25
 #, php-format
 msgctxt "post date"
 msgid "Posted on %s"
-msgstr ""
+msgstr "Publicado %s"
 
 #: includes/template-tags.php:30
 #, php-format
 msgctxt "post author"
 msgid "by %s"
-msgstr ""
+msgstr "por %s"
 
 #. translators: used between list items, there is a space after the comma
 #: includes/template-tags.php:45 includes/template-tags.php:51
 msgid ", "
-msgstr ""
+msgstr ", "
 
 #: includes/template-tags.php:47
 #, php-format
 msgid "Posted in %1$s"
-msgstr ""
+msgstr "Publicado en %1$s"
 
 #: includes/template-tags.php:53
 #, php-format
 msgid "Tagged %1$s"
-msgstr ""
+msgstr "Etiquetado %1$s"
 
 #: includes/template-tags.php:59
 msgid "Leave a comment"
-msgstr ""
+msgstr "Dejar un comentario"
 
 #: includes/template-tags.php:59
 msgid "1 Comment"
-msgstr ""
+msgstr "1 comentario"
 
 #: includes/template-tags.php:59
 msgid "% Comments"
-msgstr ""
+msgstr "% Comentarios"
 
 #. translators: %s: Name of current post
 #: includes/template-tags.php:66
 #: template-parts/content-page-stripped-end.php:16
 #: template-parts/content-page.php:31
-#: template-parts/page/content-schedule.php:95
+#: template-parts/page/content-schedule.php:140
 #: template-parts/team/content-single.php:25
 #, php-format
 msgid "Edit %s"
-msgstr ""
+msgstr "Editar %s"
 
 #: page-templates/template-events.php:120
 msgid "More information"
-msgstr ""
+msgstr "Más información"
 
 #: search.php:22
 #, php-format
 msgid "Search Results for: %s"
-msgstr ""
+msgstr "Resultados de la búsqueda para: %s"
 
 #: template-parts/content-announcementbar.php:38
 msgid "x"
-msgstr ""
+msgstr "x"
 
 #: template-parts/content-none.php:13
 msgid "Nothing Found"
-msgstr ""
+msgstr "No se encontró nada"
 
 #: template-parts/content-none.php:19
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
+"Listo para publicar tu primera entrada?  <a href=\"%1$s\">Empezá aquí</a>."
 
 #: template-parts/content-none.php:23
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
+"Lo sentimos, pero nada coincidió con tus términos de búsqueda. Por favor "
+"tratá nuevamente con otras palabras clave."
 
 #: template-parts/content-none.php:28
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
 msgstr ""
+"Parece que no podemos encontrar lo que estás buscando. Talvez una búsqueda "
+"pueda ayudar."
 
 #: template-parts/content-page.php:20 template-parts/content-single.php:24
 #: template-parts/content.php:34 template-parts/event/content-loop.php:24
 #: template-parts/event/content-single.php:42
 msgid "Pages:"
-msgstr ""
+msgstr "Páginas:"
 
 #. translators: %s: Name of current post.
 #: template-parts/content.php:27
 #, php-format
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
+msgstr "Seguir leyendo %s <span class=\"meta-nav\">&rarr;</span>"
 
 #: template-parts/event/content-single.php:110
 msgid "Important information"
-msgstr ""
+msgstr "Información importante"
 
 #: template-parts/event/content-single.php:113
 msgid "Dates"
-msgstr ""
+msgstr "Fechas"
 
 #: template-parts/event/content-single.php:135
 msgid "Venue"
-msgstr ""
+msgstr "Lugar"
 
 #: template-parts/event/content-single.php:154
 msgid "Costs"
-msgstr ""
+msgstr "Inversión"
 
 #: template-parts/event/content-single.php:195
 msgid "Reservation"
-msgstr ""
+msgstr "Reservar"
 
 #: template-parts/page/content-schedule.php:11
-#: template-parts/page/content-schedule.php:82
 msgid "Monday"
 msgstr "Lunes"
+
+#: template-parts/page/content-schedule.php:12
+msgid "Tuesday"
+msgstr "Martes"
+
+#: template-parts/page/content-schedule.php:13
+msgid "Wednesday"
+msgstr "Miércoles"
+
+#: template-parts/page/content-schedule.php:14
+msgid "Thursday"
+msgstr "Jueves"
+
+#: template-parts/page/content-schedule.php:15
+msgid "Friday"
+msgstr "Viernes"
+
+#: template-parts/page/content-schedule.php:16
+msgid "Saturday"
+msgstr "Sábado"
 
 #. Theme Name of the plugin/theme
 msgid "Mandir"
@@ -227,7 +253,7 @@ msgstr ""
 
 #. Description of the plugin/theme
 msgid "Theme based on Heisenberg 2.0.3, based on Underscores"
-msgstr ""
+msgstr "Tema basado en Heisenberg 2.0.3, basado en Underscores"
 
 #. Author of the plugin/theme
 msgid "Matilde Rosero"
