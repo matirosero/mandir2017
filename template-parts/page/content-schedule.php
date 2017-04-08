@@ -51,6 +51,7 @@ endif;
 	<section class="mro-schedule loading">
 		<div class="timeline">
 		<ul>
+			<li><span>07:00</span></li>
 			<li><span>07:30</span></li>
 			<li><span>08:00</span></li>
 			<li><span>08:30</span></li>
