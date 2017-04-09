@@ -152,7 +152,7 @@ Main Components
 		box-shadow: inset 0 -3px 0 rgba(#000, .2);
 		margin-right: 20px;
 		transition: opacity .2s, background .2s;
-		overflow: hidden;
+		
 
 		&:last-of-type {
 			margin-right: 5%;
@@ -162,6 +162,11 @@ Main Components
 			display: block;
 			height: 100%;
 			padding: .8em;
+			overflow: hidden;
+		}
+
+		.schedule-event-content {
+			display: none;
 		}
 	}
 
@@ -264,15 +269,24 @@ Main Components
 	opacity: 0;
 }
 
-.mro-schedule .event-name,
+.mro-schedule .schedule-event-info,
 .mro-schedule .event-date {
 	display: block;
 	color: white;
-	font-weight: bold;
+	font-weight: normal;
 	@include font-smoothing;
+	span {
+		display: block;
+	}
+	.schedule-event-name {
+		font-weight: bold;
+	}
+	.schedule-event-teacher {
+		font-size: $small-font-size;
+	}
 }
 
-.mro-schedule .event-name {
+.mro-schedule .schedule-event-info {
 	font-size: 1rem;
 
 	@include MQ(M) {

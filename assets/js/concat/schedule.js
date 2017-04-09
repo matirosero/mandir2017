@@ -67,6 +67,7 @@ jQuery(document).ready(function($){
 		this.singleEvents.each(function(){
 			//create the .event-date element for each event
 			var durationLabel = '<span class="event-date">'+$(this).data('start')+' - '+$(this).data('end')+'</span>';
+			var elHeight;
 			$(this).children('a').prepend($(durationLabel));
 
 			//detect click on the event and open the modal
@@ -74,6 +75,23 @@ jQuery(document).ready(function($){
 				event.preventDefault();
 				if( !self.animating ) self.openModal($(this));
 			});
+
+			$(this).on('mouseenter', function(event){
+				event.preventDefault();
+				if ( $(this).hasClass('overflow-present')) {
+					elHeight = $(this).height();
+					$(this).css('height','auto');
+				}
+
+			});
+			$(this).on('mouseleave', function(event){
+				if ( $(this).hasClass('overflow-present')) {
+					event.preventDefault();
+					$(this).css('height',elHeight);
+				}
+
+			});
+
 		});
 
 		//close modal window
@@ -95,11 +113,23 @@ jQuery(document).ready(function($){
 
 			var eventTop = self.eventSlotHeight*(start - self.timelineStart)/self.timelineUnitDuration,
 				eventHeight = self.eventSlotHeight*duration/self.timelineUnitDuration;
-			
+
+			var originalHeight = $(this).height();
+
+			$(this).removeClass('overflow-present'); 
+
 			$(this).css({
 				top: (eventTop -1) +'px',
 				height: (eventHeight+1)+'px'
 			});
+
+			console.log('original height '+ originalHeight);
+			console.log('new height '+ eventHeight);
+
+			if ( eventHeight < originalHeight ) {
+				console.log('overflow!');
+				$(this).addClass('overflow-present');
+			}
 		});
 
 		this.element.removeClass('loading');
@@ -109,17 +139,23 @@ jQuery(document).ready(function($){
 		var self = this;
 		var mq = self.mq();
 		this.animating = true;
+		var eventContent; //MY EDIT
 
 		//update event name and time
-		this.modalHeader.find('.event-name').text(event.find('.event-name').text());
+		this.modalHeader.find('.schedule-event-name').text(event.find('.schedule-event-name').text());
 		this.modalHeader.find('.event-date').text(event.find('.event-date').text());
 		this.modal.attr('data-event', event.parent().attr('data-event'));
 
+		eventContent = event.parent().find('.schedule-event-content'); //MY EDIT
+
 		//update event content
-		this.modalBody.find('.event-info').load(event.parent().attr('data-content')+'.html .event-info > *', function(data){
-			//once the event content has been loaded
-			self.element.addClass('content-loaded');
-		});
+		// this.modalBody.find('.event-info').load(event.parent().attr('data-content')+'.html .event-info > *', function(data){
+		// 	//once the event content has been loaded
+		// 	self.element.addClass('content-loaded');
+		// });
+		//MY EDIT: get content from the clicked element:
+		this.modalBody.find('.event-info').html(eventContent);
+		self.element.addClass('content-loaded');
 
 		this.element.addClass('modal-is-open');
 

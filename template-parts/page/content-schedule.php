@@ -32,7 +32,6 @@ if ($query) :
 	}
 	wp_reset_postdata();
 endif;
-
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -98,12 +97,14 @@ endif;
 
 						<ul>
 							<?php
-							foreach ($day as $key => $class) { 
+							foreach ($day as $key => $class) {
 								$time_start = $class['time_start'];
 								$time_end = $class['time_end'];
 								$class_id = $class['class_id'];
 								$teacher_id = $class['team_id'];
+								$content = $posts[$class_id]['content'];
 								$manual_class_name = $class['manual_block_name'];
+
 								//todo class for manual
 								?>
 								<li class="single-event" data-start="<?php echo $time_start; ?>" data-end="<?php echo $time_end; ?>" data-content="event-abs-circuit" data-event="event-<?php echo $posts[$class_id]['class']; ?>">
@@ -116,10 +117,25 @@ endif;
 										else:
 											$class_name = $class['manual_block_name'];
 										endif;
+
+
 										?>
-										<span class="event-name"><?php echo $class_name; ?></span>
+										<span class="schedule-event-info">
+											<span class="schedule-event-name"><?php echo $class_name; ?></span>
+
+											<?php
+											if ( $class['team_id'] != '' ) :
+												$teacher_name = $posts[$teacher_id]['title'];
+												$teacher_link = $posts[$teacher_id]['link'];
+												?>
+												<span class="schedule-event-teacher" data-teacher-link="<?php echo $teacher_link; ?>"><?php echo $teacher_name; ?></span>
+											<?php endif; ?>
+
+										</span>
+
 
 									</a>
+									<div class="schedule-event-content"><?php echo $content; ?></div>
 								</li>
 							<?php } ?>
 						</ul>
@@ -135,7 +151,7 @@ endif;
 			<header class="header">
 				<div class="content">
 					<span class="event-date"></span>
-					<h3 class="event-name"></h3>
+					<h3 class="schedule-event-name"></h3>
 				</div>
 
 				<div class="header-bg"></div>
