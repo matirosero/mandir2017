@@ -117,7 +117,7 @@ endif;
 											$class_name = $class['manual_block_name'];
 										endif;
 										?>
-										<em class="event-name"><?php echo $class_name; ?></em>
+										<span class="event-name"><?php echo $class_name; ?></span>
 
 									</a>
 								</li>

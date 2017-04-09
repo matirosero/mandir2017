@@ -25,10 +25,10 @@ Main Components
 	ol, ul {
 		margin: 0;
 		padding: 0;
-		border: 0;
-		font-size: 100%;
-		font: inherit;
-		vertical-align: baseline;
+		// border: 0;
+		// font-size: 100%;
+		// font: inherit;
+		// vertical-align: baseline;
 		list-style: none;
 	}
 
@@ -68,7 +68,7 @@ Main Components
 				left: 0;
 				width: 100%;
 				height: 1px;
-				background: $border-color;
+				background: $schedule-border-color;
 			}
 
 			&:last-of-type::after {
@@ -152,6 +152,7 @@ Main Components
 		box-shadow: inset 0 -3px 0 rgba(#000, .2);
 		margin-right: 20px;
 		transition: opacity .2s, background .2s;
+		overflow: hidden;
 
 		&:last-of-type {
 			margin-right: 5%;
@@ -177,7 +178,7 @@ Main Components
 		.events-group {
 			width: 100%/$columns-number;
 			float: left;
-			border: 1px solid $border-color;
+			border: 1px solid $schedule-border-color;
 			/* reset style */
 			margin-bottom: 0;
 
@@ -190,7 +191,7 @@ Main Components
 			/* vertically center its content */
 			display: table;
 			height: $row-height;
-			border-bottom: 1px solid $border-color;
+			border-bottom: 1px solid $schedule-border-color;
 			/* reset style */
 			padding: 0;
 
@@ -235,7 +236,7 @@ Main Components
 			margin-right: 0;
 
 			a {
-				padding: 1.2em;
+				padding: 1rem;
 			}
 
 			&:last-of-type {
@@ -272,19 +273,29 @@ Main Components
 }
 
 .mro-schedule .event-name {
-	font-size: 2.4rem;
+	font-size: 1rem;
 
 	@include MQ(M) {
-		font-size: 2rem;
+		font-size: 1rem;
 	}
 }
 
 .mro-schedule .event-date {
 	/* they are not included in the the HTML but added using JavScript */
-	font-size: 1.4rem;
+	font-size: $small-font-size;
 	opacity: .7;
 	line-height: 1.2;
 	margin-bottom: .2em;
+}
+
+.mro-schedule .single-event[data-event^="event-"],
+.mro-schedule [data-event^="event-"] .header-bg {
+	/* this is used to set a background color for the event and the modal window */
+	background: color('blue', 'base');
+}
+
+.mro-schedule .single-event[data-event^="event-"]:hover {
+	background: lighten(color('blue', 'base'), 5%);
 }
 
 .mro-schedule .single-event[data-event="event-1"],
@@ -509,7 +520,7 @@ Main Components
 			background: transparent;
 
 			&::after, &::before {
-				background: $text-color;
+				background: $body-font-color;
 				height: 16px;
 			}
 		}
