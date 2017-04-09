@@ -116,8 +116,6 @@ jQuery(document).ready(function($){
 
 			var originalHeight = $(this).height();
 
-			$(this).removeClass('overflow-present'); 
-
 			$(this).css({
 				top: (eventTop -1) +'px',
 				height: (eventHeight+1)+'px'
@@ -146,7 +144,7 @@ jQuery(document).ready(function($){
 		this.modalHeader.find('.event-date').text(event.find('.event-date').text());
 		this.modal.attr('data-event', event.parent().attr('data-event'));
 
-		eventContent = event.parent().find('.schedule-event-content'); //MY EDIT
+		eventContent = event.parent().find('.schedule-event-content').text(); //MY EDIT
 
 		//update event content
 		// this.modalBody.find('.event-info').load(event.parent().attr('data-content')+'.html .event-info > *', function(data){
@@ -154,7 +152,7 @@ jQuery(document).ready(function($){
 		// 	self.element.addClass('content-loaded');
 		// });
 		//MY EDIT: get content from the clicked element:
-		this.modalBody.find('.event-info').html(eventContent);
+		this.modalBody.find('.event-info').html('<div>'+eventContent+'<div>');
 		self.element.addClass('content-loaded');
 
 		this.element.addClass('modal-is-open');
