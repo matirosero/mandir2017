@@ -7,6 +7,7 @@
  * @package Mandir
  */
 
+//Create array with days of the week
 $days = array(
 	__('Monday', 'mandir'),
 	__('Tuesday', 'mandir'),
@@ -16,8 +17,15 @@ $days = array(
 	__('Saturday', 'mandir'),
 );
 
-$posts = array();
 global $wpdb;
+
+//Create an events array
+$events = array(); 
+
+//Create posts array, for classes and teachers (pull everything)
+$posts = array();
+
+//Grab all classes and teachers, stick them in $posts array
 $query = $wpdb->get_results(
 	'SELECT ID, post_title, post_content FROM mandir_posts WHERE post_type in ("mro-team", "mro-class") AND post_status = "publish"');
 if ($query) :
@@ -25,13 +33,17 @@ if ($query) :
 		setup_postdata( $post );
 		$posts[get_the_ID()] = array(
 			'title' => get_the_title(),
-			'content' => get_the_content(),
+			'content' => wp_kses_post( get_the_content() ),
 			'link' => get_post_permalink(get_the_ID()),
 			'class' => $key + 1,
 			);
 	}
 	wp_reset_postdata();
 endif;
+// if (array_key_exists(231, $posts)) {
+//     echo "The 'first' element is in the array";
+// }
+// var_dump($posts);
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -47,6 +59,7 @@ endif;
 		?>
 	</div><!-- .entry-content -->
 
+	<!-- Start Schedule -->
 	<section class="mro-schedule loading">
 		<div class="timeline">
 		<ul>
@@ -84,50 +97,101 @@ endif;
 		<div class="events">
 			<ul>
 				<?php
+
+				//Grab all schedule options from DB
 				$schedule_settings = get_option('mro_class_schedule_settings');
 
+				//Start a counter
 				$i = 0;
 
+
+				//Loop through all days of the week array
 				foreach ($schedule_settings as $day) { ?>
 
 					<li class="events-group">
 						<div class="top-info">
-							<span><?php echo $days[$i]; $i++; ?></span>
+							<span>
+								<?php echo $days[$i]; $i++; ?>
+							</span><!-- Name day of the week -->
 						</div>
 
 						<ul>
 							<?php
+
+							//Loop through all classes in a day
 							foreach ($day as $key => $class) {
+
+								//Create variables, populate with values from schedule settings
+								$block_type = $class['type'];//class, event or manual
 								$time_start = $class['time_start'];
 								$time_end = $class['time_end'];
-								$class_id = $class['class_id'];
-								$teacher_id = $class['team_id'];
-								$content = $posts[$class_id]['content'];
-								$manual_class_name = $class['manual_block_name'];
+
+								//If it's a class
+								if ( $block_type  == 'class' ) :
+									$class_id = $class['class_id'];
+									$class_name = $posts[$class_id]['title'];
+									$content = $posts[$class_id]['content'];
+									$teacher_id = $class['class_teacher_id'];
+									$class_class = $posts[$class_id]['class'];
+								endif;
+
+								//If it's an event
+								if ( $block_type  == 'event' ) :
+									$event_id = $class['event_id'];
+
+									//Check if event is in array, get values if it is
+									if (array_key_exists($event_id, $events)) :
+									    $class_name = $events[$event_id]['title'];
+										$content = $events[$event_id]['content'];
+										$event_link = $events[$event_id]['link'];
+									
+									//If not, query, get values and add to array
+									else:
+										$class_name = get_the_title($event_id);
+										$event_link = get_post_permalink($event_id);
+										$content = wp_kses_post( wp_trim_words( get_post_field('post_content', $event_id), 20) );
+
+										$events[$event_id] = array(
+											'title' => $class_name,
+											'content' => $content,
+											'link' => $event_link,
+											);
+									endif;
+
+								endif;
+
+								//If it's a manual entry
+								if ( $block_type  == 'manual' ) :
+									$class_name = $class['manual_block_name'];
+									$content = null;
+								endif;
+
+								if ( $block_type  == 'manual' || $block_type  == 'event' ) :
+									$teacher_id = $class['event_teacher_id'];
+									$class_class = 0;
+								endif;
+
+
+
+								//Get teacher details
+								if ( $teacher_id == 'other' ) :
+									$teacher_name = $class['manual_teacher_name'];
+								else:
+									$teacher_name = $posts[$teacher_id]['title'];
+									$teacher_link = $posts[$teacher_id]['link'];
+								endif;
 
 								//todo class for manual
 								?>
-								<li class="single-event" data-start="<?php echo $time_start; ?>" data-end="<?php echo $time_end; ?>" data-content="event-abs-circuit" data-event="event-<?php echo $posts[$class_id]['class']; ?>">
+								<li class="single-event" data-start="<?php echo $time_start; ?>" data-end="<?php echo $time_end; ?>" data-event="event-<?php echo $class_class; ?>"<?php if ( $block_type  == 'event' ) { echo 'data-link="'.$event_link.'"'; } ?>>
+
 									<a href="#0">
-										<?php
-										// var_dump($class);
-										if ( $class['class_id'] != '' ) :
-											$class_name = $posts[$class_id]['title'];
 
-										else:
-											$class_name = $class['manual_block_name'];
-										endif;
-
-
-										?>
 										<span class="schedule-event-info">
 											<span class="schedule-event-name"><?php echo $class_name; ?></span>
 
 											<?php
-											if ( $class['team_id'] != '' ) :
-												$teacher_name = $posts[$teacher_id]['title'];
-												$teacher_link = $posts[$teacher_id]['link'];
-												?>
+											if ( $teacher_name ) : ?>
 												<span class="schedule-event-teacher" data-link="<?php echo $teacher_link; ?>"><?php echo $teacher_name; ?></span>
 											<?php endif; ?>
 
@@ -152,7 +216,7 @@ endif;
 				<div class="content">
 					<span class="event-date"></span>
 					<h3 class="schedule-event-name"></h3>
-					
+
 				</div>
 
 				<div class="header-bg"></div>
