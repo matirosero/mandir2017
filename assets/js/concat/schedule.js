@@ -138,9 +138,11 @@ jQuery(document).ready(function($){
 		var mq = self.mq();
 		this.animating = true;
 		var eventContent; //MY EDIT
+		var eventTeacher = event.find('.schedule-event-teacher');
 
 		//update event name and time
 		this.modalHeader.find('.schedule-event-name').text(event.find('.schedule-event-name').text());
+		this.modalHeader.find('.schedule-event-teacher').text(eventTeacher.text()).attr('href', eventTeacher.attr('data-link'));
 		this.modalHeader.find('.event-date').text(event.find('.event-date').text());
 		this.modal.attr('data-event', event.parent().attr('data-event'));
 

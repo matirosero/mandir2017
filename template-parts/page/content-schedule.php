@@ -128,7 +128,7 @@ endif;
 												$teacher_name = $posts[$teacher_id]['title'];
 												$teacher_link = $posts[$teacher_id]['link'];
 												?>
-												<span class="schedule-event-teacher" data-teacher-link="<?php echo $teacher_link; ?>"><?php echo $teacher_name; ?></span>
+												<span class="schedule-event-teacher" data-link="<?php echo $teacher_link; ?>"><?php echo $teacher_name; ?></span>
 											<?php endif; ?>
 
 										</span>
@@ -152,6 +152,7 @@ endif;
 				<div class="content">
 					<span class="event-date"></span>
 					<h3 class="schedule-event-name"></h3>
+					<a class="schedule-event-teacher"></a>
 				</div>
 
 				<div class="header-bg"></div>
