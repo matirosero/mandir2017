@@ -26,7 +26,7 @@ get_header(); ?>
 				$firstofmonth = date('Y-m-01');
 
 
-				echo '<section class="events-list row" data-equalizer data-equalize-on="medium">';
+				echo '<section class="events-list row medium-up-2" data-equalizer data-equalize-on="medium">';
 
 
 				/**
@@ -85,12 +85,12 @@ get_header(); ?>
 
 					// - determine if it's a new month -
 					if ($monthcheck == null || $monthcheck != $month ) :
-						echo '<h2 class="full-events medium-12 columns">' . $month . '</h2>';
+						echo '<h2 class="full-events row column">' . $month . '</h2>';
 					endif;
 
 					?>
 
-					<article id="post-<?php the_ID(); ?>" <?php post_class('medium-6 columns'); ?> data-equalizer-watch>
+					<article id="post-<?php the_ID(); ?>" <?php post_class('column column-block'); ?> data-equalizer-watch>
 
 			<?php
 			// If a regular post or page, and not the front page, show the featured image.
