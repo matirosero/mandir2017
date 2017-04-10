@@ -142,9 +142,15 @@ jQuery(document).ready(function($){
 
 		//update event name and time
 		this.modalHeader.find('.schedule-event-name').text(event.find('.schedule-event-name').text());
-		this.modalHeader.find('.schedule-event-teacher').text(eventTeacher.text()).attr('href', eventTeacher.attr('data-link'));
+		
 		this.modalHeader.find('.event-date').text(event.find('.event-date').text());
 		this.modal.attr('data-event', event.parent().attr('data-event'));
+
+		if (eventTeacher.length != 0) {
+			console.log('teacher');
+			this.modalHeader.find('.schedule-event-name').after('<a class="schedule-event-teacher" href="'+eventTeacher.attr('data-link')+'">'+eventTeacher.text()+'</a>');
+		}
+		
 
 		eventContent = event.parent().find('.schedule-event-content').text(); //MY EDIT
 
@@ -287,6 +293,8 @@ jQuery(document).ready(function($){
 				event.removeClass('selected-event');
 			});
 		}
+
+		this.modalHeader.find('.schedule-event-teacher').remove();
 
 		//browser do not support transitions -> no need to wait for the end of it
 		if( !transitionsSupported ) self.modal.add(self.modalHeaderBg).trigger(transitionEnd);

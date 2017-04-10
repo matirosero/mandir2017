@@ -152,7 +152,7 @@ endif;
 				<div class="content">
 					<span class="event-date"></span>
 					<h3 class="schedule-event-name"></h3>
-					<a class="schedule-event-teacher"></a>
+					
 				</div>
 
 				<div class="header-bg"></div>
