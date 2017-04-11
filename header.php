@@ -100,4 +100,13 @@
 				</nav><!-- #site-navigation -->
 			</header><!-- #masthead -->
 
+	<?php
+	// If a regular post or page, and not the front page, show the featured image.
+	if ( has_post_thumbnail() && ( is_single() || is_page() ) ) :
+		echo '<div class="hero-header">';
+		the_post_thumbnail( 'twentyseventeen-featured-image' );
+		echo '</div><!-- .hero-header -->';
+	endif;
+	?>
+
 			<div id="content" class="site-content">
