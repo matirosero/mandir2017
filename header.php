@@ -102,9 +102,9 @@
 
 	<?php
 	// If a regular post or page, and not the front page, show the featured image.
-	if ( has_post_thumbnail() && ( is_single() || is_page() ) ) :
+	if ( has_post_thumbnail() && ! is_singular( array( 'mro-team', 'mro-event' ) ) && ( is_single() || is_page() ) ) :
 		echo '<div class="hero-header">';
-		the_post_thumbnail( 'twentyseventeen-featured-image' );
+		the_post_thumbnail();
 		echo '</div><!-- .hero-header -->';
 	endif;
 	?>
