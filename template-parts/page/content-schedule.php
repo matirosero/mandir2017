@@ -33,7 +33,7 @@ if ($query) :
 		setup_postdata( $post );
 		$posts[get_the_ID()] = array(
 			'title' => get_the_title(),
-			'content' => wp_kses_post( get_the_content() ),
+			'content' => wpautop( wp_kses_post( get_the_content() ) ),
 			'link' => get_post_permalink(get_the_ID()),
 			'class' => $key + 1,
 			);
@@ -142,20 +142,23 @@ endif;
 									//Check if event is in array, get values if it is
 									if (array_key_exists($event_id, $events)) :
 									    $class_name = $events[$event_id]['title'];
-										$content = $events[$event_id]['content'];
 										$event_link = $events[$event_id]['link'];
+										$content = $events[$event_id]['content'];
+										
 									
 									//If not, query, get values and add to array
 									else:
 										$class_name = get_the_title($event_id);
 										$event_link = get_post_permalink($event_id);
-										$content = wp_kses_post( wp_trim_words( get_post_field('post_content', $event_id), 20) );
+										$content = wpautop( wp_kses_post( wp_trim_words( get_post_field('post_content', $event_id), 50) ) );
 
 										$events[$event_id] = array(
 											'title' => $class_name,
 											'content' => $content,
 											'link' => $event_link,
 											);
+
+
 									endif;
 
 								endif;
@@ -176,6 +179,7 @@ endif;
 								//Get teacher details
 								if ( $teacher_id == 'other' ) :
 									$teacher_name = $class['manual_teacher_name'];
+									$teacher_link = null;
 								else:
 									$teacher_name = $posts[$teacher_id]['title'];
 									$teacher_link = $posts[$teacher_id]['link'];
@@ -199,7 +203,12 @@ endif;
 
 
 									</a>
-									<div class="schedule-event-content"><?php echo $content; ?></div>
+									<div class="schedule-event-content">
+										<?php echo $content; ?>
+										<?php if ( $block_type  == 'event' ) : ?>
+											<p><a href="<?php echo $event_link; ?>"><?php _e('Read more', 'mandir'); ?></a></p>
+										<?php endif; ?>
+									</div>
 								</li>
 							<?php } ?>
 						</ul>

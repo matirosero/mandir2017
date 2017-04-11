@@ -147,12 +147,16 @@ jQuery(document).ready(function($){
 		this.modal.attr('data-event', event.parent().attr('data-event'));
 
 		if (eventTeacher.length != 0) {
-			console.log('teacher');
-			this.modalHeader.find('.schedule-event-name').after('<a class="schedule-event-teacher" href="'+eventTeacher.attr('data-link')+'">'+eventTeacher.text()+'</a>');
+			if (eventTeacher.attr('data-link').length != 0) {
+				this.modalHeader.find('.schedule-event-name').after('<a class="schedule-event-teacher" href="'+eventTeacher.attr('data-link')+'">'+eventTeacher.text()+'</a>');
+			} else {
+				this.modalHeader.find('.schedule-event-name').after('<span class="schedule-event-teacher">'+eventTeacher.text()+'</span>');
+			}
+			
 		}
 		
 
-		eventContent = event.parent().find('.schedule-event-content').text(); //MY EDIT
+		eventContent = event.parent().find('.schedule-event-content').html(); //MY EDIT
 
 		//update event content
 		// this.modalBody.find('.event-info').load(event.parent().attr('data-content')+'.html .event-info > *', function(data){
