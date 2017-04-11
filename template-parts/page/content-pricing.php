@@ -41,7 +41,7 @@ $monthly_prices = $pricing_settings['monthly_prices'];
 									<span class="price">₡<?php echo $monthly_price['monthly_1weekly']; ?></span>
 									<span class="price-description">
 										<?php _e('1 class per week'); ?><br />
-										<?php _e('4 classes per week'); ?>
+										<?php _e('4 classes per month'); ?>
 									</span>
 								</div>
 							</li>
@@ -51,7 +51,7 @@ $monthly_prices = $pricing_settings['monthly_prices'];
 									<span class="price">₡<?php echo $monthly_price['monthly_2weekly']; ?></span>
 									<span class="price-description">
 										<?php _e('2 classes per week'); ?><br />
-										<?php _e('8 classes per week'); ?>
+										<?php _e('8 classes per month'); ?>
 									</span>
 								</div>
 							</li>
@@ -61,7 +61,7 @@ $monthly_prices = $pricing_settings['monthly_prices'];
 									<span class="price">₡<?php echo $monthly_price['monthly_3weekly']; ?></span>
 									<span class="price-description">
 										<?php _e('3 classes per week'); ?><br />
-										<?php _e('12 classes per week'); ?>
+										<?php _e('12 classes per month'); ?>
 									</span>
 								</div>
 							</li>

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Mandir\n"
-"POT-Creation-Date: 2017-04-08 01:02-0600\n"
-"PO-Revision-Date: 2017-04-08 12:23-0600\n"
+"POT-Creation-Date: 2017-04-10 23:45-0600\n"
+"PO-Revision-Date: 2017-04-10 23:46-0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_MX\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.0\n"
+"X-Generator: Poedit 2.0.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -47,7 +47,7 @@ msgstr "Intentá buscar en los archivos mensuales. %1$s"
 msgctxt "comments title"
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] ""
+msgstr[0] "Una idea en &ldquo;%2$s&rdquo;"
 msgstr[1] ""
 
 #: comments.php:40 comments.php:61
@@ -141,7 +141,7 @@ msgstr "% Comentarios"
 #: includes/template-tags.php:66
 #: template-parts/content-page-stripped-end.php:16
 #: template-parts/content-page.php:31
-#: template-parts/page/content-schedule.php:140
+#: template-parts/page/content-schedule.php:253
 #: template-parts/team/content-single.php:25
 #, php-format
 msgid "Edit %s"
@@ -219,29 +219,81 @@ msgstr "Inversión"
 msgid "Reservation"
 msgstr "Reservar"
 
-#: template-parts/page/content-schedule.php:11
+#: template-parts/page/content-pricing.php:11
+msgid "Pricing"
+msgstr "Tarifas"
+
+#: template-parts/page/content-pricing.php:15
+msgid "Single class"
+msgstr "Clase suelta"
+
+#: template-parts/page/content-pricing.php:19
+msgid "1 class"
+msgstr "1 clase"
+
+#: template-parts/page/content-pricing.php:23
+msgid "Membership"
+msgstr "Matrícula"
+
+#: template-parts/page/content-pricing.php:27
+msgid "Per year"
+msgstr "Por 1 año"
+
+#: template-parts/page/content-pricing.php:43
+msgid "1 class per week"
+msgstr "1 clase por semana"
+
+#: template-parts/page/content-pricing.php:44
+msgid "4 classes per month"
+msgstr "4 clases por mes"
+
+#: template-parts/page/content-pricing.php:53
+msgid "2 classes per week"
+msgstr "2 clases por semana"
+
+#: template-parts/page/content-pricing.php:54
+msgid "8 classes per month"
+msgstr "8 clases por mes"
+
+#: template-parts/page/content-pricing.php:63
+msgid "3 classes per week"
+msgstr "3 clases por semana"
+
+#: template-parts/page/content-pricing.php:64
+msgid "12 classes per month"
+msgstr "2 clases por mes"
+
+#: template-parts/page/content-pricing.php:73
+msgid "Unlimited classes"
+msgstr "Clases ilimitadas"
+
+#: template-parts/page/content-schedule.php:12
 msgid "Monday"
 msgstr "Lunes"
 
-#: template-parts/page/content-schedule.php:12
+#: template-parts/page/content-schedule.php:13
 msgid "Tuesday"
 msgstr "Martes"
 
-#: template-parts/page/content-schedule.php:13
+#: template-parts/page/content-schedule.php:14
 msgid "Wednesday"
 msgstr "Miércoles"
 
-#: template-parts/page/content-schedule.php:14
+#: template-parts/page/content-schedule.php:15
 msgid "Thursday"
 msgstr "Jueves"
 
-#: template-parts/page/content-schedule.php:15
+#: template-parts/page/content-schedule.php:16
 msgid "Friday"
 msgstr "Viernes"
 
-#: template-parts/page/content-schedule.php:16
+#: template-parts/page/content-schedule.php:17
 msgid "Saturday"
 msgstr "Sábado"
+
+#: template-parts/page/content-schedule.php:209
+msgid "Read more"
+msgstr "Más información"
 
 #. Theme Name of the plugin/theme
 msgid "Mandir"
