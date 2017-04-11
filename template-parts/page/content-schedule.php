@@ -242,6 +242,9 @@ endif;
 		<div class="cover-layer"></div>
 	</section><!-- .mro-schedule -->
 
+
+	<?php get_template_part( 'template-parts/page/content', 'pricing' ); ?>
+
 	<footer class="entry-footer">
 		<?php
 		edit_post_link(
