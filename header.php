@@ -21,7 +21,10 @@
 
 <?php
 if ( is_front_page() ) :
+	global $frontpage_settings;
+
 	$frontpage_settings = get_option('mro_frontpage_settings');
+	
 	$slider_active = $frontpage_settings['hero_slider_enable'];
 endif;
 
@@ -115,7 +118,7 @@ if ( is_front_page() && $slider_active == 1 ) : ?>
 	<?php
 	//Get frontpage settings if it's frontpage
 	if ( is_front_page() && $slider_active == 1 ) :
-			include(locate_template('template-parts/page/content-hero-slider.php'));
+		include(locate_template('template-parts/page/content-hero-slider.php'));
 	elseif ( has_post_thumbnail() && ! is_singular( array( 'mro-team', 'mro-event' ) ) && ( is_single() || is_page() ) ) :
 		get_template_part( 'template-parts/page/content', 'header' );
 	endif;

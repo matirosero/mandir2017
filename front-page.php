@@ -9,7 +9,6 @@
 
 get_header(); ?>
 
-
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
@@ -27,6 +26,9 @@ get_header(); ?>
 			</section><!-- .page-section -->
 
 			<?php get_template_part( 'template-parts/home/content', 'links' ); ?>
+
+			<?php get_template_part( 'template-parts/home/content', 'events' ); ?>
+
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

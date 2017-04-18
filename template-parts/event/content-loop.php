@@ -8,26 +8,19 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+<article id="post-<?php the_ID(); ?>" <?php post_class('column column-block'); ?> data-equalizer-watch>
 
-		<div class="entry-meta">
-			<?php mandir_posted_on(); ?>
-		</div><!-- .entry-meta -->
-	</header><!-- .entry-header -->
+	<?php
 
-	<div class="entry-content">
-		<?php the_content(); ?>
-		<?php
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'mandir' ),
-				'after'  => '</div>',
-			) );
-		?>
-	</div><!-- .entry-content -->
+	if ( has_post_thumbnail() ) : ?>
+		<a href="<?php the_permalink(); ?>" class="featured-image">
+			<?php the_post_thumbnail(); ?>
+		</a><!-- .featured-image -->
+	<?php endif; ?>
 
-	<footer class="entry-footer">
-		<?php mandir_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-## -->
+	<?php the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' ); ?>
+
+	<span class="event-date"><?php echo mandir_pretty_event_dates(); ?></span>
+
+	<a href="<?php the_permalink(); ?>"><?php _e('More information', 'mandir'); ?></a>
+</article>

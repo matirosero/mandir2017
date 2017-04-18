@@ -41,6 +41,7 @@ get_header(); ?>
 					'post_status' => 'publish',
 
 					//Order & Orderby Parameters
+
 					'order'               => 'ASC',
 					'orderby'             => 'by_inidividual_dates',
 
@@ -74,9 +75,6 @@ get_header(); ?>
 
 				while ( $query->have_posts() ) : $query->the_post();
 
-					// $all_meta = get_post_meta(get_the_ID());
-					// $get_post_custom = get_post_custom($post->ID);
-
 
 					$first_date = get_post_meta($post->ID, 'mro_event_date', true);
 
@@ -88,40 +86,7 @@ get_header(); ?>
 						echo '<h2 class="full-events row column">' . $month . '</h2>';
 					endif;
 
-					?>
-
-					<article id="post-<?php the_ID(); ?>" <?php post_class('column column-block'); ?> data-equalizer-watch>
-
-			<?php
-			// If a regular post or page, and not the front page, show the featured image.
-			if ( has_post_thumbnail() ) : ?>
-				<a href="<?php the_permalink(); ?>" class="featured-image">
-					<?php the_post_thumbnail(); ?>
-				</a><!-- .featured-image -->
-			<?php endif; ?>
-						<?php the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' ); ?>
-
-						<?php
-						/*
-						$start_times = get_post_meta($post->ID, 'mro_event_time_start', false);
-						$end_times = get_post_meta($post->ID, 'mro_event_time_end', false);
-						var_dump($start_times);
-
-						if ( count($start_times) == 1 && count($end_times) == 1 ) :
-							echo 'ONE time';
-						else:
-							echo 'more than one time';
-						endif;
-						*/
-						?>
-
-						<span class="event-date"><?php echo mandir_pretty_event_dates(); ?></span>
-
-						<a href="<?php the_permalink(); ?>"><?php _e('More information', 'mandir'); ?></a>
-					</article>
-
-
-					<?php
+					get_template_part( 'template-parts/event/content', 'loop'  );
 
 					// - fill monthcheck with the current month -
 					$monthcheck = $month;
