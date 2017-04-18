@@ -19,7 +19,19 @@
 <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<?php
+if ( is_front_page() ) :
+	$frontpage_settings = get_option('mro_frontpage_settings');
+	$slider_active = $frontpage_settings['hero_slider_enable'];
+endif;
+
+if ( is_front_page() && $slider_active == 1 ) : ?>
+	<body <?php body_class('slider-active'); ?>>
+<?php else: ?>
+	<body <?php body_class(); ?>>
+<?php endif;?>
+
+
 
 <?php //echo file_get_contents( get_template_directory() . '/assets/dist/sprite/sprite.svg' ); ?>
 
@@ -48,7 +60,7 @@
     </div><!-- #offCanvasLeft -->
     <div class="off-canvas-content" data-off-canvas-content>
 
-			<?php 
+			<?php
 			//Action to insert things at the top (i.e. announcement bar from plugin)
 			do_action('mro_body_top'); ?>
 
@@ -101,11 +113,11 @@
 			</header><!-- #masthead -->
 
 	<?php
-	// If a regular post or page, and not the front page, show the featured image.
-	if ( has_post_thumbnail() && ! is_singular( array( 'mro-team', 'mro-event' ) ) && ( is_single() || is_page() ) ) :
-		echo '<div class="hero-header">';
-		the_post_thumbnail();
-		echo '</div><!-- .hero-header -->';
+	//Get frontpage settings if it's frontpage
+	if ( is_front_page() && $slider_active == 1 ) :
+			include(locate_template('template-parts/page/content-hero-slider.php'));
+	elseif ( has_post_thumbnail() && ! is_singular( array( 'mro-team', 'mro-event' ) ) && ( is_single() || is_page() ) ) :
+		get_template_part( 'template-parts/page/content', 'header' );
 	endif;
 	?>
 

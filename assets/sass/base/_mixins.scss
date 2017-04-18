@@ -4,3 +4,23 @@
 		color: $hover-color;
 	}
 }
+
+@mixin object-fit {
+	/* For browsers that support 'object-fit' */
+	@supports ( object-fit: cover ) {
+		height: 100%;
+		left: 0;
+		-o-object-fit: cover;
+		object-fit: cover;
+		top: 0;
+		-ms-transform: none;
+		-moz-transform: none;
+		-webkit-transform: none;
+		transform: none;
+		width: 100%;
+	}
+}
+
+@mixin text-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0,0,0,.4)) {
+    text-shadow: $x $y $blur $color;
+}

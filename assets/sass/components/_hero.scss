@@ -3,50 +3,62 @@
 	height: rem-calc(200);
 	overflow:hidden;
 
-	/* For browsers that support 'object-fit' */
-	@supports ( object-fit: cover ) {
-		img,
-		video,
-		iframe {
-			height: 100%;
-			left: 0;
-			-o-object-fit: cover;
-			object-fit: cover;
-			top: 0;
-			-ms-transform: none;
-			-moz-transform: none;
-			-webkit-transform: none;
-			transform: none;
-			width: 100%;
-		}
+	.home & {
+		height: 100vw;
+	}
+
+	img,
+	video,
+	iframe {
+		@include object-fit;
 	}
 
 	@include breakpoint(medium) {
 		height: rem-calc(470);
+		.home & {
+			height: 70vh;
+		}
 	}
 
 	@include breakpoint(large) {
 		height: rem-calc(490);
+		.home & {
+			height: 75vh;
+		}
+
 	}
 }
 
 
 
-/* For browsers that support 'object-fit' */
-@supports ( object-fit: cover ) {
-	.has-header-image .custom-header-media img,
-	.has-header-video .custom-header-media video,
-	.has-header-video .custom-header-media iframe,
-	.has-header-image:not(.twentyseventeen-front-page):not(.home) .custom-header-media img {
-		height: 100%;
-		left: 0;
-		-o-object-fit: cover;
-		object-fit: cover;
-		top: 0;
-		-ms-transform: none;
-		-moz-transform: none;
-		-webkit-transform: none;
-		transform: none;
-		width: 100%;
+.hero-slider-image {
+	position: relative;
+	overflow:hidden;
+	height: 100vw;
+	background: $black;
+
+	img,
+	video,
+	iframe {
+		@include object-fit;
+		opacity: .7;
 	}
+
+	@include breakpoint(medium) {
+		height: 70vh;
+	}
+
+	@include breakpoint(large) {
+		height: 75vh;
+	}
+}
+
+.hero-content {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: $white;
+	text-align: center;
+	@include text-shadow;
 }

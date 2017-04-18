@@ -22,6 +22,8 @@ add_action( 'wp_enqueue_scripts', function() {
 		''
 	);
 
+	wp_enqueue_style( 'motion-ui', 'https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.1.1/motion-ui.min.css', false );
+
 	//Google fonts: Noto Sans & Oswald Regular
 	// font-family: 'Noto Sans', sans-serif;
 	// font-family: 'Oswald', sans-serif;
