@@ -1,0 +1,42 @@
+.block-links {
+	.column-block {
+		position: relative;
+		background-size: cover;
+		margin-bottom: 0;
+		&:first-child {
+			background-image: url(../img/home-links-classes.jpg);
+
+		}
+		&:nth-child(2) {
+			background-image: url(../img/home-links-training.jpg);
+		}
+		&:nth-child(3) {
+			background-image: url(../img/home-links-thai.jpg);
+		}
+		&:last-child {
+			background-image: url(../img/home-links-store.jpg);
+		}
+	}
+
+
+	.block-link {
+		color: $white;
+		display: block;
+		padding: 1rem;
+		text-align: center;
+	}
+
+	#block-link-classes {
+		@include link-bg-color($bgcolor:color('blue', 'trans-dark'), $hover-bgcolor:transparentize(color('blue', 'dark'), .15), $color: $white, $hover-color: $white)
+	}
+	#block-link-training {
+		@include link-bg-color($bgcolor:color('blue', 'trans'), $hover-bgcolor:transparentize(color('blue', 'base'), .15), $color: $white, $hover-color: $white)
+	}
+
+	#block-link-store {
+		@include link-bg-color($bgcolor:color('gold', 'trans-dark'), $hover-bgcolor:transparentize(color('gold', 'dark'), .15), $color: $white, $hover-color: $white)
+	}
+	#block-link-thai {
+		@include link-bg-color($bgcolor:color('gold', 'trans'), $hover-bgcolor:transparentize(color('gold', 'base'), .15), $color: $white, $hover-color: $white)
+	}
+}

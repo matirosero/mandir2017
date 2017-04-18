@@ -1,19 +1,19 @@
 // Load our plugins
-var gulp = require( 'gulp' ),
-	sass = require( 'gulp-sass' ),  // Our sass compiler
-	notify = require( 'gulp-notify' ), // Basic gulp notification using OS
-	sourcemaps = require( 'gulp-sourcemaps' ), // Sass sourcemaps
-	autoprefixer = require( 'gulp-autoprefixer' ), // Adds vendor prefixes for us
-	svgSprite = require( 'gulp-svg-sprite' ),
-	svgmin = require( 'gulp-svgmin' ),
-	size = require( 'gulp-size' ),
-	imagemin = require('gulp-imagemin'), //MRo
-	cache = require('gulp-cache'), //MRo
-	browserSync = require( 'browser-sync' ), // Sends php, js, and css updates to browser for us
-	concat = require( 'gulp-concat' ), // Concat our js
-	uglify = require( 'gulp-uglify' ),
-	babel = require( 'gulp-babel' ),
-	del = require( 'del' );
+var	gulp			= require('gulp'),
+	sass			= require('gulp-sass'),  // Our sass compiler
+	notify			= require('gulp-notify'), // Basic gulp notificatin using OS
+	sourcemaps		= require('gulp-sourcemaps'), // Sass sourcemaps
+	autoprefixer	= require('gulp-autoprefixer'), // Adds vendor prefixes for us
+	svgSprite		= require('gulp-svg-sprite'),
+	svgmin 			= require('gulp-svgmin'),
+	size			= require('gulp-size'),
+	imagemin 		= require('gulp-imagemin'), //MRo
+	cache 			= require('gulp-cache'), //MRo
+	browserSync		= require('browser-sync'), // Sends php, js, and css updates to browser for us
+	concat			= require('gulp-concat'), // Concat our js
+	uglify			= require('gulp-uglify'),
+	babel			= require('gulp-babel'),
+	del				= require('del');
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -45,30 +45,30 @@ gulp.task('clean:svgs', function () {
 });
 
 var svgConfig = {
-	mode: {
-		symbol: { // symbol mode to build the SVG
-			dest: 'sprite', // destination folder
-			sprite: 'sprite.svg', //sprite name
-			example: false // Build sample page
-		}
-	},
-	svg: {
-		xmlDeclaration: false, // strip out the XML attribute
-		doctypeDeclaration: false, // don't include the !DOCTYPE declaration
+  mode: {
+    symbol: { // symbol mode to build the SVG
+      dest: 'sprite', // destination foldeer
+      sprite: 'sprite.svg', //sprite name
+      example: true // Build sample page
+    }
+  },
+  svg: {
+    xmlDeclaration: false, // strip out the XML attribute
+    doctypeDeclaration: false, // don't include the !DOCTYPE declaration
 		rootAttributes: { // add some attributes to the <svg> tag
-			width: 0,
-			height: 0,
-			style: 'position: absolute;'
-		}
-	}
+      width: 0,
+      height: 0,
+      style: 'position: absolute;',
+     }
+  }
 };
 
 gulp.task('svg-min', ['clean:svgs'], function() {
-	return gulp.src(paths.imgPath + 'svg/**/*.svg')
+  return gulp.src(paths.imgPath + 'svg/**/*.svg')
 		.pipe(svgmin())
 		.pipe(gulp.dest(paths.destPath + 'svg'))
 		.pipe(notify({
-			message: "✔︎ SVG Minify task complete",
+			message: "SVG Minify task complete",
 			onLast: true
 		}));
 });
@@ -80,10 +80,7 @@ gulp.task('svg-sprite', ['svg-min'], function() {
     .pipe(svgSprite(svgConfig))
     .pipe(gulp.dest(paths.destPath))
 		.pipe(browserSync.reload({stream:true}))
-		.pipe(notify({
-			message: "✔︎ SVG Sprite task complete",
-			onLast: true
-		}));
+		.pipe(notify({ message: "SVG Sprite task complete"}));
 });
 
 
@@ -159,7 +156,7 @@ gulp.task('js', function() {
 		)
 		.pipe(gulp.dest(paths.destPath + 'js'))
 		.pipe(browserSync.reload({stream:true}))
-		.pipe(notify({ message: "✔︎ Scripts task complete"}));
+		.pipe(notify({ message: "✔︎ Scripts task complete!"}));
 });
 
 
@@ -207,7 +204,6 @@ gulp.task('foundation-js', function() {
 		paths.foundationJSpath + 'foundation.util.timerAndImageLoader.js',
 		paths.foundationJSpath + 'foundation.util.touch.js',
 		paths.foundationJSpath + 'foundation.util.triggers.js',
-		paths.foundationJSpath + 'foundation.zf.responsiveAccordionTabs.js',
 
 	])
 	.pipe(babel({
@@ -220,8 +216,10 @@ gulp.task('foundation-js', function() {
 });
 
 
-
+////////////////////////////////////////////////////////////////////////////////
 // Watch our files and fire off a task when something changes
+////////////////////////////////////////////////////////////////////////////////
+
 gulp.task('watch', function() {
 	gulp.watch(paths.sassPath + '**/*.scss', ['styles']);
 	gulp.watch(paths.jsPath + '**/*.js', ['js']);
@@ -229,8 +227,7 @@ gulp.task('watch', function() {
 	gulp.watch(paths.imgPath + 'raster/**/*.+(png|jpg|gif)', ['optimize-images']);
 });
 
-// Full gulp build, including server + watch
-gulp.task('serve', ['svg-sprite', 'optimize-images', 'styles', 'js', 'browser-sync', 'foundation-js', 'watch']);
 
-// Our default gulp task, which runs a one-time task
+// Our default gulp task, which runs all of our tasks upon typing in 'gulp' in Terminal
 gulp.task('default', ['styles', 'js', 'svg-sprite', 'optimize-images']);
+gulp.task('serve', ['svg-sprite', 'optimize-images', 'styles', 'js', 'browser-sync', 'foundation-js', 'watch']);

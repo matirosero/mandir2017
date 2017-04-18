@@ -5,6 +5,15 @@
 	}
 }
 
+@mixin link-bg-color($bgcolor:$anchor-color, $hover-bgcolor:$anchor-color-hover, $color: $white, $hover-color: $white) {
+	color: $color;
+	background-color: $bgcolor;
+	&:hover, &:active {
+		color: $hover-color;
+		background-color: $hover-bgcolor;
+	}
+}
+
 @mixin object-fit {
 	/* For browsers that support 'object-fit' */
 	@supports ( object-fit: cover ) {
