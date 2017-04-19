@@ -14,9 +14,9 @@
 			<?php
 			// If a regular post or page, and not the front page, show the featured image.
 			if ( has_post_thumbnail() ) :
-				echo '<div class="single-featured-image-header">';
+				echo '<div class="event-featured-image">';
 				the_post_thumbnail();
-				echo '</div><!-- .single-featured-image-header -->';
+				echo '</div><!-- .event-featured-image -->';
 			endif;
 			?>
 

@@ -33,3 +33,30 @@
 @mixin text-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0,0,0,.4)) {
     text-shadow: $x $y $blur $color;
 }
+
+@mixin vertical-padding($top:40px, $bottom:40px) {
+	padding-top: $top;
+	padding-bottom: $bottom;
+
+	@include breakpoint(medium) {
+		padding-top: $top*1.25;
+		padding-bottom: $bottom*1.25;
+	}
+
+	@include breakpoint(large) {
+		padding-top: $top*1.5;
+		padding-bottom: $bottom*1.5;
+	}
+}
+
+@mixin main-headings($margin:40px) {
+	margin-bottom: $margin;
+
+	// @include breakpoint(medium) {
+	// 	margin-bottom: $margin*1.25;
+	// }
+
+	// @include breakpoint(large) {
+	// 	margin-bottom: $margin*1.5;
+	// }
+}

@@ -13,8 +13,12 @@
 	<?php
 
 	if ( has_post_thumbnail() ) : ?>
-		<a href="<?php the_permalink(); ?>" class="featured-image">
+		<a href="<?php the_permalink(); ?>" class="event-featured-image">
 			<?php the_post_thumbnail(); ?>
+		</a><!-- .featured-image -->
+	<?php else: ?>
+		<a href="<?php the_permalink(); ?>" class="event-featured-image">
+			<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/dist/img/event-placeholder.png" alt="<?php the_title(); ?>" />
 		</a><!-- .featured-image -->
 	<?php endif; ?>
 

@@ -3,6 +3,9 @@
 
 p {
 	margin: 0;
+	@include breakpoint(medium) {
+		font-size: 18px;
+	}
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -17,4 +20,8 @@ h1 {
 h2 {
 	// font-size: 1.25rem;
 	// font-weight: 700;
+}
+
+.section-title {
+	@include main-headings;
 }
