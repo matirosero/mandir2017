@@ -1,0 +1,15 @@
+.spotlight {
+	background-color: color('blue', 'light');
+}
+
+.spotlight-image {
+	background-color: color('blue', 'dark');
+	a {
+		display: block;
+	}
+}
+
+.spotlight-text {
+	background-color: color('blue', 'light');
+	padding: 1rem;
+}
