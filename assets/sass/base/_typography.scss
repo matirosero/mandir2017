@@ -37,3 +37,11 @@ h2 {
 		}
 	}
 }
+
+
+.cta {
+	font-family: $header-font-family;
+	font-size: 1.25em;
+	text-transform: uppercase;
+	@include link-color($body-font-color, color('blue','base'));
+}

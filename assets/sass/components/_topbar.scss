@@ -19,6 +19,7 @@ $topbar-toplevel-bg: color('blue', 'dark');
 		width: auto;
 		a {
 			color: $white;
+			font-weight: bold;
 			transition: $button-transition;
 			@include hover {
 				background-color: $topbar-bg-hover;
