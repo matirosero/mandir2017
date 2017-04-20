@@ -7,9 +7,35 @@
 	a {
 		display: block;
 	}
+	img {
+		@include object-fit;
+	}
 }
 
 .spotlight-text {
-	background: url(../img/mandala.png) top center no-repeat;
-	padding: 1rem;
+	background: url(../img/mandala-small.png) top center no-repeat;
+	padding: 2rem;
+	position: relative;
+	text-align: center;
+
+	@include center-vertically-column;
+
+	p {
+		margin: 1rem 0 1.5rem;
+	}
+
+	@include breakpoint(medium) {
+		background-image: url(../img/mandala-medium.png);
+	}
+
+	@include breakpoint(large) {
+		background-image: url(../img/mandala-large.png);
+		padding: 2rem 4rem;
+		p {
+			margin: 2rem 0 2.5rem;
+		}
+	}
+
+
+
 }

@@ -26,9 +26,7 @@
 		text-align: center;
 		min-height: 160px;
 
-		display: flex;
-		justify-content: center;
-		align-items: center;
+		@include center-vertically-column;
 
 		@include breakpoint(medium) {
 			padding: 2.5rem 2rem;

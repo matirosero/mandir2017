@@ -60,3 +60,14 @@
 	// 	margin-bottom: $margin*1.5;
 	// }
 }
+
+@mixin center-vertically {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+@mixin center-vertically-column {
+	@include center-vertically;
+	align-items: center;
+}

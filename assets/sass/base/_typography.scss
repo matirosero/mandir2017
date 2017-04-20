@@ -10,6 +10,7 @@ p {
 
 h1, h2, h3, h4, h5, h6 {
 	text-transform: uppercase;
+	line-height: 1.25;
 }
 
 h1 {
@@ -24,4 +25,15 @@ h2 {
 
 .section-title {
 	@include main-headings;
+
+	@include breakpoint(medium) {
+		#home-events & {
+			margin-bottom: 50px;
+		}
+	}
+	@include breakpoint(medium) {
+		#home-events & {
+			margin-bottom: 60px;
+		}
+	}
 }
