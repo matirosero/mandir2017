@@ -52,13 +52,13 @@
 @mixin main-headings($margin:40px) {
 	margin-bottom: $margin;
 
-	// @include breakpoint(medium) {
-	// 	margin-bottom: $margin*1.25;
-	// }
+	@include breakpoint(medium) {
+		margin-bottom: $margin*1.25;
+	}
 
-	// @include breakpoint(large) {
-	// 	margin-bottom: $margin*1.5;
-	// }
+	@include breakpoint(large) {
+		margin-bottom: $margin*1.5;
+	}
 }
 
 @mixin center-vertically {

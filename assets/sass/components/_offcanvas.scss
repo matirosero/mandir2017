@@ -1,9 +1,20 @@
+.off-canvas {
+	.close-button {
+		@include link-color($white, color('blue', 'dark'));
+	}
+}
+
 .mobile-menu {
-  @include reset-list;
-  a {
-    padding: rem-calc(8 20);
-    display: block;
-  }
+	padding-top: $global-padding;
+	color: $white;
+	ul {
+		@include reset-list;
+	}
+	a {
+		@include link-bg-color(transparent, $topbar-bg-hover, $white, $white)
+	    padding: rem-calc(8 20);
+	    display: block;
+	}
 }
 
 a.ofc-home {

@@ -5,7 +5,11 @@ p {
 	margin: 0;
 	@include breakpoint(medium) {
 		font-size: 18px;
+		#page-intro & {
+			font-size: 20px;
+		}
 	}
+
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -33,19 +37,10 @@ h2 {
 	}
 }
 
+.entry-title,
 .section-title {
 	@include main-headings;
-
-	@include breakpoint(medium) {
-		#home-events & {
-			margin-bottom: 50px;
-		}
-	}
-	@include breakpoint(medium) {
-		#home-events & {
-			margin-bottom: 60px;
-		}
-	}
+	text-align: center;
 }
 
 
