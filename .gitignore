@@ -5,3 +5,4 @@ npm-debug.log
 *.sublime-*
 sftp-config.json
 assets/vendors/fullcalendar/demos
+assets/vendors/image-processing-queue
