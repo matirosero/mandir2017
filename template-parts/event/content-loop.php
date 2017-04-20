@@ -14,7 +14,18 @@
 
 	if ( has_post_thumbnail() ) : ?>
 		<a href="<?php the_permalink(); ?>" class="event-featured-image">
-			<?php the_post_thumbnail(); ?>
+			<?php //the_post_thumbnail(); ?>
+			<?php
+			echo ipq_get_theme_image( get_post_thumbnail_id( get_the_id() ), array(
+			        array( 620, 324, true ),
+			        array( 1000, 524, true ),
+			        array( 1200, 628, true ),
+			    ),
+			    array(
+			        'class' => 'event-image'
+			    )
+			);
+			?>
 		</a><!-- .featured-image -->
 	<?php else: ?>
 		<a href="<?php the_permalink(); ?>" class="event-featured-image">
