@@ -1,9 +1,28 @@
+.mro-event {
+	span {
+		display: block;
+	}
+	@include breakpoint(small-only) {
+		#home-events & {
+			margin-bottom: $global-margin*2;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+}
+
 .event-featured-image {
 	display: block;
 	@include scale-media-proportionally(52.4%);
+
+	#home-events & {
+		margin-bottom: $global-margin;
+	}
 }
 .sidebar {
 	border: 1px solid $light-gray;
-	margin-bottom: 2rem;
-	padding: 1rem;
+	margin-bottom: $global-margin*2;
+	padding: $global-margin;
 }

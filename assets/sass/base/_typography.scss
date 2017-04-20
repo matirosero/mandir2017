@@ -23,6 +23,16 @@ h2 {
 	// font-weight: 700;
 }
 
+.spotlight-heading {
+	font-size: header-size(small, h1);
+	@include breakpoint(medium) {
+		font-size: header-size(medium, h2);
+	}
+	@include breakpoint(large) {
+		font-size: header-size(medium, h1);
+	}
+}
+
 .section-title {
 	@include main-headings;
 

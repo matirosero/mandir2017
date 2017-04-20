@@ -87,3 +87,7 @@
 		height: auto;
 	}
 }
+
+@function header-size($breakpoint, $size) {
+  	@return map-deep-get($header-styles, $breakpoint, $size, font-size)*1px;;
+}

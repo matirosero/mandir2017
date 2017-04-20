@@ -4,7 +4,7 @@ $events = $frontpage_settings['frontpage_events'];
 
 if ($events[0] != '') : ?>
 
-	<section id="home-events" class="page-section expanded row medium-up-3" data-equalizer data-equalize-on="medium"">
+	<section id="home-events" class="page-section events-list expanded row medium-up-3" data-equalizer data-equalize-on="medium"">
 
 		<h2 class="section-title"> Próximos eventos</h2>
 
