@@ -1,3 +1,7 @@
+.event-featured-image {
+	display: block;
+	@include scale-media-proportionally(52.4%);
+}
 .sidebar {
 	border: 1px solid $light-gray;
 	margin-bottom: 2rem;

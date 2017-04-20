@@ -71,3 +71,19 @@
 	@include center-vertically;
 	align-items: center;
 }
+
+@mixin scale-media-proportionally($ratio:56.25%) {
+	height: 0;
+	padding-bottom: $ratio; /* 16:9 */
+	position: relative;
+	overflow: hidden;
+	img,
+	iframe,
+	video {
+		position: absolute;
+		top: 0; 
+		left: 0;
+		width: 100%; 
+		height: auto;
+	}
+}
