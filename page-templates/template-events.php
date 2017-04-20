@@ -10,23 +10,38 @@
 
 get_header(); ?>
 
-<div class="row column">
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-			<!-- <div id="calendar"></div> -->
-			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php get_template_part( 'template-parts/content', 'page-stripped' ); ?>
+			<section id="page-intro" class="row">
+
+				<div class="medium-10 medium-centered columns">
+				<?php while ( have_posts() ) : the_post(); ?>
+
+					<?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
+
+					<?php the_content(); ?>
+
+				<?php endwhile; // End of the loop. ?>
+				</div>
+			</section><!-- #page-intro -->
+
+
+
+			<?php
+
+			$today = date('Y-m-d');
+			$firstofmonth = date('Y-m-01');
+
+			?>
+
+
+
+			<section id="events-calendar" class="row column">
 
 				<?php
-
-				$today = date('Y-m-d');
-				$firstofmonth = date('Y-m-01');
-
-
-				echo '<section class="events-list row medium-up-2" data-equalizer data-equalize-on="medium">';
 
 
 				/**
@@ -83,8 +98,16 @@ get_header(); ?>
 
 					// - determine if it's a new month -
 					if ($monthcheck == null || $monthcheck != $month ) :
-						echo '<h2 class="full-events row column">' . $month . '</h2>';
-					endif;
+
+						if ($monthcheck != null) : ?>
+							</div><!-- .events-calendar -->
+						<?php endif; ?>
+
+						<h2 class="section-title"><?php echo $month; ?></h2>
+
+						<div class="events-calendar-month row medium-up-2" data-equalizer data-equalize-on="medium">
+
+					<?php endif;
 
 					get_template_part( 'template-parts/event/content', 'loop'  );
 
@@ -95,15 +118,14 @@ get_header(); ?>
 
 				wp_reset_postdata();
 
-				echo '</section>';
-
 				?>
 
-			<?php endwhile; // End of the ORIGINAL loop. ?>
+				</div><!-- .events-calendar-row -->
+
+			</section><!-- .events-calendar -->
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-</div><!-- .row -->
 
 <?php get_footer(); ?>

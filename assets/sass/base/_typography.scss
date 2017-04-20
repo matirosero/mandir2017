@@ -41,7 +41,12 @@ h2 {
 .section-title {
 	@include main-headings;
 	text-align: center;
+	&:only-child {
+		margin-bottom: 0;
+	}
 }
+
+
 
 
 .cta {

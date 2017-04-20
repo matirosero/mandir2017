@@ -4,6 +4,13 @@
 	}
 }
 
+#page-intro {
+	text-align: center;
+	.site-main > & {
+		@include main-headings;
+	}
+}
+
 .page-section {
 	@include vertical-padding;
 	.home & {

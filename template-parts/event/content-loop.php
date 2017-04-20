@@ -37,5 +37,9 @@
 
 	<span class="event-date"><?php echo mandir_pretty_event_dates(); ?></span>
 
+	<?php if ( is_page_template('page-templates/template-events.php') ) : ?>
+		
+	<?php endif; ?>
+
 	<a href="<?php the_permalink(); ?>"><?php _e('More information', 'mandir'); ?></a>
 </article>
