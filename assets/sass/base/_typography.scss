@@ -46,6 +46,15 @@ h2 {
 	}
 }
 
+.event-title {
+	@include breakpoint(medium) {
+		font-size: header-size(medium, h4);
+
+		#events-calendar & {
+			font-size: header-size(medium, h5);
+		}
+	}
+}
 
 
 

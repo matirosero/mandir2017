@@ -36,7 +36,7 @@
 
 	<div class="event-info">
 
-		<?php the_title( '<h3><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' ); ?>
+		<?php the_title( '<h3 class="event-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' ); ?>
 
 		<span class="event-date"><?php echo mandir_pretty_event_dates(); ?></span>
 
