@@ -105,7 +105,7 @@ get_header(); ?>
 
 						<h2 class="section-title"><?php echo $month; ?></h2>
 
-						<div class="events-calendar-month row medium-up-2" data-equalizer data-equalize-on="medium">
+						<div class="events-calendar-month row medium-up-2">
 
 					<?php endif;
 

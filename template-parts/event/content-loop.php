@@ -8,7 +8,8 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('column column-block'); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('column column-block'); 
+	if ( !is_page_template('page-templates/template-events.php') ) { echo ' data-equalizer-watch'; } ?>>
 
 	<?php
 
@@ -39,16 +40,20 @@
 
 		<span class="event-date"><?php echo mandir_pretty_event_dates(); ?></span>
 
-		<?php if ( is_page_template('page-templates/template-events.php') ) : 
-						
+		<?php if ( is_page_template('page-templates/template-events.php') ) :
+
 			$venue = get_post_meta($post->ID, 'mro_event_location', true);
 			if ( $venue == 'mandir' ) :
-				echo '<span class="event-venue">Lugar: Yoga Mandir</span>';
+				$venue = 'Yoga Mandir';
 			else:
-				//
-			endif;
+				$venue = get_post_meta($post->ID, 'mro_event_location_name', true);
+			endif; ?>
 
-		endif; ?>
+			<span class="event-venue">Lugar: <?php echo $venue; ?></span>
+
+
+
+		<?php endif; ?>
 
 		<a href="<?php the_permalink(); ?>"><?php _e('More information', 'mandir'); ?></a>
 

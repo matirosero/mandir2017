@@ -16,23 +16,31 @@
 .event-featured-image {
 	display: block;
 	@include scale-media-proportionally(52.4%);
+	margin-bottom: $global-margin;
 
 	#home-events & {
 		margin-bottom: $global-margin;
 	}
 
 	#events-calendar & {
-		width: 50%;
-		margin-right: $global-margin;
-		@include scale-media-proportionally(26.2%);
-		float: left;
+		@include breakpoint(medium) {
+			@include scale-media-proportionally(26.2%);
+			float: left;
+			width: 50%;
+			margin-bottom: 0;
+		}
 	}
 }
 
 .event-info {
+	text-align: center;
 	#events-calendar & {
-		// width: 45%;
-		// float: right;
+		@include breakpoint(medium) {
+			width: 50%;
+			float: right;
+			padding-left: $global-padding;
+			text-align: left;
+		}
 	}	
 }
 
