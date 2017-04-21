@@ -20,7 +20,22 @@
 	#home-events & {
 		margin-bottom: $global-margin;
 	}
+
+	#events-calendar & {
+		width: 50%;
+		margin-right: $global-margin;
+		@include scale-media-proportionally(26.2%);
+		float: left;
+	}
 }
+
+.event-info {
+	#events-calendar & {
+		// width: 45%;
+		// float: right;
+	}	
+}
+
 .sidebar {
 	border: 1px solid $light-gray;
 	margin-bottom: $global-margin*2;

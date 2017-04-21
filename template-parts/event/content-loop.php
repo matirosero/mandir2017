@@ -8,7 +8,7 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('column column-block'); ?> data-equalizer-watch>
+<article id="post-<?php the_ID(); ?>" <?php post_class('column column-block'); ?>>
 
 	<?php
 
@@ -33,13 +33,24 @@
 		</a><!-- .featured-image -->
 	<?php endif; ?>
 
-	<?php the_title( '<h3><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' ); ?>
+	<div class="event-info">
 
-	<span class="event-date"><?php echo mandir_pretty_event_dates(); ?></span>
+		<?php the_title( '<h3><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' ); ?>
 
-	<?php if ( is_page_template('page-templates/template-events.php') ) : ?>
-		
-	<?php endif; ?>
+		<span class="event-date"><?php echo mandir_pretty_event_dates(); ?></span>
 
-	<a href="<?php the_permalink(); ?>"><?php _e('More information', 'mandir'); ?></a>
+		<?php if ( is_page_template('page-templates/template-events.php') ) : 
+						
+			$venue = get_post_meta($post->ID, 'mro_event_location', true);
+			if ( $venue == 'mandir' ) :
+				echo '<span class="event-venue">Lugar: Yoga Mandir</span>';
+			else:
+				//
+			endif;
+
+		endif; ?>
+
+		<a href="<?php the_permalink(); ?>"><?php _e('More information', 'mandir'); ?></a>
+
+	</div><!-- .event-info -->
 </article>
