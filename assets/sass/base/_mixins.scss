@@ -34,7 +34,7 @@
     text-shadow: $x $y $blur $color;
 }
 
-@mixin vertical-padding($top:40px, $bottom:40px) {
+@mixin vertical-padding($top:$vertical-spacing, $bottom:$vertical-spacing) {
 	padding-top: $top;
 	padding-bottom: $bottom;
 
@@ -49,7 +49,7 @@
 	}
 }
 
-@mixin main-headings($margin:40px) {
+@mixin main-headings($margin:$vertical-spacing) {
 	margin-bottom: $margin;
 
 	@include breakpoint(medium) {

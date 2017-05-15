@@ -2,7 +2,7 @@
 	span {
 		display: block;
 	}
-	@include breakpoint(small-only) {
+	@include breakpoint(small only) {
 		#home-events & {
 			margin-bottom: $global-margin*2;
 			&:last-child {

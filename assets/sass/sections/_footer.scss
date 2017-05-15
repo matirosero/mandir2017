@@ -1,5 +1,32 @@
 #colophon {
 	background: $bgcolor;
 	padding: 3rem 0;
-	color: transparentize(#000, .7);
+	text-align: center;
+	p {
+		color: transparentize(#000, .7);
+	}
+}
+
+.footer-logo {
+	margin-bottom: $vertical-spacing;
+	@include breakpoint(large) {
+		// @include center-vertically-column;
+		margin-top: $vertical-spacing/2;
+	}
+}
+
+.footer-utility {
+	@include breakpoint(large) {
+		text-align: left;
+	}
+}
+
+.footer-list-signup {
+	border-bottom: 1px solid transparentize(#000, .85);
+	padding-bottom: 1rem;
+	margin-bottom: 1rem;
+	h3 {
+		margin: 0;
+	}
+
 }
