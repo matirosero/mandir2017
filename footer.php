@@ -12,18 +12,24 @@
 
 			</div><!-- #content -->
 
-			<footer id="colophon" class="site-footer" role="contentinfo">
+			<footer id="colophon" class="site-footer expanded row" role="contentinfo">
 
-				<div class="column row">
+				<div class="footer-logo large-3 column">
+					<a href="<?php esc_attr_e( home_url( '/' ) ); ?>" rel="home">
+						<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/dist/svg/logo-mandir.svg" alt="<?php bloginfo( 'name' ); ?>" />
+					</a>
+				</div><!-- .footer-logo -->
 
-					<p class="text-center">
-						<svg class="icon">
-							<use xlink:href="#icon-coffee-cup"></use>
-						</svg>
-						Thanks for using Mandir!
+				<div class="footer-utility large-9 column">
+
+					<div class="footer-list-signup">
+						<h3><?php _e('Subscribe to our newsletter'); ?></h3>
+					</div><!-- .footer-list-signup -->
+					<p class="footer-copyright">
+						&copy; <?php echo date("Y"); ?> <?php echo get_bloginfo( 'name' ); ?>. <?php _e('All rights reserved'); ?>.
 					</p>
+				</div><!-- .footer-utility -->
 
-				</div><!-- .column.row -->
 
 			</footer><!-- #colophon -->
 
