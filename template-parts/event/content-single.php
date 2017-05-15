@@ -15,7 +15,17 @@
 			// If a regular post or page, and not the front page, show the featured image.
 			if ( has_post_thumbnail() ) :
 				echo '<div class="event-featured-image">';
-				the_post_thumbnail();
+				//the_post_thumbnail();
+				echo ipq_get_theme_image( get_post_thumbnail_id( get_the_id() ), array(
+				        array( 620, 324, true ),
+				        array( 1000, 524, true ),
+				        array( 1200, 628, true ),
+				    ),
+				    array(
+				        'class' => 'event-image'
+				    )
+				);
+			
 				echo '</div><!-- .event-featured-image -->';
 			endif;
 			?>

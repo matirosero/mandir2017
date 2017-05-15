@@ -6,7 +6,7 @@
 
 #page-intro {
 	text-align: center;
-	.site-main > & {
+	&:not(.page-section) {
 		@include main-headings;
 	}
 }
