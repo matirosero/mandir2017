@@ -296,10 +296,13 @@ Main Components
 
 .mro-schedule .event-date {
 	/* they are not included in the the HTML but added using JavScript */
-	font-size: $small-font-size;
-	opacity: .7;
+	
+	// opacity: .7;
 	line-height: 1.2;
 	margin-bottom: .2em;
+	@include breakpoint(medium) {
+		font-size: $small-font-size;
+	}
 }
 
 .mro-schedule .single-event[data-event^="event-"],
@@ -459,7 +462,7 @@ Main Components
 	}
 
 	.event-date {
-		display: none;
+		// display: none;
 	}
 
 	&.no-transition {

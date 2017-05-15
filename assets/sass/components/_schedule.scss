@@ -1,0 +1,37 @@
+.event-modal {
+	.header {
+		color: $white;
+		padding-right: 70px;
+		a {
+			@include link-color($white,$white);
+		}
+		.schedule-event-name {
+			font-size: header-size(small, h2);
+			margin-top: .5rem;
+		}
+	}
+	.event-info {
+		text-align: left;
+		p {
+			margin-bottom: $paragraph-margin-bottom;
+		}
+	}
+
+	@include breakpoint(medium) {
+		.header {
+			.schedule-event-name {
+				font-size: header-size(medium, h3);
+			}
+		}
+	}
+
+	@include breakpoint(large) {
+		.header {
+			padding-right: 0;
+			padding-top: 26px;
+			.schedule-event-name {
+				font-size: header-size(small, h3);
+			}
+		}
+	}
+}
