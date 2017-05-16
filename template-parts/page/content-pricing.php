@@ -10,9 +10,10 @@ $monthly_prices = $pricing_settings['monthly_prices'];
 
 
 
-<section class="pricing">
-	<h2><?php _e('Pricing', 'mandir'); ?></h2>
+<section id="tarifas" class="pricing">
+	<h2 class="entry-title"><?php _e('Pricing', 'mandir'); ?></h2>
 
+<?php /*
 	<nav class="pricing-nav">
 		<ul class="menu simple">
 
@@ -31,6 +32,7 @@ $monthly_prices = $pricing_settings['monthly_prices'];
 			<li><a href="#matricula"><?php _e('Membership', 'mandir'); ?></a></li>
 		</ul>
 	</nav>
+*/ ?>
 
 	<?php
 	foreach ($monthly_prices as $monthly_price) { ?>
@@ -43,9 +45,9 @@ $monthly_prices = $pricing_settings['monthly_prices'];
 				<p><?php echo $monthly_price['monthly_description']; ?></p>
 			<?php endif; ?>
 
-			<ul class="price-list row small-up-1 medium-up-2 large-up-4">
+			<ul class="price-list row small-up-1 medium-up-2 large-up-4" data-equalizer data-equalize-on="medium">
 				<li class="column column-block">
-					<div class="price-info">
+					<div class="price-info" data-equalizer-watch>
 						<span class="price">₡<?php echo $monthly_price['monthly_1weekly']; ?></span>
 						<span class="price-description">
 							<?php _e('1 class per week', 'mandir'); ?><br />
@@ -54,7 +56,7 @@ $monthly_prices = $pricing_settings['monthly_prices'];
 					</div>
 				</li>
 				<li class="column column-block">
-					<div class="price-info">
+					<div class="price-info" data-equalizer-watch>
 						<span class="price">₡<?php echo $monthly_price['monthly_2weekly']; ?></span>
 						<span class="price-description">
 							<?php _e('2 classes per week', 'mandir'); ?><br />
@@ -63,7 +65,7 @@ $monthly_prices = $pricing_settings['monthly_prices'];
 					</div>
 				</li>
 				<li class="column column-block">
-					<div class="price-info">
+					<div class="price-info" data-equalizer-watch>
 						<span class="price">₡<?php echo $monthly_price['monthly_3weekly']; ?></span>
 						<span class="price-description">
 							<?php _e('3 classes per week', 'mandir'); ?><br />
@@ -72,7 +74,7 @@ $monthly_prices = $pricing_settings['monthly_prices'];
 					</div>
 				</li>
 				<li class="column column-block">
-					<div class="price-info special">
+					<div class="price-info special" data-equalizer-watch>
 						<span class="price">₡<?php echo $monthly_price['monthly_unlimited']; ?></span>
 						<span class="price-description">
 							<?php _e('Unlimited classes', 'mandir'); ?>
@@ -84,11 +86,11 @@ $monthly_prices = $pricing_settings['monthly_prices'];
 	<?php } ?>
 
 	<div class="row column">
-		<ul class="price-list row small-up-1 medium-up-2 large-up-4">
+		<ul class="price-list row small-up-1 medium-up-2 large-up-4" data-equalizer data-equalize-on="medium">
 			<li class="column column-block">
 				<h3><?php _e('Single class', 'mandir'); ?></h3>
 				<p><?php echo $single_class['single_class_description']; ?></p>
-				<div class="price-info">
+				<div class="price-info" data-equalizer-watch>
 					<span class="price">₡<?php echo $single_class['single_class_price']; ?></span>
 					<span class="price-description"><?php _e('1 class', 'mandir'); ?></span>
 				</div>
@@ -96,7 +98,7 @@ $monthly_prices = $pricing_settings['monthly_prices'];
 			<li class="column column-block">
 				<h3><?php _e('Membership', 'mandir'); ?></h3>
 				<p><?php echo $signup_fee['signup_description']; ?></p>
-				<div class="price-info">
+				<div class="price-info" data-equalizer-watch>
 					<span class="price">₡<?php echo $signup_fee['signup_price']; ?></span>
 					<span class="price-description"><?php _e('Per year', 'mandir'); ?></span>
 				</div>				

@@ -1,4 +1,5 @@
 .pricing {
+	@include vertical-padding($bottom:0px);
 	h3,h4 {
 		font-size: header-size(small, h3);
 	}
