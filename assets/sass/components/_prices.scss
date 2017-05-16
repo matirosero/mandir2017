@@ -1,0 +1,37 @@
+.price-list,
+.price-list ul {
+	list-style: none;
+	margin-left: 0;
+	margin-top: 1rem;
+}
+
+.price-list {
+	h3,h4 {
+		font-size: header-size(small, h4);
+	}
+	li {
+		margin-bottom: 1rem;
+	}
+	> li > ul > li {
+		margin-top: 2rem;
+	}
+
+	.price-info {
+		@extend .callout;
+		border: 0;
+		background-color: $bgcolor;
+		text-align: center;
+		&.special {
+			background-color: color('blue', 'light');
+		}
+
+		span {
+			display: block;
+			&.price {
+				font-size: 1.5rem;
+				font-family: $header-font-family;
+			}
+		}
+	}
+
+}

@@ -2,7 +2,7 @@
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 p {
-	margin: 0;
+	// margin: 0;
 	@include breakpoint(medium) {
 		font-size: 18px;
 		#page-intro & {
