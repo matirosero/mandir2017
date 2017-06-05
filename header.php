@@ -120,7 +120,7 @@ if ( is_front_page() && $slider_active == 1 ) : ?>
 	if ( is_front_page() && $slider_active == 1 ) :
 		include(locate_template('template-parts/page/content-hero-slider.php'));
 	elseif ( has_post_thumbnail() && ! is_singular( array( 'mro-team', 'mro-event' ) ) && ( is_single() || is_page() ) ) :
-		get_template_part( 'template-parts/page/content', 'header' );
+		get_template_part( 'template-parts/page/content', 'header-image' );
 	endif;
 	?>
 
