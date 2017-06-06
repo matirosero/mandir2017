@@ -115,3 +115,21 @@ function mandir_category_transient_flusher() {
 }
 add_action( 'edit_category', 'mandir_category_transient_flusher' );
 add_action( 'save_post',     'mandir_category_transient_flusher' );
+
+
+/**
+ * Returns Change date format.
+ *
+ * @return string with nice dates
+ */
+function mandir_convert_date($date, $dateformatstring = 'j \d\e F' ) {
+
+	//Check that ID belongs to an event
+	if ( empty( $date ) ) :
+		return false;
+	else :
+		//Change to nice date format
+		$newdate = date_i18n( $dateformatstring, strtotime( $date ) );
+		return $newdate;
+	endif;
+}
