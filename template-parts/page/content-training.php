@@ -132,6 +132,18 @@ $types = get_post_meta($post->ID, 'mro_training_types', true);
 
 				</div><!-- .sidebar-section -->
 
+				<div class="sidebar-section">
+					<h3>Inversión</h3>
+					<ul>
+					<?php
+					foreach ($types as $price) { ?>
+						<li>
+							$<?php echo $price['price'].' – '.$price['title']; ?>
+						</li>
+					<?php } ?>
+					</ul>
+				</div><!-- .sidebar-section -->
+
 			</div>
 		</div>
 		<div class="large-8 large-pull-4 columns">
