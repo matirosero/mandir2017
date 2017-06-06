@@ -11,7 +11,6 @@
 <?php
 $state = get_post_meta($post->ID, 'mro_training_state', true);
 $types = get_post_meta($post->ID, 'mro_training_types', true);
-var_dump($types);
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -69,27 +68,68 @@ var_dump($types);
 					</div><!-- .sidebar-section -->
 				<?php endif; ?>
 
+				<?php
+				//Types
+				if ( count($types) > 0 ) : ?>
+
+					<div class="sidebar-section">
+						<h3>Modalidad<?php if ( count($types) > 1 ) { echo 'es'; } ?></h3>
+
+						<?php
+						foreach ($types as $type) { ?>
+							<p>
+								<strong><?php echo $type['title']; ?>:</strong><br />
+								<?php echo nl2br($type['description']); ?>
+							</p>
+						<?php } ?>
+					</div><!-- .sidebar-section -->
+
+				<?php endif; ?>
+
 
 				<?php
 				// Schedule
 
-				$days = get_post_meta( $id, 'mro_training_days', false );
-				$days = ucfirst( implode ( ', ' , $days ) );
+				// Schedule as separate meta
+				// $days = get_post_meta( $id, 'mro_training_days', false );
+				// $days = ucfirst( implode ( ', ' , $days ) );
+				// $time_start = get_post_meta( $id, 'mro_training_time_start', true );
+				// $time_end = get_post_meta( $id, 'mro_training_time_end', true );
+				// $workshops = get_post_meta( $id, 'mro_training_workshops', true );
 
-				$time_start = get_post_meta( $id, 'mro_training_time_start', true );
-				$time_end = get_post_meta( $id, 'mro_training_time_end', true );
 
-				$workshops = get_post_meta( $id, 'mro_training_workshops', true );
 				?>
 				<div class="sidebar-section">
 					<h3>Horario</h3>
-					<p>
-						<?php echo $days; ?>.<br />
-						De <?php echo $time_start; ?> a <?php echo $time_end; ?>.
-					</p>
-					<p>
-						<?php echo $workshops; ?>
-					</p>
+
+					<?php
+					$i = 0;
+					foreach ($types as $schedule) {
+						$days = $schedule['days'];
+						$days = ucfirst( implode ( ', ' , $days ) );
+
+						$time_start = $schedule['time_start'];
+						$time_end = $schedule['time_end'];
+
+						$workshops = $schedule['workshops'];
+
+						?>
+						<p>
+							<?php
+							if ( $i != 0) :
+								echo '<strong>Adicional para '.$schedule['title'].':</strong><br />';
+							endif;
+							echo $days; ?>.<br />
+							De <?php echo $time_start; ?> a <?php echo $time_end; ?>.
+						</p>
+						<p>
+							<?php echo $workshops; ?>
+						</p>
+
+						<?php
+						$i++;
+					} ?>
+
 				</div><!-- .sidebar-section -->
 
 			</div>
