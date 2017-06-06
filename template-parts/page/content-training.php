@@ -10,6 +10,8 @@
 
 <?php
 $state = get_post_meta($post->ID, 'mro_training_state', true);
+$types = get_post_meta($post->ID, 'mro_training_types', true);
+var_dump($types);
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -50,6 +52,7 @@ $state = get_post_meta($post->ID, 'mro_training_state', true);
 				<p><?php echo $dates; ?></p>
 
 				<?php
+				// Orientation date
 				if ( get_post_meta($id, 'mro_training_show_orientation', true) == 1 ):
 					$orientation_date = get_post_meta($id, 'mro_training_orientation_date', true);
 					$orientation_date = mandir_convert_date($orientation_date, 'l j \d\e F, Y');
@@ -66,7 +69,10 @@ $state = get_post_meta($post->ID, 'mro_training_state', true);
 					</div><!-- .sidebar-section -->
 				<?php endif; ?>
 
+
 				<?php
+				// Schedule
+
 				$days = get_post_meta( $id, 'mro_training_days', false );
 				$days = ucfirst( implode ( ', ' , $days ) );
 
@@ -91,6 +97,7 @@ $state = get_post_meta($post->ID, 'mro_training_state', true);
 		<div class="large-8 large-pull-4 columns">
 
 			<?php
+			//Curriculum
 			if ( get_post_meta($post->ID, 'mro_training_curriculum', true) ) :
 				$curriculum = get_post_meta($post->ID, 'mro_training_curriculum', true);
 				?>
@@ -105,6 +112,7 @@ $state = get_post_meta($post->ID, 'mro_training_state', true);
 			<?php endif; ?>
 
 			<?php
+			//Recommendations
 			if ( get_post_meta($post->ID, 'mro_training_recs', true) ) :
 				$recs = get_post_meta($post->ID, 'mro_training_recs', true);
 				?>
@@ -118,6 +126,7 @@ $state = get_post_meta($post->ID, 'mro_training_state', true);
 			<?php endif; ?>
 
 			<?php
+			// Certification
 			if ( get_post_meta($post->ID, 'mro_training_certification', true) ) :
 				$certification_list = get_post_meta($post->ID, 'mro_training_certification', true);
 				?>
@@ -130,14 +139,19 @@ $state = get_post_meta($post->ID, 'mro_training_state', true);
 				</ul>
 			<?php endif; ?>
 
-			<h2>Profesorado</h2>
 			<?php
-			echo get_post_meta($post->ID, 'mro_training_teachers', true);
-			?>
-
+			// Teachers
+			if ( get_post_meta($post->ID, 'mro_training_teachers', true) ) :
+				?>
+				<h2>Profesorado</h2>
+				<?php
+				echo get_post_meta($post->ID, 'mro_training_teachers', true);
+				?>
+			<?php endif; ?>
 
 
 			<?php
+			// How to enroll
 			if ( get_post_meta($post->ID, 'mro_training_howtoenroll', true) ) :
 				$steps = get_post_meta($post->ID, 'mro_training_howtoenroll', true);
 				?>
