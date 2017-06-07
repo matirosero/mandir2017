@@ -1,11 +1,11 @@
 .hero-header {
 	position: relative;
-	height: rem-calc(200);
+	height: rem-calc(210);
 	overflow:hidden;
 
-	.home & {
-		height: 100vw;
-	}
+	// .home & {
+	// 	height: 100vw;
+	// }
 
 	img,
 	video,
@@ -15,17 +15,23 @@
 
 	@include breakpoint(medium) {
 		height: rem-calc(470);
-		.home & {
-			height: 70vh;
-		}
+		// .home & {
+		// 	height: 70vh;
+		// }
 	}
 
 	@include breakpoint(large) {
 		height: rem-calc(490);
-		.home & {
-			height: 75vh;
-		}
+		// .home & {
+		// 	height: 75vh;
+		// }
 
+	}
+	@include breakpoint(xlarge) {
+		height: rem-calc(560);
+	}
+	@include breakpoint(xxlarge) {
+		height: rem-calc(640);
 	}
 }
 
