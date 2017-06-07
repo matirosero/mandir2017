@@ -29,7 +29,7 @@ $options  = get_post_meta($post->ID, 'mro_training_payment_options', true);
 	<div class="row entry-content">
 
 		<div class="large-4 large-push-8 columns">
-			<div class="sidebar">
+			<div id="secondary" role="complementary">
 				<h2>Próximo entrenamiento</h2>
 
 				<?php

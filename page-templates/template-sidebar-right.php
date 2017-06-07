@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Sidebar Left
+ * Template Name: Sidebar Right
  * The template for displaying a page with the sidebar on the left side.
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
