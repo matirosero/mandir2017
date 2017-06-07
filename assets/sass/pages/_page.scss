@@ -4,7 +4,7 @@
 	}
 }
 
-#page-intro {
+#page-intro, .entry-header {
 	text-align: center;
 	&:not(.page-section) {
 		@include main-headings;
