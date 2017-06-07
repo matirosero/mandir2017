@@ -9,8 +9,17 @@
 ?>
 
 <?php
+$exact_dates = true;
+if ( get_post_meta($post->ID, 'mro_training_exact_dates', true) == 0 ) :
+	$exact_dates = false;
+endif;
+
+$date_start = get_post_meta($id, 'mro_training_date_start', true);
+$date_end = get_post_meta($id, 'mro_training_date_end', true);
 $state = get_post_meta($post->ID, 'mro_training_state', true);
 $types = get_post_meta($post->ID, 'mro_training_types', true);
+$reservation = get_post_meta($post->ID, 'mro_training_reserve', true);
+$options  = get_post_meta($post->ID, 'mro_training_payment_options', true);
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -24,21 +33,13 @@ $types = get_post_meta($post->ID, 'mro_training_types', true);
 				<h2>Próximo entrenamiento</h2>
 
 				<?php
-				$exact_dates = true;
-				if ( get_post_meta($post->ID, 'mro_training_exact_dates', true) == 0 ) :
-					$exact_dates = false;
-				endif;
-
 				if ( $exact_dates ) :
 					$dateformatstring = 'j \d\e F, Y';
 				else:
 					$dateformatstring = 'F Y';
 				endif;
 
-				$date_start = get_post_meta($id, 'mro_training_date_start', true);
 				$date_start = mandir_convert_date($date_start, $dateformatstring);
-
-				$date_end = get_post_meta($id, 'mro_training_date_end', true);
 				$date_end = mandir_convert_date($date_end, $dateformatstring);
 
 				if ( $exact_dates ) :
@@ -79,7 +80,7 @@ $types = get_post_meta($post->ID, 'mro_training_types', true);
 						foreach ($types as $type) { ?>
 							<p>
 								<strong><?php echo $type['title']; ?>:</strong><br />
-								<?php echo nl2br($type['description']); ?>
+								<?php echo wpautop($type['description']); ?>
 							</p>
 						<?php } ?>
 					</div><!-- .sidebar-section -->
@@ -144,6 +145,59 @@ $types = get_post_meta($post->ID, 'mro_training_types', true);
 					</ul>
 				</div><!-- .sidebar-section -->
 
+				<div class="sidebar-section">
+					<h3>Reserva de cupo</h3>
+					<p>
+						<strong>$<?php echo $reservation['price']; ?></strong><br />
+						<?php echo $reservation['description']; ?>
+					</p>
+				</div><!-- .sidebar-section -->
+
+				<div class="sidebar-section">
+					<h3>Forma de pago</h3>
+					<ul>
+					<?php
+					//var_dump($options);
+					foreach ($options as $option) { ?>
+						<li>
+							<?php
+							$option_title ='';
+							$payments = $option['payments'];
+
+							if ( $payments > 1 ) :
+								$option_title = '<strong>'.$payments.' pagos adicionales</strong>';
+							elseif ( $payments == 1 ):
+								$option_title = '<strong>'.$payments.' pago adicional</strong>';
+							endif;
+
+							if ( $option['discount'] ) :
+								$option_title .= '<span class="discount">Descuento de $'.$option['discount'].'</span>';
+							endif; 
+
+							echo $option_title;
+
+							$desc = $option['description']; 
+
+							echo '<ul>';
+
+							foreach ($types as $type) { 
+								$payment = ( $type['price']-$option['discount'] ) / $payments;
+								?>
+								<?php //var_dump($type); ?>
+								<li>
+									<?php echo '<strong>'.$type['title'].':</strong> $'.$payment.' '.$desc; ?>
+								</li>
+							<?php }
+
+							echo '</ul>';
+
+							?>
+						</li>
+
+					<?php } ?>
+					</ul>
+				</div><!-- .sidebar-section -->
+
 			</div>
 		</div>
 		<div class="large-8 large-pull-4 columns">
@@ -197,7 +251,7 @@ $types = get_post_meta($post->ID, 'mro_training_types', true);
 				?>
 				<h2>Profesorado</h2>
 				<?php
-				echo get_post_meta($post->ID, 'mro_training_teachers', true);
+				echo wpautop( get_post_meta($post->ID, 'mro_training_teachers', true) );
 				?>
 			<?php endif; ?>
 
