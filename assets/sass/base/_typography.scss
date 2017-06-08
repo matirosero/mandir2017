@@ -5,7 +5,8 @@ p {
 	// margin: 0;
 	@include breakpoint(medium) {
 		font-size: 18px;
-		#page-intro & {
+		#page-intro &,
+		.entry-header & {
 			font-size: 20px;
 		}
 	}
