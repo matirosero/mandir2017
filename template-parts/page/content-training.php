@@ -29,27 +29,31 @@ $options  = get_post_meta($post->ID, 'mro_training_payment_options', true);
 	<div class="row entry-content">
 
 		<div class="medium-5 medium-push-7 large-4 large-push-8 columns">
-			<div id="secondary" role="complementary">
-				<h2>Próximo entrenamiento</h2>
+			<div id="secondary" class="quick-info" role="complementary">
+				
+				<div class="sidebar-heading">
+					<h2>Próximo entrenamiento</h2>
 
-				<?php
-				if ( $exact_dates ) :
-					$dateformatstring = 'j \d\e F, Y';
-				else:
-					$dateformatstring = 'F Y';
-				endif;
+					<?php
+					if ( $exact_dates ) :
+						$dateformatstring = 'j \d\e F, Y';
+					else:
+						$dateformatstring = 'F Y';
+					endif;
 
-				$date_start = mandir_convert_date($date_start, $dateformatstring);
-				$date_end = mandir_convert_date($date_end, $dateformatstring);
+					$date_start = mandir_convert_date($date_start, $dateformatstring);
+					$date_end = mandir_convert_date($date_end, $dateformatstring);
 
-				if ( $exact_dates ) :
-					$dates = 'Del '.$date_start.' al '.$date_end;
-				else:
-					$dates = 'De '.$date_start.' a '.$date_end;
-				endif;
-				?>
+					if ( $exact_dates ) :
+						$dates = 'Del '.$date_start.' al '.$date_end;
+					else:
+						$dates = 'De '.$date_start.' a '.$date_end;
+					endif;
+					?>
 
-				<p><?php echo $dates; ?></p>
+					<p><?php echo $dates; ?></p>
+
+				</div><!-- .sidebar-heading -->
 
 				<?php
 				// Orientation date
@@ -80,7 +84,7 @@ $options  = get_post_meta($post->ID, 'mro_training_payment_options', true);
 						foreach ($types as $type) { ?>
 							<p>
 								<strong><?php echo $type['title']; ?>:</strong><br />
-								<?php echo wpautop($type['description']); ?>
+								<?php echo nl2br($type['description']); ?>
 							</p>
 						<?php } ?>
 					</div><!-- .sidebar-section -->
@@ -171,7 +175,7 @@ $options  = get_post_meta($post->ID, 'mro_training_payment_options', true);
 							endif;
 
 							if ( $option['discount'] ) :
-								$option_title .= '<span class="discount">Descuento de $'.$option['discount'].'</span>';
+								$option_title .= ' <span class="discount">Descuento de $'.$option['discount'].'</span>';
 							endif; 
 
 							echo $option_title;
