@@ -1,7 +1,7 @@
 // Typography
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-p {
+#primary {
 	// margin: 0;
 	@include breakpoint(medium) {
 		font-size: 18px;
@@ -11,6 +11,12 @@ p {
 		}
 	}
 
+}
+
+#secondary {
+	@include breakpoint(medium) {
+		font-size: 16px;
+	}
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -27,6 +33,30 @@ h2 {
 	// font-size: 1.25rem;
 	// font-weight: 700;
 }
+
+#secondary {
+	@include breakpoint(medium) {
+		h1 {
+			font-size: header-size(small, h1);
+		}
+		h2 {
+			font-size: header-size(small, h2);
+		}
+		h3 {
+			font-size: header-size(small, h3);
+		}
+		h4 {
+			font-size: header-size(small, h4);
+		}
+		h5 {
+			font-size: header-size(small, h5);
+		}
+		h6 {
+			font-size: header-size(small, h6);
+		}
+	}
+}
+
 
 .spotlight-heading {
 	font-size: header-size(small, h1);

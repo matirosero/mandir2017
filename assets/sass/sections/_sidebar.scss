@@ -3,8 +3,16 @@
 	margin-bottom: $global-margin*2;
 	padding: $global-margin;
 
-	h1 {
-		font-size: 1.5rem;
-		font-weight: 700;
+	.sidebar-section,
+	.widget {
+		border-top: 1px solid $light-gray;
+		padding-top: $global-margin;
+
 	}
+
+	// h1 {
+	// 	font-size: 1.5rem;
+	// 	font-weight: 700;
+	// }
 }
+
