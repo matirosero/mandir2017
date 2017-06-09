@@ -14,6 +14,12 @@
 	}
 }
 
+@mixin rounded($radius: 0.5em) {
+  // -webkit-border-radius: $radius; 
+  // -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
 @mixin reset-list {
 	list-style: none;
 	margin-left: 0;

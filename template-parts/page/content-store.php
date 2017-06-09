@@ -17,7 +17,6 @@
 
 	<div class="row entry-content">
 
-hi
 
 
 
