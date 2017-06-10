@@ -10,20 +10,20 @@
 
 get_header(); ?>
 
-<div class="row column">
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
 
-			<?php while ( have_posts() ) : the_post(); ?>
+<div id="primary" class="content-area">
+	<main id="main" class="site-main" role="main">
 
-				<?php get_template_part( 'template-parts/page/content', 'store' ); ?>
+		<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php endwhile; // End of the loop. ?>
+			<?php get_template_part( 'template-parts/page/content', 'store' ); ?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+		<?php endwhile; // End of the loop. ?>
 
-</div><!-- .row -->
+	</main><!-- #main -->
+</div><!-- #primary -->
+
+
 
 <?php get_footer(); ?>
