@@ -19,11 +19,11 @@
 
 	<?php get_template_part( 'template-parts/store/content', 'spotlight' ); ?>
 
-	<div class="row entry-content">
 
 
+	<?php get_template_part( 'template-parts/store/content', 'products' ); ?>
 
 
-	</div><!-- .entry-content -->
+	
 
 </article><!-- #post-## -->
