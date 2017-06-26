@@ -4,4 +4,10 @@
 	color: $white;
 	padding-top: 1rem;
 	padding-bottom: 1rem;
+
+	.sap_message {
+		p:last-child {
+			margin-bottom: 0;
+		}
+	}
 }
