@@ -45,6 +45,7 @@ endif;
 	<div class="medium-6 columns">
 		<div class="spotlight-text" data-equalizer-watch>
 			<h2 class="spotlight-heading"><?php echo $title; ?></h2>
+			
 			<?php echo $info; ?>
 			<a href="<?php echo $url; ?>" class="cta">Más información</a>
 		</div>
