@@ -17,7 +17,7 @@ get_header(); ?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php //get_template_part( 'template-parts/page/content', 'store' ); ?>
+			<?php get_template_part( 'template-parts/store/content', 'featured' ); ?>
 
 		<?php endwhile; // End of the loop. ?>
 

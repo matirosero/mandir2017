@@ -23,10 +23,10 @@
 				<div class="footer-utility large-9 column">
 
 					<div class="footer-list-signup">
-						<h3><?php _e('Subscribe to our newsletter'); ?></h3>
+						<h3><?php _e('Subscribe to our newsletter', 'mandir'); ?></h3>
 					</div><!-- .footer-list-signup -->
 					<p class="footer-copyright">
-						&copy; <?php echo date("Y"); ?> <?php echo get_bloginfo( 'name' ); ?>. <?php _e('All rights reserved'); ?>.
+						&copy; <?php echo date("Y"); ?> <?php echo get_bloginfo( 'name' ); ?>. <?php _e('All rights reserved', 'mandir'); ?>.
 					</p>
 				</div><!-- .footer-utility -->
 

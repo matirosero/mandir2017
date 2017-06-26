@@ -1,0 +1,20 @@
+.slider-markers {
+	background: color('blue', 'light');
+	position:relative;
+	margin-top: -20px;
+	margin-left: 0.7rem;
+	width: calc(100% - 1.4rem);
+}
+span[class^="slider-marker-"] {
+	position: absolute;
+	// left: calc(0% - 1rem);
+	top: 1rem;
+	// width: 2rem;
+	text-align: center;
+	// background: color('blue', 'light');
+	transform: translateX(-50%);
+	font-size: $small-font-size;
+	color: color('grey','base');
+	padding:0.15rem 0.5rem;
+	@include rounded();
+}

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Mandir\n"
-"POT-Creation-Date: 2017-05-15 17:42-0600\n"
-"PO-Revision-Date: 2017-05-15 22:59-0600\n"
+"POT-Creation-Date: 2017-06-25 21:39-0600\n"
+"PO-Revision-Date: 2017-06-25 21:45-0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_MX\n"
@@ -73,7 +73,7 @@ msgstr "Comentarios cerrados."
 
 #: footer.php:26
 msgid "Subscribe to our newsletter"
-msgstr "Suscribiste a muestro boletín"
+msgstr "Suscribite a muestro boletín"
 
 #: footer.php:29
 msgid "All rights reserved"
@@ -231,53 +231,53 @@ msgstr "Inversión"
 msgid "Reservation"
 msgstr "Reservar"
 
-#: template-parts/page/content-pricing.php:11
+#: template-parts/page/content-pricing.php:14
 msgid "Pricing"
 msgstr "Tarifas"
 
-#: template-parts/page/content-pricing.php:15
-msgid "Single class"
-msgstr "Clase suelta"
-
-#: template-parts/page/content-pricing.php:19
-msgid "1 class"
-msgstr "1 clase"
-
-#: template-parts/page/content-pricing.php:23
-msgid "Membership"
-msgstr "Matrícula"
-
-#: template-parts/page/content-pricing.php:27
-msgid "Per year"
-msgstr "Por 1 año"
-
-#: template-parts/page/content-pricing.php:43
+#: template-parts/page/content-pricing.php:53
 msgid "1 class per week"
 msgstr "1 clase por semana"
 
-#: template-parts/page/content-pricing.php:44
+#: template-parts/page/content-pricing.php:54
 msgid "4 classes per month"
 msgstr "4 clases por mes"
 
-#: template-parts/page/content-pricing.php:53
+#: template-parts/page/content-pricing.php:62
 msgid "2 classes per week"
 msgstr "2 clases por semana"
 
-#: template-parts/page/content-pricing.php:54
+#: template-parts/page/content-pricing.php:63
 msgid "8 classes per month"
 msgstr "8 clases por mes"
 
-#: template-parts/page/content-pricing.php:63
+#: template-parts/page/content-pricing.php:71
 msgid "3 classes per week"
 msgstr "3 clases por semana"
 
-#: template-parts/page/content-pricing.php:64
+#: template-parts/page/content-pricing.php:72
 msgid "12 classes per month"
 msgstr "2 clases por mes"
 
-#: template-parts/page/content-pricing.php:73
+#: template-parts/page/content-pricing.php:80
 msgid "Unlimited classes"
 msgstr "Clases ilimitadas"
+
+#: template-parts/page/content-pricing.php:91
+msgid "Single class"
+msgstr "Clase suelta"
+
+#: template-parts/page/content-pricing.php:95
+msgid "1 class"
+msgstr "1 clase"
+
+#: template-parts/page/content-pricing.php:99
+msgid "Membership"
+msgstr "Matrícula"
+
+#: template-parts/page/content-pricing.php:103
+msgid "Per year"
+msgstr "Por 1 año"
 
 #: template-parts/page/content-schedule.php:12
 msgid "Monday"
