@@ -37,7 +37,7 @@ function mro_menu_top_item_classes( $classes, $item, $args ) {
 	// if( is_singular( 'projects' ) && 'Nosotros' == $item->title )
 	// 	$classes[] = 'current-menu-item';
 
-	if( is_page_template( 'Featured Product' ) && 'Tienda' == $item->title )
+	if( mandir_is_tree(18) && 'Tienda' == $item->title )
 		$classes[] = 'current-menu-item';
 
 	// if( is_singular( 'projects' ) && 'Contáctenos' == $item->title )

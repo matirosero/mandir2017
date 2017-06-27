@@ -22,8 +22,13 @@ $price_points = $product['price_points'];
 	<div class="entry-content">
 
 		<?php the_content(); ?>
+	</div>
 
-		<h2>Yoga mats al por mayor</h2>
+	<div class="page-section">
+
+		<h2 class="section-title">Yoga mats al por mayor</h2>
+
+		<div class="large-8 small-centered">
 
 			<div class="slider" data-slider data-initial-start="6">
 				<span class="slider-handle"  data-slider-handle role="slider" tabindex="1" aria-controls="sliderOutput1"></span>
@@ -48,10 +53,12 @@ $price_points = $product['price_points'];
 				<strong>Precio unitario:</strong> <span class="bulk-price"> </span><br />
 				<strong>Precio total:</strong> <span class="total-price"> </span>
 			</p>
+		</div>
 
 		<?php
-		echo wpautop( $product['info'] );
-		echo do_shortcode( '[caldera_form id="CF593c379405e69"]' );
+		// echo wpautop( $product['info'] );
+		echo apply_filters('the_content', $product['info']);
+		// echo do_shortcode( '[caldera_form_modal id="CF593c379405e69" width="600"]Formulario[/caldera_form_modal]' );
 		?>
 	</div><!-- .entry-content -->
 

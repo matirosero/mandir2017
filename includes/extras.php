@@ -54,5 +54,12 @@ function mandir_convert_to_lowercase_dash($str) {
 	$str = mandir_replace_dashes($str);
 	$str = mb_strtolower($str, 'UTF-8');
 	return $str;
-
 }
+
+function mandir_is_tree($pid) {      // $pid = The ID of the page we're looking for pages underneath
+	global $post;         // load details about this page
+	if(is_page()&&($post->post_parent==$pid||is_page($pid))) 
+               return true;   // we're at the page or at a sub page
+	else 
+               return false;  // we're elsewhere
+};
