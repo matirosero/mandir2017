@@ -1,0 +1,10 @@
+.store-products {
+	@include vertical-padding($bottom: 0);
+}
+
+.product {
+	@include vertical-padding($top: 0);
+	.product-image {
+		margin-bottom: 1rem;
+	}
+}

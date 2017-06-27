@@ -2,6 +2,9 @@
 	body:not(.home) & {
 		@include vertical-padding;
 	}
+	body.page-template-template-store & {
+		@include vertical-padding($bottom: 0);
+	}
 }
 
 #page-intro, .entry-header {
