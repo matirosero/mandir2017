@@ -28,37 +28,62 @@ $price_points = $product['price_points'];
 
 		<h2 class="section-title">Yoga mats al por mayor</h2>
 
-		<div class="large-8 small-centered">
+		<div class="row product-pricing">
 
-			<div class="slider" data-slider data-initial-start="6">
-				<span class="slider-handle"  data-slider-handle role="slider" tabindex="1" aria-controls="sliderOutput1"></span>
-				<span class="slider-fill" data-slider-fill></span>
+			<div class="medium-7 large-9 columns">
 
-				<div class="slider-markers">
-				<?php
+				<div class="slider" data-slider data-initial-start="6">
+					<span class="slider-handle"  data-slider-handle role="slider" tabindex="1" aria-controls="sliderOutput1"></span>
+					<span class="slider-fill" data-slider-fill></span>
 
-				foreach ($price_points as $price_point) {
-					$qty = $price_point['qty'];
-					$price = $price_point['price'];
-					echo '<span class="slider-marker-'.$qty.'" data-price="'.$price.'" data-quantity="'.$qty.'" style="left:'.$qty.'%">'.$qty.'</span>';
-				} ?>
+					<div class="slider-markers">
+					<?php
+
+					foreach ($price_points as $price_point) {
+						$qty = $price_point['qty'];
+						$price = $price_point['price'];
+						echo '<span class="slider-marker-'.$qty.'" data-price="'.$price.'" data-quantity="'.$qty.'" style="left:'.$qty.'%">'.$qty.'</span>';
+					} ?>
+					</div>
+				</div>
+
+				<div id="bulk-price">
+					<h3><span class="bulk-qty">0</span> mats</h3>
+					<p>
+						<strong>Precio unitario:</strong> <span class="bulk-price"> </span><br />
+						<strong>Precio total:</strong> <span class="total-price"> </span>
+					</p>
 				</div>
 			</div>
 
+			<div class="medium-5 large-3 columns">
+				<div class="price-info">
+					<h3>Precio unitario</h3>
+					<ul>
+						<?php
 
+						$i = 0;
+						$count = count($price_points);
+						foreach ($price_points as $price_point) {
+							$lower_range = $price_point['qty'];
+							$price = $price_point['price'];
+							$i++;
 
+							if ( $i < $count ) : 
+								$higher_range = $price_points[$i]['qty'];
+								echo '<li><strong>'.$lower_range.' - '.$higher_range.' mats:</strong> $'.$price.'</li>';
+							else :
+								echo '<li><strong>'.$lower_range.'+ mats:</strong> $'.$price.'</li>';
+							endif;
+						} ?>
+					</ul>
+				</div>
+			</div>
 
-			<p id="bulk-price">
-				<span class="bulk-qty">0</span> mats<br />
-				<strong>Precio unitario:</strong> <span class="bulk-price"> </span><br />
-				<strong>Precio total:</strong> <span class="total-price"> </span>
-			</p>
 		</div>
 
 		<?php
-		// echo wpautop( $product['info'] );
 		echo apply_filters('the_content', $product['info']);
-		// echo do_shortcode( '[caldera_form_modal id="CF593c379405e69" width="600"]Formulario[/caldera_form_modal]' );
 		?>
 	</div><!-- .entry-content -->
 
@@ -66,6 +91,6 @@ $price_points = $product['price_points'];
 
 
 
-	
+
 
 </article><!-- #post-## -->

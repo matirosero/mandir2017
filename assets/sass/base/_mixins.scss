@@ -20,10 +20,6 @@
   border-radius: $radius;
 }
 
-@mixin reset-list {
-	list-style: none;
-	margin-left: 0;
-}
 
 @mixin object-fit {
 	/* For browsers that support 'object-fit' */

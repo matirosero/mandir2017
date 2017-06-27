@@ -9,6 +9,14 @@
 	}
 }
 
+.product-pricing {
+	@include vertical-padding($top: 0);
+
+	.slider {
+		margin-top:3rem;
+	}
+}
+
 #bulk-price {
 	text-align: center;
 }

@@ -27,6 +27,10 @@
 			font-family: $header-font-family;
 		}
 	}
+
+	ul {
+		@include reset-list;
+	}
 }
 
 @include breakpoint(small only) {
