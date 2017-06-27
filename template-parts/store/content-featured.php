@@ -48,9 +48,9 @@ $price_points = $product['price_points'];
 		</div>
 
 			<p id="bulk-price">
-				<span class="bulk-qty"> </span> mats<br />
-				<strong>Precio unitario:</strong> $<span class="bulk-price"> </span><br />
-				<strong>Precio total:</strong> $<span class="total-price"> </span>
+				<span class="bulk-qty">0</span> mats<br />
+				<strong>Precio unitario:</strong> <span class="bulk-price"> </span><br />
+				<strong>Precio total:</strong> <span class="total-price"> </span>
 			</p>
 
 		<?php

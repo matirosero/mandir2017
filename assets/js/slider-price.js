@@ -58,10 +58,24 @@ jQuery(document).ready(function($){
 			}
 
 			outputQty.html(qty);
+			outputPrice.html('$'+unitPrice);
+			outputTotal.html('$'+total);
+
+ 		} else if ( qty >= 1) {
+
+
+			unitPrice = 'Depende del tamaño y diseño';
+			total = 'Depende del tamaño y diseño';
+
+			outputQty.html(qty);
 			outputPrice.html(unitPrice);
 			outputTotal.html(total);
 
  		} else {
+
+			outputQty.html('0');
+			outputPrice.html('$0');
+			outputTotal.html('$0');
 
  		}
 
