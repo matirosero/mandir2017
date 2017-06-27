@@ -8,8 +8,10 @@
 }
 
 .help-block {
-	color: #ee0000;//get-color(alert);
 	font-size: $small-font-size;
+	.has-error & {
+		color: #ee0000;//get-color(alert);
+	}
 }
 
 .form-pricing-notes {
