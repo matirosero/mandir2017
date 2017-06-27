@@ -25,7 +25,6 @@ $price_points = $product['price_points'];
 
 		<h2>Yoga mats al por mayor</h2>
 
-		<div class="small-10 columns">
 			<div class="slider" data-slider data-initial-start="6">
 				<span class="slider-handle"  data-slider-handle role="slider" tabindex="1" aria-controls="sliderOutput1"></span>
 				<span class="slider-fill" data-slider-fill></span>
@@ -42,10 +41,7 @@ $price_points = $product['price_points'];
 			</div>
 
 
-		</div>
-		<div class="small-2 columns">
-		  <!-- <input type="number" id="sliderOutput1"> -->
-		</div>
+
 
 			<p id="bulk-price">
 				<span class="bulk-qty">0</span> mats<br />
