@@ -37,8 +37,8 @@ function mro_menu_top_item_classes( $classes, $item, $args ) {
 	// if( is_singular( 'projects' ) && 'Nosotros' == $item->title )
 	// 	$classes[] = 'current-menu-item';
 
-	// if( is_singular( 'projects' ) && 'Tienda' == $item->title )
-	// 	$classes[] = 'current-menu-item';
+	if( is_page( 'yoga-mats-de-hule-natural' ) && 'Tienda' == $item->title )
+		$classes[] = 'current-menu-item';
 
 	// if( is_singular( 'projects' ) && 'Contáctenos' == $item->title )
 	// 	$classes[] = 'current-menu-item';

@@ -1,0 +1,21 @@
+#content .intl-tel-input {
+	input[type=tel] {
+		margin-bottom: 1rem !important;
+	}
+	.flag-container {
+	    bottom: 1rem !important;
+	}
+}
+
+.help-block {
+	color: #ee0000;//get-color(alert);
+	font-size: $small-font-size;
+}
+
+.form-pricing-notes {
+	p {
+		margin-top: 1.25rem;
+		margin-bottom: 0;
+		font-size: $small-font-size;
+	}
+}
