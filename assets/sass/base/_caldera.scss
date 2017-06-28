@@ -1,11 +1,11 @@
-#content .intl-tel-input {
-	input[type=tel] {
-		margin-bottom: 1rem !important;
-	}
-	.flag-container {
-	    bottom: 1rem !important;
-	}
-}
+// #content .intl-tel-input {
+// 	input[type=tel] {
+// 		margin-bottom: 1rem !important;
+// 	}
+// 	.flag-container {
+// 	    margin-bottom: 1rem !important;
+// 	}
+// }
 
 .help-block {
 	font-size: $small-font-size;
@@ -19,5 +19,14 @@
 		margin-top: 1.25rem;
 		margin-bottom: 0;
 		font-size: $small-font-size;
+	}
+}
+
+.caldera-grid {
+	[type='text'], [type='password'], [type='date'], [type='datetime'], [type='datetime-local'], [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='color'], textarea {
+		margin-bottom: 0;
+	}
+	.row:not(.last_row) .form-group {
+		margin-bottom: 1rem !important;
 	}
 }

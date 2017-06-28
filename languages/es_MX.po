@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Mandir\n"
-"POT-Creation-Date: 2017-06-25 21:39-0600\n"
-"PO-Revision-Date: 2017-06-25 21:45-0600\n"
+"POT-Creation-Date: 2017-06-27 20:07-0600\n"
+"PO-Revision-Date: 2017-06-27 20:08-0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_MX\n"
@@ -211,25 +211,25 @@ msgstr "Seguir leyendo %s <span class=\"meta-nav\">&rarr;</span>"
 msgid "More information"
 msgstr "Más información"
 
-#: template-parts/event/content-single.php:120
+#: template-parts/event/content-single.php:121
 msgid "Important information"
 msgstr "Información importante"
 
-#: template-parts/event/content-single.php:123
+#: template-parts/event/content-single.php:124
 msgid "Dates"
 msgstr "Fechas"
 
-#: template-parts/event/content-single.php:145
+#: template-parts/event/content-single.php:146
 msgid "Venue"
 msgstr "Lugar"
 
-#: template-parts/event/content-single.php:164
+#: template-parts/event/content-single.php:165
 msgid "Costs"
 msgstr "Inversión"
 
-#: template-parts/event/content-single.php:205
-msgid "Reservation"
-msgstr "Reservar"
+#: template-parts/event/content-single.php:206
+msgid "Reserve your spot"
+msgstr "Reserv&aacute; tu espacio"
 
 #: template-parts/page/content-pricing.php:14
 msgid "Pricing"
@@ -307,6 +307,10 @@ msgstr "Sábado"
 msgid "Read more"
 msgstr "Más información"
 
+#: template-parts/store/content-products.php:9
+msgid "Other products"
+msgstr "Otros productos"
+
 #. Theme Name of the plugin/theme
 msgid "Mandir"
 msgstr ""
@@ -326,3 +330,6 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "http://matilderosero.com"
 msgstr ""
+
+#~ msgid "Reservation"
+#~ msgstr "Reservar"

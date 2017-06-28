@@ -113,9 +113,10 @@
 <?php
 
 ?>
-	<div class="medium-5 large-4 columns" id="secondary" role="complementary">
+	<div class="medium-5 large-4 columns">
 
-		<div class="sidebar">
+
+		<div id="secondary" class="quick-info" role="complementary">
 
 			<h2 class="sidebar-title"><?php _e('Important information','mandir'); ?></h2>
 
@@ -201,8 +202,8 @@
 
 		</div><!-- .sidebar -->
 
-		<div class="sidebar">
-			<h2 class="sidebar-title"><?php _e('Reservation','mandir'); ?></h2>
+		<div class="sidebar-form" role="complementary">
+			<h2 class="sidebar-title"><?php _e('Reserve your spot','mandir'); ?></h2>
 			<section class="sidebar-module">
 				<?php echo do_shortcode( '[caldera_form id="CF58e57f617099d"]' ); ?>
 			</section><!-- .sidebar-module -->
