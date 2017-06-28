@@ -15,7 +15,7 @@
 .event-featured-image {
 	display: block;
 	@include scale-media-proportionally(52.4%);
-	margin-bottom: $global-margin;
+	margin-bottom: $global-margin*2;
 
 	#home-events & {
 		margin-bottom: $global-margin;
@@ -28,6 +28,9 @@
 			width: 50%;
 			margin-bottom: 0;
 		}
+	}
+	@include breakpoint(large) {
+		margin-bottom: $global-margin*4;
 	}
 }
 
