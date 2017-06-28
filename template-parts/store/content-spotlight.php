@@ -47,7 +47,7 @@ endif;
 			<h2 class="spotlight-heading"><?php echo $title; ?></h2>
 			
 			<?php echo $info; ?>
-			<a href="<?php echo $url; ?>" class="cta">Más información</a>
+			<a href="<?php echo $url; ?>" class="cta">Más información <i class="icon-right-open-small"></i></a>
 		</div>
 	</div>
 </aside>

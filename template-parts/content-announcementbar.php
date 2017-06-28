@@ -35,8 +35,12 @@
         ?>
         <div id="announcements" class="hidden">
             <div class="wrapper">
+
                 <a class="close" href="#" id="close"><?php _e('x', 'simple-announcements'); ?></a>
                 <div class="sap_message">
+  <button class="close-button" aria-label="Close alert" type="button">
+    <span aria-hidden="true">&times;</span>
+  </button>
                     <?php
                     foreach ($announcements as $announcement) {
                         ?>
