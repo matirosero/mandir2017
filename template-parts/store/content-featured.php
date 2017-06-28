@@ -31,10 +31,11 @@ $price_points = $product['price_points'];
 		<div class="row product-pricing">
 
 			<div class="medium-7 large-9 columns">
-
-				<div class="slider" data-slider data-initial-start="6">
+				<div class="slider" data-slider data-initial-start="6" data-end="100">
 					<span class="slider-handle"  data-slider-handle role="slider" tabindex="1" aria-controls="sliderOutput1"></span>
 					<span class="slider-fill" data-slider-fill></span>
+					<input type="hidden">
+
 
 					<div class="slider-markers">
 					<?php
