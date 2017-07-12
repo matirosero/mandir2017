@@ -2,6 +2,7 @@
 	position: relative;
 	height: rem-calc(210);
 	overflow:hidden;
+	background: $black;
 
 	// .home & {
 	// 	height: 100vw;
@@ -11,6 +12,7 @@
 	video,
 	iframe {
 		@include object-fit;
+		opacity: .7;
 	}
 
 	@include breakpoint(medium) {

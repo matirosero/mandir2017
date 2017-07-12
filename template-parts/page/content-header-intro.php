@@ -9,6 +9,10 @@
 ?>
 
 	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		<?php 
+		if ( !has_post_thumbnail() ) :
+			the_title( '<h1 class="entry-title">', '</h1>' ); 
+		endif;
+		?>
 		<?php the_content(); ?>
 	</header><!-- .entry-header -->
