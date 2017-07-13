@@ -20,7 +20,7 @@ $days = array(
 global $wpdb;
 
 //Create an events array
-$events = array(); 
+$events = array();
 
 //Create posts array, for classes and teachers (pull everything)
 $posts = array();
@@ -28,8 +28,11 @@ $posts = array();
 //Grab all classes and teachers, stick them in $posts array
 $query = $wpdb->get_results(
 	'SELECT ID, post_title, post_content FROM mandir_posts WHERE post_type in ("mro-team", "mro-class") AND post_status = "publish"');
+
+//Loop through query of classes
 if ($query) :
 	foreach ($query as $key => $post) {
+		//Add each class' info to the array
 		setup_postdata( $post );
 		$posts[get_the_ID()] = array(
 			'title' => get_the_title(),
@@ -40,10 +43,6 @@ if ($query) :
 	}
 	wp_reset_postdata();
 endif;
-// if (array_key_exists(231, $posts)) {
-//     echo "The 'first' element is in the array";
-// }
-// var_dump($posts);
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -144,8 +143,8 @@ endif;
 									    $class_name = $events[$event_id]['title'];
 										$event_link = $events[$event_id]['link'];
 										$content = $events[$event_id]['content'];
-										
-									
+
+
 									//If not, query, get values and add to array
 									else:
 										$class_name = get_the_title($event_id);
