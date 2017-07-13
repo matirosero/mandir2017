@@ -5,8 +5,8 @@ function setup_foundation_grid($grid, $form){
 	// Bootstrap grid sized to foundation equivilents
 	$grid_sizes = array(
 		'xs'	=>	'small',
-		'sm'	=>	'small',
-		'md'	=>	'medium',
+		'sm'	=>	'medium',
+		'md'	=>	'large',
 		'lg'	=>	'large',
 	);
 	// set grid size to foundation size from sizes array
