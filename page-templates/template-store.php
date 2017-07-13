@@ -17,7 +17,17 @@ get_header(); ?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php get_template_part( 'template-parts/page/content', 'store' ); ?>
+			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+				<div class="row column">
+					<?php get_template_part( 'template-parts/page/content', 'header-intro' ); ?>
+				</div><!-- .row column -->
+
+				<?php get_template_part( 'template-parts/store/content', 'spotlight' ); ?>
+
+				<?php get_template_part( 'template-parts/store/content', 'products' ); ?>
+
+			</article><!-- #post-## -->
 
 		<?php endwhile; // End of the loop. ?>
 
