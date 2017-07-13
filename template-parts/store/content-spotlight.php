@@ -27,27 +27,39 @@ endif;
 ?>
 
 <aside class="spotlight expanded collapse row" data-equalizer data-equalize-on="medium">
+
 	<div class="spotlight-image medium-6 columns hide-for-small-only">
-		<?php 
+
+		<?php
 		if ( $featured['__relate_post'][0] !== '' ) : ?>
 			<a href="<?php echo $url; ?>" id="" class="" data-equalizer-watch>
 		<?php else: ?>
 			<div id="" class="" data-equalizer-watch>
 		<?php endif; ?>
+
 			<?php echo $featured_imgsrcset; ?>
-		<?php 
+			
+		<?php
 		if ( $featured['__relate_post'][0] !== '' ) : ?>
 			</a>
 		<?php else: ?>
 			</div>
 		<?php endif; ?>
-	</div>
+
+	</div><!-- .columns .spotlight-image -->
+
 	<div class="medium-6 columns">
+
 		<div class="spotlight-text" data-equalizer-watch>
+
 			<h2 class="spotlight-heading"><?php echo $title; ?></h2>
-			
+
 			<?php echo $info; ?>
+
 			<a href="<?php echo $url; ?>" class="cta">Más información <i class="icon-right-open-small"></i></a>
-		</div>
-	</div>
-</aside>
+
+		</div><!-- .spotlight-text -->
+
+	</div><!-- .columns -->
+
+</aside><!-- .spotlight .row -->
