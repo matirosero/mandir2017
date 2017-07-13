@@ -21,18 +21,14 @@ get_header(); ?>
 					<?php get_template_part( 'template-parts/page/content', 'header-intro' ); ?>
 				</div><!-- .row column -->
 
-				<div class="row">
-					<div class="medium-10 medium-centered large-9 columns">
-						<?php get_template_part( 'template-parts/page/content', 'schedule' ); ?>
-					</div><!-- .columns -->
-				</div><!-- .row -->
+				<div class="row column">
+					<?php get_template_part( 'template-parts/page/content', 'schedule' ); ?>
+				</div><!-- .row column -->
 
-				<div class="row">
-					<div class="medium-10 medium-centered large-9 columns">
-						<?php get_template_part( 'template-parts/page/content', 'pricing' ); ?>
-					</div><!-- .columns -->
-				</div><!-- .row -->
-				
+				<div class="row column">
+					<?php get_template_part( 'template-parts/page/content', 'pricing' ); ?>
+				</div><!-- .row column -->
+
 			</article><!-- #post-## -->
 
 		<?php endwhile; // End of the loop. ?>
