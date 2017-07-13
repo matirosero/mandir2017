@@ -17,7 +17,19 @@ get_header(); ?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php get_template_part( 'template-parts/store/content', 'featured' ); ?>
+			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+				<div class="row">
+					<div class="medium-10 medium-centered large-9 columns">
+						<?php get_template_part( 'template-parts/store/content', 'featured-info' ); ?>
+					</div><!-- .columns -->
+				</div><!-- .row -->
+
+				<div class="page-section row column">
+					<?php get_template_part( 'template-parts/store/content', 'featured-pricing' ); ?>
+				</div><!-- .page-section -->
+
+			</article><!-- #post-## -->
 
 		<?php endwhile; // End of the loop. ?>
 
