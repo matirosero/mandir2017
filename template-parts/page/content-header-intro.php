@@ -14,12 +14,12 @@
 			the_title( '<h1 class="entry-title">', '</h1>' );
 		endif;
 
-
 		if ( is_page_template( array( 
 				'page-templates/template-events.php',
 				'page-templates/template-store.php',
 				'page-templates/template-training.php',
 				'page-templates/template-schedule.php',
+				'page-templates/template-events.php',
 			) ) ) :
 			the_content(); 
 		else:
