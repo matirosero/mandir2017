@@ -19,22 +19,14 @@ get_header(); ?>
 				<div class="row column">
 					<?php get_template_part( 'template-parts/page/content', 'header-intro' ); ?>
 				</div><!-- .row column -->
-				
+
 			<?php endwhile; // End of the loop. ?>
 
 
-
-
-
-
 			<?php
-
 			$today = date('Y-m-d');
 			$firstofmonth = date('Y-m-01');
-
 			?>
-
-
 
 			<section id="events-calendar" class="row column">
 
@@ -79,8 +71,6 @@ get_header(); ?>
 				);
 
 				$query = new WP_Query( $args );
-
-				// var_dump($query->posts);
 
 				// - declare fresh month -
 				$monthcheck = null;
