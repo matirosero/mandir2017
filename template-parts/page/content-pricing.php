@@ -9,30 +9,8 @@ $monthly_prices = $pricing_settings['monthly_prices'];
 ?>
 
 
-
 <section id="tarifas" class="pricing">
 	<h2 class="entry-title"><?php _e('Pricing', 'mandir'); ?></h2>
-
-<?php /*
-	<nav class="pricing-nav">
-		<ul class="menu simple">
-
-		<?php
-		$i = 0;
-		foreach ($monthly_prices as $monthly_price) {
-			$id_name = mandir_convert_to_lowercase_dash($monthly_price['monthly_title']);
-			$monthly_prices[$i]['id_name'] = $id_name;
-			$i++;
-			?>
-			<li><a href="#<?php echo $id_name; ?>"><?php echo $monthly_price['monthly_title']; ?></a></li>
-		<?php } ?>
-
-
-			<li><a href="#clase-suelta"><?php _e('Drop-in class', 'mandir'); ?></a></li>
-			<li><a href="#matricula"><?php _e('Membership', 'mandir'); ?></a></li>
-		</ul>
-	</nav>
-*/ ?>
 
 	<?php
 	foreach ($monthly_prices as $monthly_price) { ?>
@@ -101,12 +79,9 @@ $monthly_prices = $pricing_settings['monthly_prices'];
 				<div class="price-info" data-equalizer-watch>
 					<span class="price">₡<?php echo $signup_fee['signup_price']; ?></span>
 					<span class="price-description"><?php _e('Per year', 'mandir'); ?></span>
-				</div>				
-			</li>	
+				</div>
+			</li>
 		</ul>
 	</div>
-
-
-
 
 </section><!-- .pricing -->
