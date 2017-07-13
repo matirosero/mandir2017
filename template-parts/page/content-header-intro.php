@@ -19,6 +19,7 @@
 				'page-templates/template-events.php',
 				'page-templates/template-store.php',
 				'page-templates/template-training.php',
+				'page-templates/template-schedule.php',
 			) ) ) :
 			the_content(); 
 		else:
