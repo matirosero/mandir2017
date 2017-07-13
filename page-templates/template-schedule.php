@@ -19,13 +19,9 @@ get_header(); ?>
 
 				<div class="row column">
 					<?php get_template_part( 'template-parts/page/content', 'header-intro' ); ?>
-				</div><!-- .row column -->
 
-				<div class="row column">
 					<?php get_template_part( 'template-parts/page/content', 'schedule' ); ?>
-				</div><!-- .row column -->
 
-				<div class="row column">
 					<?php get_template_part( 'template-parts/page/content', 'pricing' ); ?>
 				</div><!-- .row column -->
 
