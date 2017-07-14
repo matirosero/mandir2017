@@ -11,21 +11,11 @@
 <?php
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('row'); ?>>
+<div class="row column">
+	<?php the_content( ); ?>
+</div><!-- .row column -->
 
-	<div class="medium-10 medium-centered column">
-		<?php get_template_part( 'template-parts/page/content', 'header-intro' ); ?>
-	</div><!-- .row column -->
-
-	<div class="row column">
-
-		<?php 
-		the_content( );
-		//get_template_part( 'template-parts/page/content', 'header-intro' ); ?>
-	</div><!-- .row column -->
-
-	<?php //get_template_part( 'template-parts/store/content', 'spotlight' ); ?>
+<?php //get_template_part( 'template-parts/store/content', 'spotlight' ); ?>
 
 
 
-</article><!-- #post-## -->

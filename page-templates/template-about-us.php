@@ -17,7 +17,22 @@ get_header(); ?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php get_template_part( 'template-parts/page/content', 'about-us' ); ?>
+			<article id="post-<?php the_ID(); ?>" <?php post_class('row'); ?>>
+
+				<div class="row">
+					<div class="medium-10 medium-centered large-9 columns">
+						<?php get_template_part( 'template-parts/page/content', 'header-intro' ); ?>
+					</div><!-- .columns -->
+				</div><!-- .row -->
+
+				<div class="row">
+					<div class="medium-10 medium-centered large-9 columns">	
+						<?php get_template_part( 'template-parts/page/content', 'about-us' ); ?>
+					</div><!-- .columns -->
+				</div><!-- .row -->
+
+		
+			</article><!-- #post-## -->
 
 		<?php endwhile; // End of the loop. ?>
 
