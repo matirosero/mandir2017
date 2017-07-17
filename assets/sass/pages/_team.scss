@@ -1,0 +1,16 @@
+.profile-image {
+	@include round-container;
+}
+
+.mro-team {
+	.profile-image,
+	.profile-image-secondary {
+		margin: 0 auto;
+	}
+	.profile-image + .entry-title {
+		@include vertical-padding($bottom:0);
+	}
+	.profile-image-secondary {
+		@include vertical-padding($bottom:0);
+	}
+}

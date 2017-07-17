@@ -20,6 +20,11 @@
   border-radius: $radius;
 }
 
+@mixin round-container {
+	@include rounded(50%);
+	overflow: hidden;
+}
+
 
 @mixin object-fit {
 	/* For browsers that support 'object-fit' */
