@@ -1,10 +1,13 @@
 <?php
 
+/*
+ * Show only regular teachers in team archive loop
+ */
 add_action( 'pre_get_posts', 'mro_team_archive' );
 
 function mro_team_archive( $query ) {
 
-if( $query->is_main_query() && !is_admin() && is_post_type_archive( 'mro-team' ) ) {
+	if( $query->is_main_query() && !is_admin() && is_post_type_archive( 'mro-team' ) ) {
 
 		$query->set( 'posts_per_page', '-1' );
         $query->set( 'order', 'ASC' );
