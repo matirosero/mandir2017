@@ -17,7 +17,7 @@
 		}
 	}
 	.profile-image-secondary {
-		@include vertical-padding($bottom:0);
+		@include vertical-padding($top:$vertical-spacing/4, $bottom:0);
 	}
 
 	@include breakpoint(medium) {
