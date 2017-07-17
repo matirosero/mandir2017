@@ -74,7 +74,7 @@ function mro_list_team_shortcode($atts) {
 
             $team .= '<div class="column column-block teacher" >
 	            	<a href="' . get_permalink() . '" class="profile-image">'.get_the_post_thumbnail().'</a>
-	            	<h3><a href="' . get_permalink() . '">' . get_the_title() . '</a></h3>
+	            	<h3 class="entry-title"><a href="' . get_permalink() . '">' . get_the_title() . '</a></h3>
             	</div>';
 
         endwhile; 
