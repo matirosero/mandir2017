@@ -1,5 +1,16 @@
 .profile-image {
+	display: block;
 	@include round-container;
+	@include square(200px);
+	img {
+		@include object-fit;
+	}
+	.teacher & {
+		margin: 0 auto 2rem;
+	}
+	@include breakpoint(medium) {
+		@include square(300px);
+	}
 }
 
 .mro-team {
@@ -8,10 +19,7 @@
 		margin: 0 auto;
 	}
 	.profile-image {
-		@include square(200px);
-		img {
-			@include object-fit;
-		}
+
 		+ .entry-title {
 			@include vertical-padding($bottom:0);
 		}
@@ -20,9 +28,13 @@
 		@include vertical-padding($top:$vertical-spacing/4, $bottom:0);
 	}
 
-	@include breakpoint(medium) {
-		.profile-image {
-			@include square(300px);
-		}
+
+}
+
+.teachers-list {
+	// @include vertical-padding($bottom: 0);
+	.teacher {
+		text-align: center;
+		@include vertical-padding($top:$vertical-spacing, $bottom:0);
 	}
 }
