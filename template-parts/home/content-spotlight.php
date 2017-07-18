@@ -9,7 +9,7 @@ $directory_url = 'http://www.yoga-mandir.com/certificados/';
 		</a>
 	</div>
 	<div class="medium-6 columns">
-		<div class="spotlight-text" data-equalizer-watch>
+		<div class="spotlight-highlight" data-equalizer-watch>
 			<h2 class="spotlight-heading">¡Profesores certificados en tu zona!</h2>
 			<p>Ingresá a la Red Mandir Certificados y podrás buscar profesores de yoga y masajistas certificados por Yoga Mandir en tu comunidad.</p>
 			<a href="<?php echo $directory_url; ?>" class="cta">Ir a Red Mandir Certificados <i class="icon-right-open-small"></i></a>

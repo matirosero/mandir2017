@@ -16,9 +16,9 @@
 <div class="spotlight expanded collapse row" data-equalizer data-equalize-on="medium">
 
 	<div class="medium-6 large-5 columns">
-		<div class="" data-equalizer-watch>
+		<div class="spotlight-content" data-equalizer-watch>
 			<?php the_content( ); ?>
-		</div><!-- .spotlight-text -->
+		</div><!-- .spotlight-content -->
 	</div><!-- .columns -->
 
 	<div class="spotlight-image medium-6 large-7 columns hide-for-small-only" data-equalizer-watch>

@@ -20,7 +20,7 @@
 					</a>
 				</div><!-- .footer-logo -->
 
-				<div class="footer-utility large-9 column">
+				<div class="footer-utility large-8 column end">
 
 					<div class="footer-list-signup">
 						<h3><?php _e('Subscribe to our newsletter', 'mandir'); ?></h3>

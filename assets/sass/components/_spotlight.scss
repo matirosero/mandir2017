@@ -12,7 +12,7 @@
 	}
 }
 
-.spotlight-text {
+.spotlight-highlight {
 	background: url(../img/mandala-small.png) top center no-repeat;
 	padding: 2rem;
 	position: relative;
@@ -39,7 +39,31 @@
 			margin: 2rem 0 2.5rem;
 		}
 	}
+}
 
+.spotlight-content {
+	padding: 2rem;
+	position: relative;
 
+	@include center-vertically-column;
 
+	p {
+		// margin: 1rem 0 1.5rem;
+	}
+
+	ul, ol {
+		// text-align: left;
+	}
+
+	@include breakpoint(medium) {
+		// background-image: url(../img/mandala-medium.png);
+	}
+
+	@include breakpoint(large) {
+		// background-image: url(../img/mandala-large.png);
+		padding: 2rem 4rem;
+		p {
+			// margin: 2rem 0 2.5rem;
+		}
+	}
 }

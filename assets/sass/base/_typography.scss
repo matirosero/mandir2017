@@ -95,7 +95,12 @@ h2 {
 	}
 }
 
-
+.location-title {
+	text-transform: none;
+	font-family: $body-font-family;
+	font-weight: bold;
+	font-size: 110%;
+}
 
 .cta {
 	font-family: $header-font-family;

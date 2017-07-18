@@ -50,7 +50,7 @@ endif;
 
 	<div class="medium-6 columns">
 
-		<div class="spotlight-text" data-equalizer-watch>
+		<div class="spotlight-highlight" data-equalizer-watch>
 
 			<h2 class="spotlight-heading"><?php echo $title; ?></h2>
 
