@@ -263,7 +263,7 @@ $options  = get_post_meta($post->ID, 'mro_training_payment_options', true);
 
 			$teachers_imgsrcset = wp_get_attachment_image($teachers_img_id, 'medium');
 
-			echo '<div class="alignleft round">'.$teachers_imgsrcset.'</div>';
+			echo '<div class="profile-image alignleft">'.$teachers_imgsrcset.'</div>';
 
 			echo wpautop( get_post_meta($post->ID, 'mro_training_teachers', true) );
 			?>
