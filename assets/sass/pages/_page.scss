@@ -3,7 +3,8 @@
 		@include vertical-padding;
 	}
 	body.page-template-template-store &,
-	body.page-template-template-featured-product & {
+	body.page-template-template-featured-product &,
+	body.page-template-template-about-us & {
 		@include vertical-padding($bottom: 0);
 	}
 }
