@@ -84,7 +84,7 @@ function mandir_socialmedia_topbar_output() {
 
 		foreach ( $active_sites as $key => $active_site ) {
         	$class = 'icon-' . $active_site; ?>
-		 	<li class="menu-item show-for-medium">
+		 	<li class="menu-item menu-item-social show-for-medium">
 				<a class="<?php echo esc_attr( $active_site ); ?>" target="_blank" href="<?php echo esc_url( get_theme_mod( $key ) ); ?>">
 					<i class="<?php echo esc_attr( $class ); ?>" title="<?php echo esc_attr( $active_site ); ?>"></i>
 				</a>

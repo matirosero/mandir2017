@@ -103,9 +103,15 @@
 		}
 		.top-bar-right {
 			margin-right: 8px;
-			.menu > li > a {
-				line-height: 30px;
-				padding: 6px 1rem 4px;
+			.menu {
+				> li > a {
+					line-height: 30px;
+					padding: 6px 1rem 4px;
+				}
+				> .menu-item-social > a {
+					line-height: 30px;
+					padding: 6px 0.5rem 4px;
+				}
 			}
 		}
 
