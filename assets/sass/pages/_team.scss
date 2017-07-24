@@ -11,6 +11,9 @@
 	@include breakpoint(medium) {
 		@include square(300px);
 	}
+	.type-page & {
+		@include square(200px);
+	}
 }
 
 .mro-team {

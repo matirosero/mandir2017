@@ -121,7 +121,7 @@
 
 		<h2 class="sidebar-title"><?php _e('Important information','mandir'); ?></h2>
 
-		<section class="sidebar-module">
+		<section class="sidebar-section">
 			<h3 class="module-title"><?php _e('Dates','mandir'); ?></h3>
 
 			<?php $datetimes = mro_events_join_datetime(); ?>
@@ -143,13 +143,13 @@
 
 		<?php if ( get_post_meta($post->ID, 'mro_event_location', true) ) : ?>
 
-			<section class="sidebar-module">
+			<section class="sidebar-section">
 				<h3 class="module-title"><?php _e('Venue','mandir'); ?></h3>
 
 				<?php
 				$venue = get_post_meta($post->ID, 'mro_event_location', true);
 				if ( $venue == 'mandir' ) :
-					echo '<span class="event-venue">Yoga Mandir</span>';
+					echo '<p class="event-venue">Yoga Mandir</p>';
 				else:
 					//
 				endif;
@@ -162,7 +162,7 @@
 		<?php
 		if ( get_post_meta($post->ID, 'mro_event_price', true) ) : ?>
 
-			<section class="sidebar-module">
+			<section class="sidebar-section">
 				<h3 class="module-title"><?php _e('Costs','mandir'); ?></h3>
 
 				<?php
@@ -170,7 +170,8 @@
 				$price = get_post_meta($post->ID, 'mro_event_price', true);
 				?>
 
-				<span class="event-price"><?php echo $c.$price; ?></span>
+				<p>
+				<span class="event-price"><?php echo $c.$price; ?></span></p>
 
 				<?php
 				if ( get_post_meta($post->ID, 'mro_event_pricing_options', true) ) :
