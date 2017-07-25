@@ -1,0 +1,36 @@
+.ctct-form-wrapper {
+	.ctct-button {
+		display: none;
+	}
+	.ctct-form-field {
+		margin-top: 1em;
+		label {
+			display: none;
+		}
+	}
+	.ctct-submit {
+		display: block;
+		width: 100%;
+	}
+	.ctct-disclosure {
+		display: none;
+	}
+
+	@include breakpoint(medium) {
+		.ctct-form-description h3,
+		.ctct-form-field {
+			display: inline-block;
+		}
+		h3 {
+			font-size: header-size(small, h3);
+			padding-right: 1rem;
+			// padding-top: 3px;
+		}
+		.ctct-form-field {
+			margin: 0;
+		}
+		input {
+			margin-bottom: 0;
+		}
+	}
+}

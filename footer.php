@@ -23,7 +23,7 @@
 				<div class="footer-utility large-8 column end">
 
 					<div class="footer-list-signup">
-						<h3><?php _e('Subscribe to our newsletter', 'mandir'); ?></h3>
+						<?php echo do_shortcode( '[ctct form="599"]' ); ?>
 					</div><!-- .footer-list-signup -->
 					<p class="footer-copyright">
 						&copy; <?php echo date("Y"); ?> <?php echo get_bloginfo( 'name' ); ?>. <?php _e('All rights reserved', 'mandir'); ?>.
