@@ -1,7 +1,7 @@
 <?php
 /**
- * Template Name: Certificación
- * The template for displaying general certification information.
+ * Template Name: Masaje Tai
+ * The template for displayingg thai massage course information.
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
