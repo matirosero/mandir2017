@@ -1,7 +1,7 @@
 <?php
 /**
- * Template Name: Certificacion Virabhadra
- * The template for displaying Teacher Training program information.
+ * Template Name: Certificación
+ * The template for displayinggeneral certification information.
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
