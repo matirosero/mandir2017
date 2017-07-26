@@ -8,21 +8,17 @@
  */
 ?>
 
+<?php if ( !has_post_thumbnail() || get_post_meta($post->ID, 'mro_page_intro', true) ) : ?>
 	<header class="entry-header">
 		<?php
 		if ( !has_post_thumbnail() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
 		endif;
 
-		if ( is_page_template( array( 
-				'page-templates/template-events.php',
-				'page-templates/template-store.php',
-				'page-templates/template-training.php',
-				'page-templates/template-schedule.php',
-				'page-templates/template-events.php',
-			) ) ) :
-			the_content(); 
-		else:
+
+		if ( get_post_meta($post->ID, 'mro_page_intro', true) ) :
 			echo wpautop( get_post_meta($post->ID, 'mro_page_intro', true) );
-		endif;?>
+		endif;
+		?>
 	</header><!-- .entry-header -->
+<?php endif; ?>

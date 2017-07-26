@@ -211,6 +211,8 @@ $options  = get_post_meta($post->ID, 'mro_training_payment_options', true);
 	<div class="medium-7 medium-pull-5 large-8 large-pull-4 columns">
 
 		<?php
+
+		the_content();
 		//Curriculum
 		if ( get_post_meta($post->ID, 'mro_training_curriculum', true) ) :
 			$curriculum = get_post_meta($post->ID, 'mro_training_curriculum', true);
