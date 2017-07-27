@@ -5,9 +5,9 @@
 	// margin: 0;
 	@include breakpoint(medium) {
 		font-size: 18px;
-		#page-intro &,
-		.entry-header & {
-			font-size: 20px;
+		#page-intro,
+		.entry-header {
+			font-size: 22px;
 		}
 	}
 
