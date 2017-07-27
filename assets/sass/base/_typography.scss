@@ -83,6 +83,12 @@ h2 {
 	&:only-child {
 		margin-bottom: 0;
 	}
+	a {
+		color: $body-font-color;
+		@include hover {
+			color: $anchor-color-hover;
+		}
+	}
 }
 
 .event-title {

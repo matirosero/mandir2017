@@ -38,6 +38,7 @@
 	// @include vertical-padding($bottom: 0);
 	.teacher {
 		text-align: center;
-		@include vertical-padding($top:$vertical-spacing, $bottom:0);
+		margin-bottom: 0;
+		@include vertical-padding($top:0, $bottom:$vertical-spacing);
 	}
 }
