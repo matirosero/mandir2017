@@ -34,7 +34,7 @@ $options  = get_post_meta($post->ID, 'mro_training_payment_options', true);
 
 	<div class="medium-5 medium-push-7 large-4 large-push-8 columns">
 		<div id="secondary" class="quick-info" role="complementary">
-			
+
 			<div class="sidebar-heading">
 				<h2>Próximo entrenamiento</h2>
 
@@ -213,6 +213,7 @@ $options  = get_post_meta($post->ID, 'mro_training_payment_options', true);
 		<?php
 
 		the_content();
+
 		//Curriculum
 		if ( get_post_meta($post->ID, 'mro_training_curriculum', true) ) :
 			$curriculum = get_post_meta($post->ID, 'mro_training_curriculum', true);
@@ -260,15 +261,34 @@ $options  = get_post_meta($post->ID, 'mro_training_payment_options', true);
 		if ( get_post_meta($post->ID, 'mro_training_teachers', true) ) :
 			?>
 			<h2>Profesorado</h2>
-			<?php
-			$teachers_img_id = get_post_meta($post->ID, 'mro_training_teachers_image', true);
 
-			$teachers_imgsrcset = wp_get_attachment_image($teachers_img_id, 'medium');
+			<?php if ( get_post_meta($post->ID, 'mro_training_teachers_image', true) ) : ?>
 
-			echo '<div class="profile-image alignleft">'.$teachers_imgsrcset.'</div>';
+				<?php
+				$teachers_img_id = get_post_meta($post->ID, 'mro_training_teachers_image', true);
+				$teachers_imgsrcset = wp_get_attachment_image($teachers_img_id, 'medium');
+				?>
 
-			echo wpautop( get_post_meta($post->ID, 'mro_training_teachers', true) );
-			?>
+				<div class="row">
+
+
+					<div class="medium-8 medium-push-4 large-9 large-push-3 columns">
+
+						<?php echo wpautop( get_post_meta($post->ID, 'mro_training_teachers', true) );
+						?>
+					</div>
+
+					<div class="medium-4 medium-pull-8 large-3 large-pull-9 columns">
+
+						<div class="profile-image"><?php echo $teachers_imgsrcset; ?></div>
+					</div>
+
+				</div><!-- .row -->
+
+			<?php else : 
+				echo wpautop( get_post_meta($post->ID, 'mro_training_teachers', true) );
+			endif; ?>
+
 		<?php endif; ?>
 
 

@@ -8,12 +8,22 @@
 	.teacher & {
 		margin: 0 auto 2rem;
 	}
+	.columns > & {
+		margin: 0 auto 2rem;
+		@include square(150px);
+	}
 	@include breakpoint(medium) {
 		@include square(300px);
+		.columns > & {
+			width: auto;
+			height: auto;
+			margin-top: .5rem;
+		}
 	}
-	.type-page & {
+	.teachers-list & {
 		@include square(200px);
 	}
+
 }
 
 .mro-team {
