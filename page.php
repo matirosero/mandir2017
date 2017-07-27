@@ -23,6 +23,7 @@ get_header(); ?>
 
 				<?php while ( have_posts() ) : the_post(); ?>
 
+					<?php get_template_part( 'template-parts/page/content', 'header-intro' ); ?>
 					<?php get_template_part( 'template-parts/page/content', 'page' ); ?>
 
 				<?php endwhile; // End of the loop. ?>

@@ -8,7 +8,7 @@
  */
 ?>
 
-<?php if ( !has_post_thumbnail() || get_post_meta($post->ID, 'mro_page_intro', true) ) : ?>
+<?php if ( !has_post_thumbnail() && get_post_meta($post->ID, 'mro_page_intro', true) ) : ?>
 	<header class="entry-header">
 		<?php
 		if ( !has_post_thumbnail() ) :
