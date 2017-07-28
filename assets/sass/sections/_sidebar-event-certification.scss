@@ -1,0 +1,30 @@
+.event-date,
+.event-time,
+.event-venue,
+.event-address,
+.event-donation,
+.event-price,
+.certification-price,
+.event-price-description,
+.certification-price-description {
+	display: block;
+}
+.event-date + .event-time {
+	margin-bottom: .5rem;
+}
+.event-venue {
+	font-weight: bold;
+}
+.event-donation {
+	font-size: $small-font-size;
+}
+.event-price,
+.certification-price {
+	font-weight: bold;
+	font-size: 1.2rem;
+	line-height: 1.25;
+}
+.event-price-description,
+.certification-price-description {
+	margin-bottom: .5rem;
+}

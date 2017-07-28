@@ -46,24 +46,3 @@
 	}
 }
 
-.event-date,
-.event-time,
-.event-venue,
-.event-address,
-.event-donation {
-	display: block;
-}
-.event-date + .event-time {
-	margin-bottom: .5rem;
-}
-.event-venue {
-	font-weight: bold;
-}
-.event-donation {
-	font-size: $small-font-size;
-}
-.event-price {
-	li & {
-		font-weight: bold;
-	}
-}

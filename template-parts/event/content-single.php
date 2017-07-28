@@ -157,7 +157,7 @@
 		<!-- </section> --><!-- .sidebar-module -->
 		<!-- <section class="sidebar-section"> -->
 
-			<h3 class="module-title"><?php _e('Costs','mandir'); ?></h3>
+			<h3 class="module-title"><?php _e('Cost','mandir'); ?></h3>
 
 			<?php
 			$type =	get_post_meta($post->ID, 'mro_event_payment_type', true);
@@ -200,7 +200,7 @@
 						<ul>
 							<li>
 								<span class="event-price"><?php echo $c.$price; ?></span>
-								<span class="event-price-description"> – <?php _e('Regular price','mandir'); ?></span>
+								<span class="event-price-description"><?php _e('Regular price','mandir'); ?></span>
 							</li>
 
 							<?php
@@ -208,7 +208,7 @@
 							foreach ($pricing_options as $option) { ?>
 								<li>
 									<span class="event-price"><?php echo $c.$option['price']; ?></span>
-									<span class="event-price-description"> – <?php echo $option['description']; ?></span>
+									<span class="event-price-description"><?php echo $option['description']; ?></span>
 								</li>
 							<?php } ?>
 

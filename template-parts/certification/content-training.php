@@ -74,8 +74,9 @@ $options  = get_post_meta($post->ID, 'mro_training_payment_options', true);
 
 			</div><!-- .sidebar-section -->
 
+
 			<div class="sidebar-section">
-				<h3>Inversión</h3>
+				<h3><?php _e('Cost','mandir'); ?></h3>
 				<ul>
 				<?php
 				foreach ($types as $price) { ?>

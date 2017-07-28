@@ -76,18 +76,30 @@ $options  = get_post_meta($post->ID, 'mro_training_payment_options', true);
 			<?php endif; ?>
 
 
+			<?php
+			$c = get_post_meta($post->ID, 'mro_training_currency', true);
+			$prices = get_post_meta($post->ID, 'mro_training_pricing_options', true);
 
-			<div class="sidebar-section">
-				<h3>Inversión</h3>
-				<ul>
-				<?php
-				foreach ($types as $price) { ?>
-					<li>
-						$<?php echo $price['price'].' – '.$price['title']; ?>
-					</li>
-				<?php } ?>
-				</ul>
-			</div><!-- .sidebar-section -->
+			if ( !empty($prices[0]['price']) ) : ?>
+
+				<div class="sidebar-section">
+					<h3><?php _e('Cost','mandir'); ?></h3>
+
+					<ul>
+					<?php
+					foreach ($prices as $price) { ?>
+						<li>
+							<span class="certification-price"><?php echo $c.$price['price']; ?></span>
+							<span class="certification-price-description"><?php echo $price['description']; ?></span>
+						</li>
+					<?php } ?>
+					</ul>
+				</div><!-- .sidebar-section -->
+
+			<?php endif; ?>
+
+
+
 
 			<div class="sidebar-section">
 				<h3>Reserva de cupo</h3>

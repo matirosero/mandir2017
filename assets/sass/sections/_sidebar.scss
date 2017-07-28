@@ -23,12 +23,6 @@
 }
 
 .quick-info .sidebar-section {
-	h3 {
-		// float: left;
-		// text-align: right;
-		// width: 100px;
-		// margin-top: 2px;
-	}
 
 	ul {
 		@include reset-list;
@@ -44,6 +38,15 @@
 		}
 		> p, > ul, > ol {
 			margin-left: 116px;
+		}
+
+		.single-mro-event & {
+			h3 {
+				width: 79px;
+			}
+			> p, > ul, > ol {
+				margin-left: 95px;
+			}
 		}
 	}
 }
