@@ -9,9 +9,10 @@
 ?>
 
 
-<div class="medium-7 large-8 columns">
+<div class="medium-8 columns">
 
 	<header class="entry-header">
+
 		<?php
 		// If a regular post or page, and not the front page, show the featured image.
 		if ( has_post_thumbnail() ) :
@@ -95,27 +96,24 @@
 
 	if ( $query->have_posts() ) : ?>
 
-	<aside class="event-instructor">
+		<aside class="event-instructor">
 
-		<!-- the loop -->
-		<?php while ( $query->have_posts() ) : $query->the_post(); ?>
-			<h2><?php the_title(); ?></h2>
-		<?php endwhile; ?>
-		<!-- end of the loop -->
+			<!-- the loop -->
+			<?php while ( $query->have_posts() ) : $query->the_post(); ?>
+				<h2><?php the_title(); ?></h2>
+			<?php endwhile; ?>
+			<!-- end of the loop -->
 
-	</aside><!-- .event-instructor -->
+		</aside><!-- .event-instructor -->
 
-	<?php wp_reset_postdata(); ?>
+		<?php wp_reset_postdata(); ?>
 
-<?php endif; ?>
+	<?php endif; ?>
 
 </div>
 
-<?php
-?>
 
-
-<div class="medium-5 large-4 columns">
+<div class="medium-4 columns">
 
 	<div id="secondary" class="quick-info" role="complementary">
 
