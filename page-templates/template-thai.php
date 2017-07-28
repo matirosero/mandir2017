@@ -17,9 +17,11 @@ get_header(); ?>
 
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-				<div class="row column">
-					<?php get_template_part( 'template-parts/page/content', 'header-intro' ); ?>
-				</div><!-- .row column -->
+				<div class="row">
+					<div class="medium-10 medium-centered large-9 columns">
+						<?php get_template_part( 'template-parts/page/content', 'header-intro' ); ?>
+					</div><!-- .column -->
+				</div><!-- .row -->
 
 				<div class="row">
 					<?php get_template_part( 'template-parts/page/content', 'training' ); ?>
