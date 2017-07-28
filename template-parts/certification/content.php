@@ -39,7 +39,7 @@ $options  = get_post_meta($post->ID, 'mro_training_payment_options', true);
 
 			<?php
 			//Orientation
-			get_template_part( 'template-parts/certification/content', 'orientation' ); 
+			get_template_part( 'template-parts/certification/content', 'orientation' );
 			?>
 
 			<?php
@@ -60,38 +60,22 @@ $options  = get_post_meta($post->ID, 'mro_training_payment_options', true);
 			<?php endif; ?>
 
 
-			<div class="sidebar-section">
-				<h3><?php _e('Schedule','mandir'); ?></h3>
+			<?php
+			// Simple schedule
+			$schedule = get_post_meta($post->ID, 'mro_training_schedule', true);
 
-				<?php
-				$i = 0;
-				foreach ($types as $schedule) {
-					$days = $schedule['days'];
-					$days = ucfirst( implode ( ', ' , $days ) );
+			if ( !empty( $schedule['time_start'] ) ) : ?>
 
-					$time_start = $schedule['time_start'];
-					$time_end = $schedule['time_end'];
+				<div class="sidebar-section">
+					<h3><?php _e('Schedule','mandir'); ?></h3>
 
-					$workshops = $schedule['workshops'];
+					<?php mro_certificaction_render_schedule($schedule); ?>
 
-					?>
-					<p>
-						<?php
-						if ( $i != 0) :
-							echo '<strong>Adicional para '.$schedule['title'].':</strong><br />';
-						endif;
-						echo $days; ?>.<br />
-						De <?php echo $time_start; ?> a <?php echo $time_end; ?>.
-					</p>
-					<p>
-						<?php echo $workshops; ?>
-					</p>
+				</div><!-- .sidebar-section -->
 
-					<?php
-					$i++;
-				} ?>
+			<?php endif; ?>
 
-			</div><!-- .sidebar-section -->
+
 
 			<div class="sidebar-section">
 				<h3>Inversión</h3>
@@ -132,15 +116,15 @@ $options  = get_post_meta($post->ID, 'mro_training_payment_options', true);
 
 						if ( $option['discount'] ) :
 							$option_title .= ' <span class="discount">Descuento de $'.$option['discount'].'</span>';
-						endif; 
+						endif;
 
 						echo $option_title;
 
-						$desc = $option['description']; 
+						$desc = $option['description'];
 
 						echo '<ul>';
 
-						foreach ($types as $type) { 
+						foreach ($types as $type) {
 							$payment = ( $type['price']-$option['discount'] ) / $payments;
 							?>
 							<?php //var_dump($type); ?>
@@ -237,7 +221,7 @@ $options  = get_post_meta($post->ID, 'mro_training_payment_options', true);
 
 				</div><!-- .row -->
 
-			<?php else : 
+			<?php else :
 				echo wpautop( get_post_meta($post->ID, 'mro_training_teachers', true) );
 			endif; ?>
 

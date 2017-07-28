@@ -68,28 +68,7 @@ $options  = get_post_meta($post->ID, 'mro_training_payment_options', true);
 				<?php
 				$i = 0;
 				foreach ($types as $schedule) {
-					$days = $schedule['days'];
-					$days = ucfirst( implode ( ', ' , $days ) );
-
-					$time_start = $schedule['time_start'];
-					$time_end = $schedule['time_end'];
-
-					$workshops = $schedule['workshops'];
-
-					?>
-					<p>
-						<?php
-						if ( $i != 0) :
-							echo '<strong>Adicional para '.$schedule['title'].':</strong><br />';
-						endif;
-						echo $days; ?>.<br />
-						De <?php echo $time_start; ?> a <?php echo $time_end; ?>.
-					</p>
-					<p>
-						<?php echo $workshops; ?>
-					</p>
-
-					<?php
+					mro_certificaction_render_schedule($schedule);
 					$i++;
 				} ?>
 
