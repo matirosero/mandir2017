@@ -32,7 +32,7 @@ $options  = get_post_meta($post->ID, 'mro_training_payment_options', true);
 
 <div class="entry-content">
 
-	<div class="medium-5 medium-push-7 large-4 large-push-8 columns">
+	<div class="medium-4 medium-push-8 columns">
 		<div id="secondary" class="quick-info" role="complementary">
 
 			<div class="sidebar-heading">
@@ -208,7 +208,7 @@ $options  = get_post_meta($post->ID, 'mro_training_payment_options', true);
 
 		</div>
 	</div>
-	<div class="medium-7 medium-pull-5 large-8 large-pull-4 columns">
+	<div class="medium-8 medium-pull-4 columns">
 
 		<?php
 

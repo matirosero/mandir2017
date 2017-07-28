@@ -24,22 +24,26 @@
 
 .quick-info .sidebar-section {
 	h3 {
-		float: left;
-		text-align: right;
-		width: 100px;
-		margin-top: 2px;
+		// float: left;
+		// text-align: right;
+		// width: 100px;
+		// margin-top: 2px;
 	}
-	> p, > ul, > ol {
-		margin-left: 116px;
-	}
-	> ul {
-		list-style: none;
-		> li { 
 
+	ul {
+		@include reset-list;
+		margin-bottom: 1rem;
+	}
+
+	@include breakpoint(large) {
+		h3 {
+			float: left;
+			text-align: right;
+			width: 100px;
+			margin-top: 2px;
 		}
-		ul {
-			@include reset-list;
-			margin-bottom: 1rem; 
+		> p, > ul, > ol {
+			margin-left: 116px;
 		}
 	}
 }

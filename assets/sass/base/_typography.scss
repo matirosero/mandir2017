@@ -3,6 +3,10 @@
 
 #primary {
 	// margin: 0;
+	#page-intro,
+	.entry-header {
+		font-size: 18px;
+	}
 	@include breakpoint(medium) {
 		font-size: 18px;
 		#page-intro,
@@ -58,10 +62,13 @@ h2 {
 		}
 	}
 	&.quick-info h3 {
-		text-transform: initial;
-		font-family: $body-font-family;
-		font-weight: 700;
-		font-size: 16px;
+		font-size: 18px;
+		@include breakpoint(large) {
+			text-transform: initial;
+			font-family: $body-font-family;
+			font-weight: 700;
+			font-size: 16px;
+		}
 	}
 }
 
