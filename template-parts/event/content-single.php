@@ -136,25 +136,25 @@
 				?>
 			</ul>
 
-		</section><!-- .sidebar-module -->
+			<?php if ( get_post_meta($post->ID, 'mro_event_location', true) ) : ?>
 
-
-		<?php if ( get_post_meta($post->ID, 'mro_event_location', true) ) : ?>
-
-			<section class="sidebar-section">
 				<h3 class="module-title"><?php _e('Venue','mandir'); ?></h3>
 
 				<?php
 				$venue = get_post_meta($post->ID, 'mro_event_location', true);
 				if ( $venue == 'mandir' ) :
-					echo '<p class="event-venue">Yoga Mandir</p>';
+					echo '<p><span class="event-venue">Yoga Mandir</span></p>';
 				else:
-					//
+					$venue = get_post_meta($post->ID, 'mro_event_location_name', true);
+					$address = get_post_meta($post->ID, 'mro_event_location_address', true);
+					echo '<p><span class="event-venue">'.$venue.'</span>
+						<span class="event-address">'.$address.'</span></p>';
 				endif;
 				?>
-			</section><!-- .sidebar-module -->
 
-		<?php endif; ?>
+			<?php endif; ?>
+
+		</section><!-- .sidebar-module -->
 
 
 		<?php

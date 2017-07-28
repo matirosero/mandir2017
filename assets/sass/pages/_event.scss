@@ -43,7 +43,18 @@
 			padding-left: $global-padding;
 			text-align: left;
 		}
-	}	
+	}
 }
 
-
+.event-date,
+.event-time,
+.event-venue,
+.event-address {
+	display: block;
+}
+.event-date + .event-time {
+	margin-bottom: .5rem;
+}
+.event-venue {
+	font-weight: bold;
+}
