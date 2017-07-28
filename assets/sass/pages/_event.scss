@@ -49,7 +49,8 @@
 .event-date,
 .event-time,
 .event-venue,
-.event-address {
+.event-address,
+.event-donation {
 	display: block;
 }
 .event-date + .event-time {
@@ -57,4 +58,12 @@
 }
 .event-venue {
 	font-weight: bold;
+}
+.event-donation {
+	font-size: $small-font-size;
+}
+.event-price {
+	li & {
+		font-weight: bold;
+	}
 }

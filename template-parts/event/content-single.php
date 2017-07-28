@@ -154,51 +154,82 @@
 
 			<?php endif; ?>
 
-		</section><!-- .sidebar-module -->
+		<!-- </section> --><!-- .sidebar-module -->
+		<!-- <section class="sidebar-section"> -->
 
+			<h3 class="module-title"><?php _e('Costs','mandir'); ?></h3>
 
-		<?php
-		if ( get_post_meta($post->ID, 'mro_event_price', true) ) : ?>
+			<?php
+			$type =	get_post_meta($post->ID, 'mro_event_payment_type', true);
 
-			<section class="sidebar-section">
-				<h3 class="module-title"><?php _e('Costs','mandir'); ?></h3>
+			if ( $type == 'free' ) : ?>
+
+				<p class="event-price"><?php _e('Free','mandir'); ?></p>
+
+			<?php else : ?>
 
 				<?php
 				$c = get_post_meta($post->ID, 'mro_event_currency', true);
-				$price = get_post_meta($post->ID, 'mro_event_price', true);
-				?>
 
-				<p>
-				<span class="event-price"><?php echo $c.$price; ?></span></p>
-
-				<?php
-				if ( get_post_meta($post->ID, 'mro_event_pricing_options', true) ) :
-					$pricing_options = get_post_meta($post->ID, 'mro_event_pricing_options', true);
-					?>
-					<ul>
+				if ( $type == 'donation' ) : ?>
 
 					<?php
-					foreach ($pricing_options as $option) { ?>
-						<li>
-							<span class="event-price-option"><?php echo $c.$option['price']; ?></span>
-							<span class="event-price-description"><?php echo $option['description']; ?></span>
-						</li>
-					<?php } ?>
-					</ul>
-
-				<?php endif; ?>
-
-
-				<?php
-				if ( get_post_meta($post->ID, 'mro_event_pricing_notes', true) ) :
-					$pricing_notes = nl2br( get_post_meta($post->ID, 'mro_event_pricing_notes', true) );
+					$donation = get_post_meta($post->ID, 'mro_event_donation', true);
 					?>
-					<span class="event-pricing-notes"><?php echo $pricing_notes; ?></span>
+
+					<p><span class="event-price"><?php _e('Voluntary donation','mandir'); ?></span>
+						<span class="event-donation">
+							<?php _e('Suggested: ','mandir'); ?>
+							<?php echo $c.$donation; ?>
+						</span>
+					</p>
+
+				<?php elseif ( $type == 'price' ) : ?>
+
+					<?php
+					$price = get_post_meta($post->ID, 'mro_event_price', true);
+
+					$options = get_post_meta($post->ID, 'mro_event_pricing_options', true);
+
+					if ( empty($options[0]['price']) ) : ?>
+
+						<p class="event-price"><?php echo $c.$price; ?></p>
+
+					<?php else: ?>
+
+						<ul>
+							<li>
+								<span class="event-price"><?php echo $c.$price; ?></span>
+								<span class="event-price-description"> – <?php _e('Regular price','mandir'); ?></span>
+							</li>
+
+							<?php
+							$pricing_options = get_post_meta($post->ID, 'mro_event_pricing_options', true);
+							foreach ($pricing_options as $option) { ?>
+								<li>
+									<span class="event-price"><?php echo $c.$option['price']; ?></span>
+									<span class="event-price-description"> – <?php echo $option['description']; ?></span>
+								</li>
+							<?php } ?>
+
+						</ul>
+
+					<?php endif; ?>
+
 				<?php endif; ?>
 
-			</section><!-- .sidebar-module -->
+			<?php endif; ?>
 
-		<?php endif; ?>
+			<?php
+			if ( get_post_meta($post->ID, 'mro_event_pricing_notes', true) ) :
+
+				$pricing_notes = nl2br( get_post_meta($post->ID, 'mro_event_pricing_notes', true) );
+				?>
+				<p class="event-pricing-notes"><?php echo $pricing_notes; ?></p>
+
+			<?php endif; ?>
+
+		</section><!-- .sidebar-module -->
 
 	</div><!-- .sidebar -->
 
