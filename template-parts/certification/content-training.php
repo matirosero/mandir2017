@@ -9,13 +9,6 @@
 ?>
 
 <?php
-$exact_dates = true;
-if ( get_post_meta($post->ID, 'mro_training_exact_dates', true) == 0 ) :
-	$exact_dates = false;
-endif;
-
-$date_start = get_post_meta($id, 'mro_training_date_start', true);
-$date_end = get_post_meta($id, 'mro_training_date_end', true);
 $state = get_post_meta($post->ID, 'mro_training_state', true);
 $types = get_post_meta($post->ID, 'mro_training_types', true);
 $reservation = get_post_meta($post->ID, 'mro_training_reserve', true);
@@ -28,6 +21,7 @@ $options  = get_post_meta($post->ID, 'mro_training_payment_options', true);
  Move main and side column into their own template part
  Training folder?
 */
+
 ?>
 
 <div class="entry-content">
@@ -38,47 +32,19 @@ $options  = get_post_meta($post->ID, 'mro_training_payment_options', true);
 			<div class="sidebar-heading">
 				<h2>Próximo entrenamiento</h2>
 
-				<?php
-				if ( $exact_dates ) :
-					$dateformatstring = 'j \d\e F, Y';
-				else:
-					$dateformatstring = 'F Y';
-				endif;
-
-				$date_start = mandir_convert_date($date_start, $dateformatstring);
-				$date_end = mandir_convert_date($date_end, $dateformatstring);
-
-				if ( $exact_dates ) :
-					$dates = 'Del '.$date_start.' al '.$date_end;
-				else:
-					$dates = 'De '.$date_start.' a '.$date_end;
-				endif;
-				?>
+				<?php $dates = mro_certification_dates(); ?>
 
 				<p><?php echo $dates; ?></p>
 
 			</div><!-- .sidebar-heading -->
 
 			<?php
-			// Orientation date
-			if ( get_post_meta($id, 'mro_training_show_orientation', true) == 1 ):
-				$orientation_date = get_post_meta($id, 'mro_training_orientation_date', true);
-				$orientation_date = mandir_convert_date($orientation_date, 'l j \d\e F, Y');
-
-				$orientation_time = get_post_meta($id, 'mro_training_orientation_time', true);
+			//Orientation
+			get_template_part( 'template-parts/certification/content', 'orientation' ); 
 			?>
-				<div class="sidebar-section">
-					<h3>Orientación</h3>
-					<p>
-						<?php echo $orientation_date; ?> a las <?php echo $orientation_time; ?> en Yoga Mandir.
-						<br />
-						<strong>Asistencia obligatoria.</strong>
-					</p>
-				</div><!-- .sidebar-section -->
-			<?php endif; ?>
 
 			<?php
-			//Types
+			// Types || Duration
 			if ( count($types) > 0 ) : ?>
 
 				<div class="sidebar-section">
@@ -96,20 +62,8 @@ $options  = get_post_meta($post->ID, 'mro_training_payment_options', true);
 			<?php endif; ?>
 
 
-			<?php
-			// Schedule
-
-			// Schedule as separate meta
-			// $days = get_post_meta( $id, 'mro_training_days', false );
-			// $days = ucfirst( implode ( ', ' , $days ) );
-			// $time_start = get_post_meta( $id, 'mro_training_time_start', true );
-			// $time_end = get_post_meta( $id, 'mro_training_time_end', true );
-			// $workshops = get_post_meta( $id, 'mro_training_workshops', true );
-
-
-			?>
 			<div class="sidebar-section">
-				<h3>Horario</h3>
+				<h3><?php _e('Schedule','mandir'); ?></h3>
 
 				<?php
 				$i = 0;
@@ -180,15 +134,15 @@ $options  = get_post_meta($post->ID, 'mro_training_payment_options', true);
 
 						if ( $option['discount'] ) :
 							$option_title .= ' <span class="discount">Descuento de $'.$option['discount'].'</span>';
-						endif; 
+						endif;
 
 						echo $option_title;
 
-						$desc = $option['description']; 
+						$desc = $option['description'];
 
 						echo '<ul>';
 
-						foreach ($types as $type) { 
+						foreach ($types as $type) {
 							$payment = ( $type['price']-$option['discount'] ) / $payments;
 							?>
 							<?php //var_dump($type); ?>
@@ -285,7 +239,7 @@ $options  = get_post_meta($post->ID, 'mro_training_payment_options', true);
 
 				</div><!-- .row -->
 
-			<?php else : 
+			<?php else :
 				echo wpautop( get_post_meta($post->ID, 'mro_training_teachers', true) );
 			endif; ?>
 
