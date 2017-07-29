@@ -9,7 +9,7 @@ if ( get_post_meta($id, 'mro_training_show_orientation', true) == 1 ):
 	$orientation_time = get_post_meta($id, 'mro_training_orientation_time', true);
 	?>
 	<div class="sidebar-section">
-		<h3>Orientación</h3>
+		<h3><?php _e('Orientation','mandir'); ?></h3>
 		<p>
 			<?php echo $orientation_date; ?> a las <?php echo $orientation_time; ?> en Yoga Mandir.
 			<br />

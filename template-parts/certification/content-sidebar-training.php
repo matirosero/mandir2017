@@ -11,7 +11,7 @@ get_template_part( 'template-parts/certification/content', 'sidebar-heading' );
 
 <?php
 //Orientation
-get_template_part( 'template-parts/certification/content', 'orientation' ); 
+get_template_part( 'template-parts/certification/content', 'sidebar-orientation' ); 
 ?>
 
 <?php
