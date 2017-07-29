@@ -30,52 +30,17 @@ $state = get_post_meta($post->ID, 'mro_training_state', true);
 
 		the_content();
 
+		//Teachers
+		get_template_part( 'template-parts/certification/content', 'teachers' );
+
 		//Curriculum
 		get_template_part( 'template-parts/certification/content', 'curriculum' );
-
 
 		//Recommendations
 		get_template_part( 'template-parts/certification/content', 'recs' );
 
-
 		// Certificate
 		get_template_part( 'template-parts/certification/content', 'certificate' );
-
-
-		// Teachers
-		if ( get_post_meta($post->ID, 'mro_training_teachers', true) ) :
-			?>
-			
-
-			<?php if ( get_post_meta($post->ID, 'mro_training_teachers_image', true) ) : ?>
-
-				<?php
-				$teachers_img_id = get_post_meta($post->ID, 'mro_training_teachers_image', true);
-				$teachers_imgsrcset = wp_get_attachment_image($teachers_img_id, 'medium');
-				?>
-
-				<div class="row">
-
-
-					<div class="medium-8 medium-push-4 large-9 large-push-3 columns">
-						<h2>Profesorado</h2>
-						<?php echo wpautop( get_post_meta($post->ID, 'mro_training_teachers', true) );
-						?>
-					</div>
-
-					<div class="medium-4 medium-pull-8 large-3 large-pull-9 columns">
-
-						<div class="profile-image"><?php echo $teachers_imgsrcset; ?></div>
-					</div>
-
-				</div><!-- .row -->
-
-			<?php else : ?>
-				<h2>Profesorado</h2>
-				<?php echo wpautop( get_post_meta($post->ID, 'mro_training_teachers', true) );
-			endif; ?>
-
-		<?php endif; 
 
 		// Certificate
 		get_template_part( 'template-parts/certification/content', 'enroll' );
