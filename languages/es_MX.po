@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Mandir\n"
-"POT-Creation-Date: 2017-07-28 19:24-0600\n"
-"PO-Revision-Date: 2017-07-28 20:49-0600\n"
+"POT-Creation-Date: 2017-07-28 21:02-0600\n"
+"PO-Revision-Date: 2017-07-28 21:03-0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_MX\n"
@@ -175,6 +175,15 @@ msgstr "Reconocimiento"
 #: template-parts/certification/content-curriculum.php:7
 msgid "Curriculum"
 msgstr "Currículum"
+
+#: template-parts/certification/content-enroll.php:10
+msgid "Enrollment process"
+msgstr "Proceso de matrícula"
+
+#: template-parts/certification/content-includes.php:10
+msgctxt "Certification includes"
+msgid "Includes"
+msgstr "Incluye"
 
 #: template-parts/certification/content-recs.php:10
 msgid "Recommendation"
