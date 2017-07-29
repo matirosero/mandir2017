@@ -42,19 +42,9 @@ $state = get_post_meta($post->ID, 'mro_training_state', true);
 		get_template_part( 'template-parts/certification/content', 'curriculum' );
 
 		//Recommendations
-		if ( get_post_meta($post->ID, 'mro_training_recs', true) ) :
-			$recs = get_post_meta($post->ID, 'mro_training_recs', true);
-			?>
-			<h2>Recomendaciones</h2>
-			<ul>
-			<?php
-			foreach ( $recs as $rec ) {
-				echo '<li>'.$rec['rec'].'</li>';
-			} ?>
-			</ul>
-		<?php endif; ?>
+		get_template_part( 'template-parts/certification/content', 'recs' );
 
-		<?php
+
 		// Certification
 		if ( get_post_meta($post->ID, 'mro_training_certification', true) ) :
 			$certification_list = get_post_meta($post->ID, 'mro_training_certification', true);
