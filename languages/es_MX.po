@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Mandir\n"
-"POT-Creation-Date: 2017-07-28 21:02-0600\n"
-"PO-Revision-Date: 2017-07-28 21:03-0600\n"
+"POT-Creation-Date: 2017-07-29 00:15-0600\n"
+"PO-Revision-Date: 2017-07-29 00:15-0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_MX\n"
@@ -83,6 +83,10 @@ msgstr "Iconos de redes sociales"
 msgid "Add the URL for each of your social profiles."
 msgstr ""
 "Agregá la dirección URL para cada uno de tus perfiles de redes sociales."
+
+#: includes/extras.php:71 template-parts/page/content-schedule.php:196
+msgid "Read more"
+msgstr "Seguir leyendo"
 
 #: includes/setup.php:41
 msgid "Primary Menu"
@@ -209,6 +213,11 @@ msgstr "Horario"
 #: template-parts/certification/content-sidebar.php:16
 msgid "Duration"
 msgstr "Duración"
+
+#: template-parts/certification/content-teachers.php:31
+#: template-parts/certification/content-teachers.php:39
+msgid "Teachers"
+msgstr "Profesorado"
 
 #: template-parts/content-announcementbar.php:39
 msgid "x"
@@ -355,13 +364,13 @@ msgstr "Viernes"
 msgid "Saturday"
 msgstr "Sábado"
 
-#: template-parts/page/content-schedule.php:196
-msgid "Read more"
-msgstr "Seguir leyendo"
-
 #: template-parts/store/content-products.php:8
 msgid "Other products"
 msgstr "Otros productos"
+
+#: template-parts/team/content-event-teacher.php:20
+msgid "Teacher:"
+msgstr "Profesor:"
 
 #. Theme Name of the plugin/theme
 msgid "Mandir"
