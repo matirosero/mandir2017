@@ -8,16 +8,16 @@
 	.teacher & {
 		margin: 0 auto 2rem;
 	}
-	.columns > & {
-		margin: 0 auto 2rem;
+	.teacher-box & {
+		margin: 1rem auto 2rem;
 		@include square(150px);
 	}
 	@include breakpoint(medium) {
 		@include square(300px);
-		.columns > & {
+		.teacher-box & {
+			margin-top:0;
 			width: auto;
 			height: auto;
-			margin-top: .5rem;
 		}
 	}
 	.teachers-list & {
@@ -51,4 +51,11 @@
 		margin-bottom: 0;
 		@include vertical-padding($top:0, $bottom:$vertical-spacing);
 	}
+}
+
+
+.teacher-box {
+	// background-color: color('blue', 'light');
+	// padding: 1.5rem 1.5rem 0.25rem;
+	@include bordered-box;
 }

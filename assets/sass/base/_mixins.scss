@@ -108,3 +108,13 @@
 @function header-size($breakpoint, $size) {
   	@return map-deep-get($header-styles, $breakpoint, $size, font-size)*1px;;
 }
+
+@mixin bordered-box {
+	border: 1px solid $light-gray;
+	margin-bottom: $global-margin*2;
+	padding: $global-margin/2;
+
+	@include breakpoint(medium) {
+		padding: $global-margin;
+	}
+}

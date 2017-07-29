@@ -1,20 +1,14 @@
 #secondary,
 .sidebar-form {
 
-	border: 1px solid $light-gray;
-	margin-bottom: $global-margin*2;
-	padding: $global-margin/2;
+	@include bordered-box;
 
 	.sidebar-section,
 	.widget {
 		border-top: 1px solid $light-gray;
 		padding-top: $global-margin;
-
 	}
 
-	@include breakpoint(medium) {
-		padding: $global-margin;
-	}
 }
 
 .sidebar-heading {

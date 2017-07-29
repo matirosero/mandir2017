@@ -10,18 +10,6 @@
 
 <?php
 $state = get_post_meta($post->ID, 'mro_training_state', true);
-// $types = get_post_meta($post->ID, 'mro_training_types', true);
-// $reservation = get_post_meta($post->ID, 'mro_training_reserve', true);
-// $options  = get_post_meta($post->ID, 'mro_training_payment_options', true);
-?>
-
-<?php
-/*
- TO DO:
- Move main and side column into their own template part
- Training folder?
-*/
-
 ?>
 
 <div class="entry-content">
@@ -57,7 +45,7 @@ $state = get_post_meta($post->ID, 'mro_training_state', true);
 		// Teachers
 		if ( get_post_meta($post->ID, 'mro_training_teachers', true) ) :
 			?>
-			<h2>Profesorado</h2>
+			
 
 			<?php if ( get_post_meta($post->ID, 'mro_training_teachers_image', true) ) : ?>
 
@@ -70,7 +58,7 @@ $state = get_post_meta($post->ID, 'mro_training_state', true);
 
 
 					<div class="medium-8 medium-push-4 large-9 large-push-3 columns">
-
+						<h2>Profesorado</h2>
 						<?php echo wpautop( get_post_meta($post->ID, 'mro_training_teachers', true) );
 						?>
 					</div>
@@ -82,8 +70,9 @@ $state = get_post_meta($post->ID, 'mro_training_state', true);
 
 				</div><!-- .row -->
 
-			<?php else :
-				echo wpautop( get_post_meta($post->ID, 'mro_training_teachers', true) );
+			<?php else : ?>
+				<h2>Profesorado</h2>
+				<?php echo wpautop( get_post_meta($post->ID, 'mro_training_teachers', true) );
 			endif; ?>
 
 		<?php endif; 

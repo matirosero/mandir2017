@@ -100,7 +100,7 @@
 
 			<!-- the loop -->
 			<?php while ( $query->have_posts() ) : $query->the_post(); ?>
-				<h2><?php the_title(); ?></h2>
+				<?php get_template_part( 'template-parts/team/content', 'event-teacher' ); ?>
 			<?php endwhile; ?>
 			<!-- end of the loop -->
 
