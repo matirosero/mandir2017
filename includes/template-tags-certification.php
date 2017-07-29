@@ -58,3 +58,4 @@ function mro_certificaction_render_schedule($schedule) {
 	<p><?php echo $notes; ?></p>
 
 <?php } ?>
+

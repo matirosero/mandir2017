@@ -10,9 +10,6 @@
 
 <?php
 $state = get_post_meta($post->ID, 'mro_training_state', true);
-$types = get_post_meta($post->ID, 'mro_training_types', true);
-$reservation = get_post_meta($post->ID, 'mro_training_reserve', true);
-$options  = get_post_meta($post->ID, 'mro_training_payment_options', true);
 ?>
 
 <?php
@@ -28,131 +25,10 @@ $options  = get_post_meta($post->ID, 'mro_training_payment_options', true);
 	<div class="medium-4 medium-push-8 columns">
 		<div id="secondary" class="quick-info" role="complementary">
 
-			<div class="sidebar-heading">
-				<h2>Próxima edición</h2>
-
-				<?php $dates = mro_certification_dates(); ?>
-
-				<p><?php echo $dates; ?></p>
-
-			</div><!-- .sidebar-heading -->
-
 			<?php
-			//Orientation
-			get_template_part( 'template-parts/certification/content', 'orientation' );
+			//Sidebar
+			get_template_part( 'template-parts/certification/content', 'sidebar' );
 			?>
-
-			<?php
-			//Duration
-			if ( get_post_meta($post->ID, 'mro_training_duration', true) ) : ?>
-
-				<div class="sidebar-section">
-					<h3><?php _e('Duration','mandir'); ?></h3>
-
-					<?php
-					$duration = nl2br( get_post_meta($post->ID, 'mro_training_duration', true) );
-					?>
-
-					<p><?php echo $duration; ?></p>
-
-				</div><!-- .sidebar-section -->
-
-			<?php endif; ?>
-
-
-			<?php
-			// Simple schedule
-			$schedule = get_post_meta($post->ID, 'mro_training_schedule', true);
-
-			if ( !empty( $schedule['time_start'] ) ) : ?>
-
-				<div class="sidebar-section">
-					<h3><?php _e('Schedule','mandir'); ?></h3>
-
-					<?php mro_certificaction_render_schedule($schedule); ?>
-
-				</div><!-- .sidebar-section -->
-
-			<?php endif; ?>
-
-
-			<?php
-			$c = get_post_meta($post->ID, 'mro_training_currency', true);
-			$prices = get_post_meta($post->ID, 'mro_training_pricing_options', true);
-
-			if ( !empty($prices[0]['price']) ) : ?>
-
-				<div class="sidebar-section">
-					<h3><?php _e('Cost','mandir'); ?></h3>
-
-					<ul>
-					<?php
-					foreach ($prices as $price) { ?>
-						<li>
-							<span class="certification-price"><?php echo $c.$price['price']; ?></span>
-							<span class="certification-price-description"><?php echo $price['description']; ?></span>
-						</li>
-					<?php } ?>
-					</ul>
-				</div><!-- .sidebar-section -->
-
-			<?php endif; ?>
-
-
-
-
-			<div class="sidebar-section">
-				<h3>Reserva de cupo</h3>
-				<p>
-					<strong>$<?php echo $reservation['price']; ?></strong><br />
-					<?php echo $reservation['description']; ?>
-				</p>
-			</div><!-- .sidebar-section -->
-
-			<div class="sidebar-section">
-				<h3>Forma de pago</h3>
-				<ul>
-				<?php
-				//var_dump($options);
-				foreach ($options as $option) { ?>
-					<li>
-						<?php
-						$option_title ='';
-						$payments = $option['payments'];
-
-						if ( $payments > 1 ) :
-							$option_title = '<strong>'.$payments.' pagos adicionales</strong>';
-						elseif ( $payments == 1 ):
-							$option_title = '<strong>'.$payments.' pago adicional</strong>';
-						endif;
-
-						if ( $option['discount'] ) :
-							$option_title .= ' <span class="discount">Descuento de $'.$option['discount'].'</span>';
-						endif;
-
-						echo $option_title;
-
-						$desc = $option['description'];
-
-						echo '<ul>';
-
-						foreach ($types as $type) {
-							$payment = ( $type['price']-$option['discount'] ) / $payments;
-							?>
-							<?php //var_dump($type); ?>
-							<li>
-								<?php echo '<strong>'.$type['title'].':</strong> $'.$payment.' '.$desc; ?>
-							</li>
-						<?php }
-
-						echo '</ul>';
-
-						?>
-					</li>
-
-				<?php } ?>
-				</ul>
-			</div><!-- .sidebar-section -->
 
 		</div>
 	</div>
