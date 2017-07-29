@@ -50,20 +50,10 @@ $state = get_post_meta($post->ID, 'mro_training_state', true);
 		get_template_part( 'template-parts/certification/content', 'recs' );
 
 
-		// Certification
-		if ( get_post_meta($post->ID, 'mro_training_certification', true) ) :
-			$certification_list = get_post_meta($post->ID, 'mro_training_certification', true);
-			?>
-			<h2>Reconocimiento</h2>
-			<ul>
-			<?php
-			foreach ( $certification_list as $li ) {
-				echo '<li>'.$li['point'].'</li>';
-			} ?>
-			</ul>
-		<?php endif; ?>
+		// Certificate
+		get_template_part( 'template-parts/certification/content', 'certificate' );
 
-		<?php
+
 		// Teachers
 		if ( get_post_meta($post->ID, 'mro_training_teachers', true) ) :
 			?>
@@ -96,22 +86,13 @@ $state = get_post_meta($post->ID, 'mro_training_state', true);
 				echo wpautop( get_post_meta($post->ID, 'mro_training_teachers', true) );
 			endif; ?>
 
-		<?php endif; ?>
+		<?php endif; 
 
+		// Certificate
+		get_template_part( 'template-parts/certification/content', 'enroll' );
 
-		<?php
-		// How to enroll
-		if ( get_post_meta($post->ID, 'mro_training_howtoenroll', true) ) :
-			$steps = get_post_meta($post->ID, 'mro_training_howtoenroll', true);
-			?>
-			<h2>Proceso de matrícula</h2>
-			<ol>
-			<?php
-			foreach ( $steps as $step ) {
-				echo '<li>'.$step['point'].'</li>';
-			} ?>
-			</ol>
-		<?php endif; ?>
+		?>
+
 	</div>
 
 </div><!-- .entry-content -->
