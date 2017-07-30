@@ -31,9 +31,21 @@ $state = get_post_meta($post->ID, 'mro_training_state', true);
 
 		endif;
 
-
 		//Includes
 		get_template_part( 'template-parts/certification/content', 'includes' );
+		
+		if ( is_page_template( 'page-templates/template-thai.php' ) ) :
+
+			//Daily schedule
+			get_template_part( 'template-parts/certification/content', 'daily' );
+
+			//Modules
+			get_template_part( 'template-parts/certification/content', 'thai' );
+
+		endif;
+
+
+
 
 
 		if ( !is_page_template( 'page-templates/template-thai.php' ) ) :

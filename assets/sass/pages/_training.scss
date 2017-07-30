@@ -1,0 +1,24 @@
+.module-levels {
+	margin-bottom: 1.25rem;
+}
+.module-meta {
+	margin-bottom: 2rem;
+	padding-top: 0.5rem;
+	// background: color('grey', 'light');
+	border-top: 2px solid color('grey', 'light');
+}
+
+.module-dates,
+.module-certificate {
+	display: block;
+}
+
+.training-daily {
+	@include reset-list;
+	.training-block-time {
+		font-weight: bold;
+	}
+	.training-block-description {
+		margin-left: 1rem;
+	}
+}

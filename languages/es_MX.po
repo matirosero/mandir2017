@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Mandir\n"
-"POT-Creation-Date: 2017-07-29 00:15-0600\n"
-"PO-Revision-Date: 2017-07-29 00:15-0600\n"
+"POT-Creation-Date: 2017-07-29 23:04-0600\n"
+"PO-Revision-Date: 2017-07-29 23:05-0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_MX\n"
@@ -184,7 +184,11 @@ msgstr "Currículum"
 msgid "Enrollment process"
 msgstr "Proceso de matrícula"
 
-#: template-parts/certification/content-includes.php:10
+#: template-parts/certification/content-includes.php:11
+msgid "Each level includes"
+msgstr "Cada nivel incluye"
+
+#: template-parts/certification/content-includes.php:13
 msgctxt "Certification includes"
 msgid "Includes"
 msgstr "Incluye"
@@ -218,6 +222,25 @@ msgstr "Duración"
 #: template-parts/certification/content-teachers.php:39
 msgid "Teachers"
 msgstr "Profesorado"
+
+#: template-parts/certification/content-thai.php:25
+#: template-parts/certification/content-thai.php:76
+#, php-format
+msgid "From %1$s to %2$s"
+msgstr "Del %1$s al %2$s"
+
+#: template-parts/certification/content-thai.php:34
+msgid " and "
+msgstr " y "
+
+#: template-parts/certification/content-thai.php:37
+#, php-format
+msgid "Certificate issued by %1$s "
+msgstr "Certificado por %1$s "
+
+#: template-parts/certification/content-thai.php:47
+msgid "Who this course is for"
+msgstr "Para quién es este curso"
 
 #: template-parts/content-announcementbar.php:39
 msgid "x"

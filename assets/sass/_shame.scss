@@ -16,16 +16,3 @@ body {
 	display: none;
 }
 
-//TRAINING TYPE
-.entry-content {
-	h2 {
-		font-size:24px;
-	}
-	ul ,
-	ol ,
-	p {
-		+ h2 {
-			margin-top: 2rem;
-		}
-	}
-}

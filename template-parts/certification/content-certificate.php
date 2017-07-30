@@ -25,4 +25,4 @@ if ( !empty($items[0]['point']) ) : ?>
 
 	<?php endif; ?>
 
-<?php endif; ?>
+<?php endif;
