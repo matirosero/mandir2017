@@ -7,7 +7,11 @@ if ( !empty($items[0]['point']) ) : ?>
 
 	<?php $count = count($items); ?>
 
-	<h2><?php _ex('Includes', 'Certification includes', 'mandir'); ?></h2>
+	<?php if ( is_page_template( 'page-templates/template-thai.php' ) ) : ?>
+		<h2><?php _e('Each level includes', 'mandir'); ?></h2>
+	<?php else: ?>
+		<h2><?php _ex('Includes', 'Certification includes', 'mandir'); ?></h2>
+	<?php endif; ?>
 
 	<?php
 	if ( $count > 1 ) : ?>

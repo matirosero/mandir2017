@@ -24,7 +24,7 @@ get_header(); ?>
 				</div><!-- .row -->
 
 				<div class="row">
-					<?php get_template_part( 'template-parts/page/content', 'training' ); ?>
+					<?php get_template_part( 'template-parts/certification/content', 'none' ); ?>
 				</div><!-- .row -->
 
 			</article><!-- #post-## -->
