@@ -1,5 +1,9 @@
 .module-levels {
 	margin-bottom: 1.25rem;
+	ul {
+		@include reset-list;
+		margin-bottom: 1.25rem;
+	}
 }
 .module-meta {
 	margin-bottom: 2rem;
