@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying teacher training content.
+ * Template part for displaying certification content.
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
@@ -19,7 +19,11 @@ $state = get_post_meta($post->ID, 'mro_training_state', true);
 
 			<?php
 			//Sidebar
-			get_template_part( 'template-parts/certification/content', 'sidebar' );
+			if ( is_page_template( 'page-templates/template-training.php' ) ) :
+				get_template_part( 'template-parts/certification/content', 'sidebar-training' );
+			else:
+				get_template_part( 'template-parts/certification/content', 'sidebar' );
+			endif;
 			?>
 
 		</div>

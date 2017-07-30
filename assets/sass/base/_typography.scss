@@ -95,6 +95,11 @@ h2 {
 	&:only-child {
 		margin-bottom: 0;
 	}
+}
+
+.entry-title,
+.section-title,
+.event-title {
 	a {
 		color: $body-font-color;
 		@include hover {
@@ -102,6 +107,7 @@ h2 {
 		}
 	}
 }
+
 
 .event-title {
 	@include breakpoint(medium) {
