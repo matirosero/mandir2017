@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Mandir\n"
-"POT-Creation-Date: 2017-07-29 23:04-0600\n"
-"PO-Revision-Date: 2017-07-29 23:05-0600\n"
+"POT-Creation-Date: 2017-07-31 00:13-0600\n"
+"PO-Revision-Date: 2017-07-31 00:14-0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_MX\n"
@@ -152,7 +152,7 @@ msgid "% Comments"
 msgstr "% Comentarios"
 
 #. translators: %s: Name of current post
-#: includes/template-tags.php:66 template-parts/_content-page.php:34
+#: includes/template-tags.php:66
 #: template-parts/content-page-stripped-end.php:16
 #: template-parts/page/content-page.php:34
 #: template-parts/team/content-single.php:39
@@ -165,12 +165,6 @@ msgstr "Editar %s"
 msgid "Search Results for: %s"
 msgstr "Resultados de la búsqueda para: %s"
 
-#: template-parts/_content-page.php:23 template-parts/content-single.php:24
-#: template-parts/content.php:34 template-parts/event/content-single.php:54
-#: template-parts/page/content-page.php:23
-msgid "Pages:"
-msgstr "Páginas:"
-
 #: template-parts/certification/content-certificate.php:10
 msgctxt "Heading for certificate info in template"
 msgid "Certificate"
@@ -179,6 +173,10 @@ msgstr "Reconocimiento"
 #: template-parts/certification/content-curriculum.php:7
 msgid "Curriculum"
 msgstr "Currículum"
+
+#: template-parts/certification/content-daily.php:1
+msgid "Daily schedule"
+msgstr "Horario de Clase"
 
 #: template-parts/certification/content-enroll.php:10
 msgid "Enrollment process"
@@ -223,22 +221,22 @@ msgstr "Duración"
 msgid "Teachers"
 msgstr "Profesorado"
 
-#: template-parts/certification/content-thai.php:25
-#: template-parts/certification/content-thai.php:76
+#: template-parts/certification/content-thai.php:27
+#: template-parts/certification/content-thai.php:78
 #, php-format
 msgid "From %1$s to %2$s"
 msgstr "Del %1$s al %2$s"
 
-#: template-parts/certification/content-thai.php:34
+#: template-parts/certification/content-thai.php:36
 msgid " and "
 msgstr " y "
 
-#: template-parts/certification/content-thai.php:37
+#: template-parts/certification/content-thai.php:39
 #, php-format
 msgid "Certificate issued by %1$s "
 msgstr "Certificado por %1$s "
 
-#: template-parts/certification/content-thai.php:47
+#: template-parts/certification/content-thai.php:49
 msgid "Who this course is for"
 msgstr "Para quién es este curso"
 
@@ -272,6 +270,11 @@ msgid ""
 msgstr ""
 "Parece que no podemos encontrar lo que estás buscando. Talvez una búsqueda "
 "pueda ayudar."
+
+#: template-parts/content-single.php:24 template-parts/content.php:34
+#: template-parts/page/content-page.php:23
+msgid "Pages:"
+msgstr "Páginas:"
 
 #. translators: %s: Name of current post.
 #: template-parts/content.php:27
@@ -314,6 +317,18 @@ msgstr "Precio normal"
 #: template-parts/event/content-single.php:237
 msgid "Reserve your spot"
 msgstr "Reservá tu espacio"
+
+#: template-parts/page/content-payment.php:5
+msgid "How to pay"
+msgstr "Cómo pagar"
+
+#: template-parts/page/content-payment.php:7
+msgid "Make local bank transfers to:"
+msgstr "Para transferencias locales:"
+
+#: template-parts/page/content-payment.php:14
+msgid "For international payments:"
+msgstr "Para pagos internacionales:"
 
 #: template-parts/page/content-pricing.php:13
 msgid "Pricing"
