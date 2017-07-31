@@ -133,3 +133,16 @@ function mandir_convert_date($date, $dateformatstring = 'j \d\e F' ) {
 		return $newdate;
 	endif;
 }
+
+
+/**
+ * Returns formatted phone number.
+ *
+ * @return string with nice dates
+ */
+function mandir_format_phone_link($n) {
+	$patterns = '/([+][0-9]{3})(-)/'; // [0-9]{3}$
+	$replacements = '(\1) ';
+	$phone = preg_replace($patterns, $replacements, $n);
+	return $phone;
+}

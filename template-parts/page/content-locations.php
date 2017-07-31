@@ -6,28 +6,33 @@
  *
  * @package Mandir
  */
+
+// global $mandir_settings;
+$mandir_settings = get_option('mandir_fields');
 ?>
 
 <div class="row">
 
 	<div class="medium-7 large-8 columns">
-	<?php
-		$map_shortcode = get_post_meta( $id, 'mro_about_map_shortcode', true );
+
+		<?php
+		$map_shortcode = $mandir_settings['mro_locations_map_shortcode'];
 		echo do_shortcode( $map_shortcode );
 		?>
+
 	</div><!-- .columns -->
 
 	<div class="medium-5 large-4 columns">
 		<h2>Dónde estamos</h2>
 
 		<?php
-		$locations = get_post_meta( $id, 'mro_about_locations', true ); ?>
+		$locations = $mandir_settings['mro_locations']; ?>
 
 		<ul class="locations">
 			<?php foreach ( $locations as $location ) {
-				echo '<li><h4 class="location-title">'.$location['name'].'</h4>
+				echo '<li><h4 class="location-title">'.$location['title'].'</h4>
 					<p>'.$location['address'].'</p>
-					<p>Tel. <a href="tel:'.$location['tel'].'">'.$location['tel'].'</a></p></li>';
+					<p>Tel. <a href="tel:'.$location['phone'].'">'.mandir_format_phone_link($location['phone']).'</a></p></li>';
 			}
 			?>
 		</ul>

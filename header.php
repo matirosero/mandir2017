@@ -21,9 +21,13 @@
 
 <?php
 if ( is_front_page() ) :
-	global $frontpage_settings;
+	// global $frontpage_settings;
+	global $mandir_settings;
 
 	$frontpage_settings = get_option('mro_frontpage_settings');
+	$mandir_settings = get_option('mandir_fields');
+
+	// var_dump($mandir_settings);
 	
 	$slider_active = $frontpage_settings['hero_slider_enable'];
 endif;

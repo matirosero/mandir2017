@@ -8,7 +8,8 @@
  * @package Mandir
  */
 
-get_header(); ?>
+get_header(); 
+?>
 
 
 
@@ -28,7 +29,7 @@ get_header(); ?>
 				<?php get_template_part( 'template-parts/page/content', 'about' ); ?>
 
 				<div id="donde-estamos" class="page-section">
-					<?php get_template_part( 'template-parts/page/content', 'about-locations' ); ?>
+					<?php get_template_part( 'template-parts/page/content', 'locations' ); ?>
 				</div>
 
 
