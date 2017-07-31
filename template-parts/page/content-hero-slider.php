@@ -1,7 +1,5 @@
 <?php
-// var_dump( $frontpage_settings);
-$slider_images = $frontpage_settings['hero_slider_images']; 
-
+$slider_images = $mandir_settings['hero_slider_images']; 
 ?>
 
 <!-- <div class="hero-header"> -->

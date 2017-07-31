@@ -29,7 +29,7 @@ if ( is_front_page() ) :
 
 	// var_dump($mandir_settings);
 	
-	$slider_active = $frontpage_settings['hero_slider_enable'];
+	$slider_active = $mandir_settings['hero_slider_enable'];
 endif;
 
 if ( is_front_page() && $slider_active == 1 ) : ?>
@@ -37,10 +37,6 @@ if ( is_front_page() && $slider_active == 1 ) : ?>
 <?php else: ?>
 	<body <?php body_class(); ?>>
 <?php endif;?>
-
-
-
-<?php //echo file_get_contents( get_template_directory() . '/assets/dist/sprite/sprite.svg' ); ?>
 
 
 <div class="off-canvas-wrapper">
