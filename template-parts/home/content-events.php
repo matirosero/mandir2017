@@ -1,6 +1,6 @@
 <?php
-global $frontpage_settings;
-$events = $frontpage_settings['frontpage_events'];
+global $mandir_settings;
+$events = $mandir_settings['frontpage_events'];
 
 if ($events[0] != '') : ?>
 
@@ -10,14 +10,7 @@ if ($events[0] != '') : ?>
 
 		<div class="events-list expanded row medium-up-3" data-equalizer data-equalize-on="medium">
 
-			
-
 			<?php
-			/**
-			 * The WordPress Query class.
-			 * @link http://codex.wordpress.org/Function_Reference/WP_Query
-			 *
-			 */
 			$args = array(
 
 				//Post & Page Parameters
