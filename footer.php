@@ -28,6 +28,10 @@
 					<p class="footer-copyright">
 						&copy; <?php echo date("Y"); ?> <?php echo get_bloginfo( 'name' ); ?>. <?php _e('All rights reserved', 'mandir'); ?>.
 					</p>
+					<p class="footer-credits">
+						<span>Diseño y desarrollo: <a href="https://matilderosero.com">Matilde Rosero</a></span>
+						<span>Fotografías encabezados: <a href="https://www.facebook.com/rmontoyaphoto/">Rodigo Montoya</a></span>
+					</p>
 				</div><!-- .footer-utility -->
 
 
