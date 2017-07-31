@@ -5,6 +5,12 @@
 	p {
 		color: transparentize(#000, .7);
 	}
+	a {
+		color: $body-font-color;
+		@include hover {
+			color: $anchor-color-hover;
+		}
+	}
 }
 
 .footer-logo {
@@ -29,4 +35,32 @@
 		margin: 0;
 	}
 
+}
+
+.footer-copyright,
+.footer-credits {
+	text-align: center;
+	margin-bottom: 0;
+}
+
+.footer-credits {
+	font-size: $small-font-size;
+	span {
+		display: block;
+	}
+}
+
+@include breakpoint(medium) {
+	.footer-copyright {
+		float: left;
+		text-align: left;
+		width: 50%;
+	}
+
+	.footer-credits {
+		float: right;
+		text-align: right;
+		width: 49%;
+		margin-top: 3px;
+	}
 }
