@@ -1,13 +1,10 @@
 .hero-header {
 	position: relative;
-	height: rem-calc(210);
+	// height: rem-calc(210);
+	height: 90vw;
 	overflow:hidden;
 	background: $black;
 	width: 100%;
-
-	// .home & {
-	// 	height: 100vw;
-	// }
 
 	img,
 	video,
@@ -17,25 +14,20 @@
 	}
 
 	@include breakpoint(medium) {
-		height: rem-calc(470);
-		// .home & {
-		// 	height: 70vh;
-		// }
+		// height: rem-calc(470);
+		height: 70vh;
 	}
 
 	@include breakpoint(large) {
-		height: rem-calc(490);
-		// .home & {
-		// 	height: 75vh;
-		// }
-
+		// height: rem-calc(490);
+		height: 70vh;
 	}
-	@include breakpoint(xlarge) {
-		height: rem-calc(560);
-	}
-	@include breakpoint(xxlarge) {
-		height: rem-calc(640);
-	}
+	// @include breakpoint(xlarge) {
+	// 	// height: rem-calc(560);
+	// }
+	// @include breakpoint(xxlarge) {
+	// 	// height: rem-calc(640);
+	// }
 }
 
 
@@ -43,7 +35,7 @@
 .hero-slider-image {
 	position: relative;
 	overflow:hidden;
-	height: 100vw;
+	height: 90vw;
 	background: $black;
 
 	img,
@@ -58,7 +50,7 @@
 	}
 
 	@include breakpoint(large) {
-		height: 75vh;
+		// height: 75vh;
 	}
 }
 
