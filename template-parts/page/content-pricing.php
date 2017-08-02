@@ -15,7 +15,7 @@ $monthly_prices = $pricing_settings['monthly_prices'];
 	<?php
 	foreach ($monthly_prices as $monthly_price) { ?>
 
-		<div id="<?php echo $monthly_price['id_name']; ?>" class="row column">
+		<div class="row column">
 
 			<h3><?php echo $monthly_price['monthly_title']; ?></h3>
 

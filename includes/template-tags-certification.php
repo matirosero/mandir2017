@@ -43,19 +43,22 @@ function mro_certification_dates() {
 }
 
 function mro_certificaction_render_schedule($schedule) {
+	// var_dump($schedule);
 	$days = $schedule['days'];
 	$days = ucfirst( implode ( ', ' , $days ) );
 
 	$time_start = $schedule['time_start'];
 	$time_end = $schedule['time_end'];
 
-	$notes = $schedule['notes'];
+	if ( isset($schedule['notes']) ) :
+		$notes = $schedule['notes'];
+	endif;
 
 	?>
 
 	<p><?php echo $days; ?>.<br />
 		De <?php echo $time_start; ?> a <?php echo $time_end; ?>.</p>
-	<p><?php echo $notes; ?></p>
+	<p><?php if ( isset($schedule['notes']) ) { echo $notes; } ?></p>
 
 <?php } ?>
 
