@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Mandir\n"
-"POT-Creation-Date: 2017-07-31 00:13-0600\n"
-"PO-Revision-Date: 2017-07-31 00:14-0600\n"
+"POT-Creation-Date: 2017-08-02 23:22-0600\n"
+"PO-Revision-Date: 2017-08-02 23:24-0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_MX\n"
@@ -196,6 +196,10 @@ msgid "Recommendation"
 msgid_plural "Recommendations"
 msgstr[0] "Recomendación"
 msgstr[1] "Recomendaciones"
+
+#: template-parts/certification/content-sidebar-india.php:19
+msgid "Trip dates"
+msgstr "Fechas del viaje"
 
 #: template-parts/certification/content-sidebar-orientation.php:12
 msgid "Orientation"
@@ -449,6 +453,10 @@ msgstr "Producto destacado"
 #. Template Name of the plugin/theme
 msgid "Full Width (full 12 columns)"
 msgstr "Ancho completo (12 columnas)"
+
+#. Template Name of the plugin/theme
+msgid "India"
+msgstr ""
 
 #. Template Name of the plugin/theme
 msgid "Class Schedule"
