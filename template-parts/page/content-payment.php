@@ -10,7 +10,7 @@ $mandir_settings = get_option('mandir_fields');
 
 echo wpautop( $mandir_settings['mro_payment_local'] );
 
-if ( is_page_template( 'page-templates/template-training.php' ) ) : ?>
+if ( is_page_template( 'page-templates/template-thai.php' ) ) : ?>
 	<p><strong><?php _e('For international payments:', 'mandir'); ?></strong></p>
 
 	<?php
