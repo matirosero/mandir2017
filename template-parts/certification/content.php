@@ -62,8 +62,10 @@ $state = get_post_meta($post->ID, 'mro_training_state', true);
 		// Enroll
 		get_template_part( 'template-parts/certification/content', 'enroll' );
 
-		// Payment
-		get_template_part( 'template-parts/page/content', 'payment' );
+		if ( !is_page_template( 'page-templates/template-india.php' ) ) :
+			// Payment
+			get_template_part( 'template-parts/page/content', 'payment' );
+		endif;
 
 		?>
 
