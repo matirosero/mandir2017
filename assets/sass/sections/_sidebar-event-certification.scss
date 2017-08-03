@@ -28,3 +28,12 @@
 .certification-price-description {
 	margin-bottom: .5rem;
 }
+
+.dates {
+	.event-name {
+		font-weight: bold;
+		+ .event-date {
+			margin-bottom: .5rem;
+		}
+	}
+}

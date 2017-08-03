@@ -78,6 +78,8 @@ $state = get_post_meta($post->ID, 'mro_training_state', true);
 			//Sidebar
 			if ( is_page_template( 'page-templates/template-training.php' ) ) :
 				get_template_part( 'template-parts/certification/content', 'sidebar-training' );
+			elseif ( is_page_template( 'page-templates/template-india.php' ) ) :
+				get_template_part( 'template-parts/certification/content', 'sidebar-india' );
 			else:
 				get_template_part( 'template-parts/certification/content', 'sidebar' );
 			endif;
