@@ -8,6 +8,9 @@
  */
 ?>
 
+<?php
+var_dump( get_post_meta($post->ID, 'mro_event_redirect', true) );
+?>
 
 <div class="medium-8 columns ">
 

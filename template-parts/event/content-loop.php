@@ -8,13 +8,22 @@
  */
 ?>
 
+<?php
+if ( get_post_meta($post->ID, 'mro_event_redirect', true) ) :
+	$redirect_id = get_post_meta($post->ID, 'mro_event_redirect', true);
+	$url = get_permalink( $redirect_id );
+else:
+	$url = get_permalink();
+endif;
+?>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class('column column-block'); 
 	if ( !is_page_template('page-templates/template-events.php') ) { echo ' data-equalizer-watch'; } ?>>
 
 	<?php
 
 	if ( has_post_thumbnail() ) : ?>
-		<a href="<?php the_permalink(); ?>" class="event-featured-image">
+		<a href="<?php echo $url; ?>" class="event-featured-image">
 			<?php //the_post_thumbnail(); ?>
 			<?php
 			echo ipq_get_theme_image( get_post_thumbnail_id( get_the_id() ), array(
@@ -29,14 +38,14 @@
 			?>
 		</a><!-- .featured-image -->
 	<?php else: ?>
-		<a href="<?php the_permalink(); ?>" class="event-featured-image">
+		<a href="<?php echo $url; ?>" class="event-featured-image">
 			<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/dist/img/event-placeholder.png" alt="<?php the_title(); ?>" />
 		</a><!-- .featured-image -->
 	<?php endif; ?>
 
 	<div class="event-info">
 
-		<?php the_title( '<h3 class="event-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' ); ?>
+		<?php the_title( '<h3 class="event-title"><a href="' . esc_url( $url ) . '" rel="bookmark">', '</a></h3>' ); ?>
 
 		<span class="event-date"><?php echo mandir_pretty_event_dates(); ?></span>
 
@@ -55,7 +64,7 @@
 
 		<?php endif; ?>
 
-		<a href="<?php the_permalink(); ?>"><?php _e('More information', 'mandir'); ?></a>
+		<a href="<?php echo $url; ?>"><?php _e('More information', 'mandir'); ?></a>
 
 	</div><!-- .event-info -->
 </article>
