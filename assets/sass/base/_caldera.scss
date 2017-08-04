@@ -29,4 +29,14 @@
 	.row:not(.last_row) .form-group {
 		margin-bottom: 1rem !important;
 	}
+	h3 {
+		margin-top: 1rem;
+	}
+}
+
+.radio-inline {
+	display: inline-block;
+	+ .radio-inline {
+		margin-left: 1.5rem;
+	}
 }
