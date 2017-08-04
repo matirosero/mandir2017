@@ -125,3 +125,32 @@ function mro_events_join_datetime($dateformatstring = 'j \d\e F') {
 		return false;
 	endif;
 }
+
+
+/**
+ * Returns redirect url for events.
+ *
+ * @return $url
+ */
+function mandir_redirect_url() {
+	global $post;
+
+	if ( !get_post_meta($post->ID, 'mro_event_redirect', true) ) :
+		return false;
+	else:
+		$redirect_id = get_post_meta($post->ID, 'mro_event_redirect', true);
+		$url = get_permalink( $redirect_id );
+		return $url;
+	endif;
+}
+
+/**
+ * Redirect events.
+ */
+function mandir_redirect_event() {
+	if ( mandir_redirect_url() ) :
+		$url = mandir_redirect_url();
+		wp_safe_redirect( $url );
+		exit;
+	endif;
+}

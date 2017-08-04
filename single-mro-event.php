@@ -7,6 +7,8 @@
  * @package Mandir
  */
 
+mandir_redirect_event();
+
 get_header(); ?>
 
 

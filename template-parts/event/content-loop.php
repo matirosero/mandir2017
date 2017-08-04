@@ -9,9 +9,8 @@
 ?>
 
 <?php
-if ( get_post_meta($post->ID, 'mro_event_redirect', true) ) :
-	$redirect_id = get_post_meta($post->ID, 'mro_event_redirect', true);
-	$url = get_permalink( $redirect_id );
+if ( mandir_redirect_url() ) :
+	$url = mandir_redirect_url();
 else:
 	$url = get_permalink();
 endif;
