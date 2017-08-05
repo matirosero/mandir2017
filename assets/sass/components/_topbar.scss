@@ -173,11 +173,11 @@
 
 	#utility-menu {
 		.menu {
-			margin-right: 8px;
+			// margin-right: 8px;
 		}
 
 		.menu-item-social > a {
-			padding: 9px 0.5rem 4px;
+			padding: 9px 0.75rem 4px 0;
 			line-height: 43px;
 
 			@include hover {
