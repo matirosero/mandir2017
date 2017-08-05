@@ -1,0 +1,35 @@
+			//for JS
+			.no-js & {
+				@include hover {
+					&:not(.current-menu-item) {
+						a {
+							background-color: $topbar-bg-hover;
+						}
+						> .sub-menu {
+							background-color: $topbar-bg-hover;
+							opacity: 1;
+							visibility: visible;
+							z-index: 99;
+							a:hover {
+								background-color: $topbar-bg;
+							}
+						}
+					}
+				}
+			}
+			&.active-menu-item {
+				a {
+					background-color: $topbar-bg-hover;
+					border: 1px dashed $white;
+				}
+				> .sub-menu {
+					background-color: $topbar-bg-hover;
+					opacity: 1;
+					visibility: visible;
+					z-index: 99;
+					a:hover {
+						background-color: $topbar-bg;
+					}
+				}
+			}
+			// end for JS

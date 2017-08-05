@@ -73,12 +73,13 @@ if ( is_front_page() && $slider_active == 1 ) : ?>
 							</a>
 						</h1><!-- .site-title -->
 					</section><!-- .top-bar-title -->
-					<section class="top-bar-left">
+					<section id="main-menu" class="top-bar-left">
 						<?php
 						wp_nav_menu(
 							array(
 								'theme_location' 	=> 'primary',
 								'container_class'	=> 'show-for-large',
+								'menu_id'			=> 'main-menu-large',
 								'depth'				=> 2,
 							)
 						);
@@ -100,7 +101,7 @@ if ( is_front_page() && $slider_active == 1 ) : ?>
 						);
 						?>
 					</section><!-- .top-bar-left -->
-					<section class="top-bar-right">
+					<section id="utility-menu" class="top-bar-right">
 						<ul class="menu">
 							<?php mandir_socialmedia_topbar_output(); ?>
 							<li class="menu-item hide-for-large">
