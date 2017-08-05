@@ -120,15 +120,8 @@
 		a {
 			padding: 6px 1rem 10px;
 		}
-
+		
 		.no-js & {
-
-			a {
-				@include hover {
-					background-color: red; //$topbar-bg-hover
-				}
-			}
-
 			.menu-item {
 				@include hover {
 					&:not(.current-menu-item) {
@@ -156,8 +149,9 @@
 						visibility: visible;
 					}
 				}
-			}
+			}			
 		}
+
 
 		.sub-menu {
 			position: absolute;
