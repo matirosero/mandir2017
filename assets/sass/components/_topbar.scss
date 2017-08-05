@@ -16,7 +16,6 @@
 		width: auto;
 		a {
 			color: $white;
-			// font-weight: bold;
 			transition: $button-transition;
 			@include hover {
 				background-color: $topbar-bg-hover;
@@ -25,7 +24,6 @@
 	}
 	.top-bar-left {
 		a {
-			// line-height: 38px;
 			padding: 6px 1rem;
 		}
 	}
@@ -48,7 +46,6 @@
 			padding: 6px 1rem;
 		}
 		ul {
-			// display: none;
 			opacity: 0;
 			visibility: hidden;
 		}
@@ -144,9 +141,6 @@
 			&.current-menu-parent {
 				a {
 					background-color: $topbar-bg;
-					// @include hover {
-					// 	cursor: default;
-					// }
 				}
 				> .sub-menu {
 					opacity: 1;
