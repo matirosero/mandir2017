@@ -121,31 +121,40 @@
 			padding: 6px 1rem 10px;
 		}
 
-		.menu-item {
-			@include hover {
-				&:not(.current-menu-item) {
-					a {
-						background-color: $topbar-bg-hover;
-					}
-					> .sub-menu {
-						background-color: $topbar-bg-hover;
-						opacity: 1;
-						visibility: visible;
-						z-index: 99;
-						a:hover {
-							background-color: $topbar-bg;
+		.no-js & {
+
+			a {
+				@include hover {
+					background-color: red; //$topbar-bg-hover
+				}
+			}
+
+			.menu-item {
+				@include hover {
+					&:not(.current-menu-item) {
+						a {
+							background-color: $topbar-bg-hover;
+						}
+						> .sub-menu {
+							background-color: $topbar-bg-hover;
+							opacity: 1;
+							visibility: visible;
+							z-index: 99;
+							a:hover {
+								background-color: $topbar-bg;
+							}
 						}
 					}
 				}
-			}
-			&.current-menu-item,
-			&.current-menu-parent {
-				a {
-					background-color: $topbar-bg;
-				}
-				> .sub-menu {
-					opacity: 1;
-					visibility: visible;
+				&.current-menu-item,
+				&.current-menu-parent {
+					a {
+						background-color: $topbar-bg;
+					}
+					> .sub-menu {
+						opacity: 1;
+						visibility: visible;
+					}
 				}
 			}
 		}

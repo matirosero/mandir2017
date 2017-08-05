@@ -29,9 +29,9 @@ if ( is_front_page() ) :
 endif;
 
 if ( is_front_page() && $slider_active == 1 ) : ?>
-	<body <?php body_class('slider-active'); ?>>
+	<body <?php body_class('no-js slider-active'); ?>>
 <?php else: ?>
-	<body <?php body_class(); ?>>
+	<body <?php body_class('no-js'); ?>>
 <?php endif;?>
 
 
