@@ -122,30 +122,88 @@
 		}
 
 		.menu-item {
-			&.current-menu-item {
 
-			}
-			&.current-menu-item.menu-item-has-children {
-
+			// YOU ARE HERE: icon, no bg
+			&.current-menu-item,
+			&.current-menu-ancestor {
 				> a {
-					background-color: $topbar-bg;
+					background-color: transparent;//$topbar-bg;
 					&:before {
 						@include icon-before;
 						@include icon-right-dir;
 					}
 				}
+			}
+
+			> a {
+				background-color: transparent;
+			}
+
+			&:not(.active):not(.current-menu-item) {
+				a {
+					@include hover {
+						color: color('blue', 'dark');
+					}
+				}
+			}
+
+			&.menu-item-has-children:not(.active) {
+				> a {
+					@include hover {
+						color: color('blue', 'light');
+					}
+				}
+			}
+
+			//YOU ARE HERE but not active *****
+			&.current-menu-ancestor {
+				> a {
+					background-color: $topbar-bg-hover;
+				}
+			}
+
+			&.active {
+				a {
+					background-color: $topbar-bg;
+				}
+
+				// Submenu is visible
 				> .sub-menu {
 					opacity: 1;
 					visibility: visible;
 					z-index: 99;
 				}
 			}
-			@include hover {
-				&:not(.current-menu-item) {
-					a {
-						color: color('blue', 'light');
-						background-color: transparent;
-					}
+		}
+
+		.sub-menu {
+			position: absolute;
+			display: block;
+			left: 230px;
+			width: 100%;
+			padding-left: 8px;
+			transition: opacity 0.25s ease-out;
+			@include reset-list;
+
+			.menu-item {
+				display: table-cell;
+				vertical-align: middle;
+				width: auto;
+				white-space: nowrap;
+
+				a {
+					// Submenu links full squares, no padding
+					display: inline-block;
+					line-height: 56px;
+					padding: 0 1rem;
+
+					//No background
+					// background-color: transparent;
+
+					// Sub menu links are squares
+					// display: inline;
+					// line-height: 56px;
+					// padding: 8px 1rem;
 				}
 			}
 		}
@@ -179,28 +237,22 @@
 					}
 				}
 			}
-		}
 
-
-		.sub-menu {
-			position: absolute;
-			display: block;
-			left: 230px;
-			width: 100%;
-			padding-left: 8px;
-			transition: opacity 0.25s ease-out;
-			@include reset-list;
-			.menu-item {
-				display: table-cell;
-				vertical-align: middle;
-				width: auto;
-				white-space: nowrap;
-				a {
-					line-height: 56px;
-					padding: 8px 1rem;
+			//Sub menu links are squares
+			.sub-menu {
+				.menu-item {
+					a {
+						display: inline;
+						line-height: 56px;
+						padding: 8px 1rem;
+						background-color: $topbar-bg-hover;
+					}
 				}
 			}
 		}
+
+
+
 	}
 
 	#utility-menu {
