@@ -145,7 +145,8 @@
 				background-color: transparent;
 			}
 
-			&:not(.active):not(.current-menu-item) {
+			&:not(.active):not(.current-menu-item),
+			&.menu-item-type-custom {
 				a {
 					@include hover {
 						color: color('blue', 'dark');
