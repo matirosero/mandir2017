@@ -163,9 +163,10 @@
 			}
 
 			//YOU ARE HERE but not active *****
+			//Looks like a darker blue tab
 			&.current-menu-ancestor {
 				> a {
-					background-color: $topbar-bg-hover;
+					// background-color: $topbar-bg-hover;
 				}
 			}
 
