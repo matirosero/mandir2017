@@ -48,7 +48,7 @@
 
 .sub-menu {
 	// opacity: 0;
-	// visibility: hidden;
+	// visibility: hidden;	
 }
 
 
@@ -229,7 +229,7 @@
 				&.current-menu-item,
 				&.current-menu-parent {
 					a {
-						background-color: $topbar-bg;
+						// background-color: transparent;
 					}
 					> .sub-menu {
 						opacity: 1;
@@ -245,7 +245,7 @@
 						display: inline;
 						line-height: 56px;
 						padding: 8px 1rem;
-						background-color: $topbar-bg-hover;
+						// background-color: transparent;
 					}
 				}
 			}

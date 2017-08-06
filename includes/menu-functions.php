@@ -17,7 +17,7 @@ function mro_menu_top_item_classes( $classes, $item, $args ) {
 		return $classes;
 
 	if( is_front_page() && ( 'Clases de Yoga' == $item->title  || 'Clases de yoga' == $item->title  || 'Clases' == $item->title ) )
-		$classes[] = 'current-menu-item';
+		$classes[] = 'active';
 
 	if( is_singular( 'mro-team' ) && ( 'Clases de Yoga' == $item->title  || 'Clases de yoga' == $item->title  || 'Clases' == $item->title ) )
 		$classes[] = 'current-menu-item';
