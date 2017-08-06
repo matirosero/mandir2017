@@ -150,6 +150,7 @@
 				a {
 					@include hover {
 						color: color('blue', 'dark');
+						// background-color: $topbar-bg-hover;
 					}
 				}
 			}
@@ -157,7 +158,8 @@
 			&.menu-item-has-children:not(.active) {
 				> a {
 					@include hover {
-						color: color('blue', 'light');
+						color: $white;
+						background-color: lighten( color('blue', 'dark'), 9% );
 					}
 				}
 			}
