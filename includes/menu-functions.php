@@ -20,10 +20,10 @@ function mro_menu_top_item_classes( $classes, $item, $args ) {
 		$classes[] = 'active';
 
 	if( is_singular( 'mro-team' ) && ( 'Clases de Yoga' == $item->title  || 'Clases de yoga' == $item->title  || 'Clases' == $item->title ) )
-		$classes[] = 'current-menu-item';
+		$classes[] = 'current-menu-item active';
 
 	if( is_singular( 'mro-event' ) && 'Actividades' == $item->title )
-		$classes[] = 'current-menu-item';
+		$classes[] = 'current-menu-item active';
 
 	// if( ( is_singular( 'code' ) || is_tax( 'code-tag' ) ) && 'Talleres' == $item->title )
 		// $classes[] = 'current-menu-item';

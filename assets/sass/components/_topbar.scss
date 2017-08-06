@@ -83,6 +83,8 @@
 @include breakpoint(large) {
 
 	#site-navigation {
+
+		height: 112px;
 		background: linear-gradient(
 			to bottom,
 			$topbar-toplevel-bg 0%,
@@ -91,8 +93,6 @@
 			$topbar-bg 50%,
 			$topbar-bg 100%
 		);
-
-		height: 112px;
 
 		.top-bar-title {
 			width: auto;
@@ -124,14 +124,20 @@
 		.menu-item {
 
 			// YOU ARE HERE: icon, no bg
-			&.current-menu-item,
+			&.current-menu-item:not(.menu-item-type-custom),
 			&.current-menu-ancestor {
 				> a {
-					background-color: transparent;//$topbar-bg;
 					&:before {
 						@include icon-before;
 						@include icon-right-dir;
 					}
+				}
+			}
+
+			&.current-menu-item,
+			&.current-menu-ancestor {
+				> a {
+					background-color: transparent;//$topbar-bg;
 				}
 			}
 
@@ -250,9 +256,6 @@
 				}
 			}
 		}
-
-
-
 	}
 
 	#utility-menu {
@@ -279,5 +282,4 @@
 			}
 		}
 	}
-
 }
