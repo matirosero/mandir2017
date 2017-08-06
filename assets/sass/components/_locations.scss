@@ -1,4 +1,15 @@
 .locations {
 	@include reset-list;
 	margin-top: 1rem;
+	li {
+		position: relative;
+		margin-left: 1.5rem;
+		&:before {
+			@include icon-before;
+			@include icon-location-1;
+			position: absolute;
+			left: -1.6rem;
+			top: 0.2rem;
+		}
+	}
 }
