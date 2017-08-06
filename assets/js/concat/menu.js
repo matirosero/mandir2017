@@ -6,7 +6,7 @@ jQuery(document).ready(function($){
 
 
 	menuItem.on('click', function(event){
-		event.preventDefault();
+		// event.preventDefault();
 		// $(this).parent().siblings('.current-menu-item').children('.sub-menu').css({
 		// 	'opacity' : '0',
 		// 	'visibility' : 'hidden'

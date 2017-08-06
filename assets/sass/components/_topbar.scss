@@ -120,7 +120,36 @@
 		a {
 			padding: 6px 1rem 10px;
 		}
-		
+
+		.menu-item {
+			&.current-menu-item {
+
+			}
+			&.current-menu-item.menu-item-has-children {
+
+				> a {
+					background-color: $topbar-bg;
+					&:before {
+						@include icon-before;
+						@include icon-right-dir;
+					}
+				}
+				> .sub-menu {
+					opacity: 1;
+					visibility: visible;
+					z-index: 99;
+				}
+			}
+			@include hover {
+				&:not(.current-menu-item) {
+					a {
+						color: color('blue', 'light');
+						background-color: transparent;
+					}
+				}
+			}
+		}
+
 		.no-js & {
 			.menu-item {
 				@include hover {
@@ -149,7 +178,7 @@
 						visibility: visible;
 					}
 				}
-			}			
+			}
 		}
 
 

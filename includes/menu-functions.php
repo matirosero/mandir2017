@@ -49,3 +49,13 @@ function mro_menu_top_item_classes( $classes, $item, $args ) {
 	return array_unique( $classes );
 }
 add_filter( 'nav_menu_css_class', 'mro_menu_top_item_classes', 10, 3 );
+
+
+//https://stackoverflow.com/questions/26789438/how-to-add-active-class-to-wp-nav-menu-current-menu-item-simple-way
+function special_nav_class ($classes, $item) {
+    if (in_array('current-page-ancestor', $classes) || in_array('current-menu-item', $classes) ){
+        $classes[] = 'active ';
+    }
+    return $classes;
+}
+add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
