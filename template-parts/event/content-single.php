@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying single posts.
+ * Template part for displaying single events.
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
@@ -18,9 +18,10 @@
 			echo '<div class="event-featured-image">';
 			//the_post_thumbnail();
 			echo ipq_get_theme_image( get_post_thumbnail_id( get_the_id() ), array(
+			        array( 770, 402, true ),
+			        array( 657, 343, true ),
 			        array( 620, 324, true ),
-			        array( 1000, 524, true ),
-			        array( 1200, 628, true ),
+			        array( 394, 206, true ),
 			    ),
 			    array(
 			        'class' => 'event-image'

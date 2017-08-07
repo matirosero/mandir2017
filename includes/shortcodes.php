@@ -72,8 +72,17 @@ function mro_list_team_shortcode($atts) {
 
 		while( $query->have_posts() ) : $query->the_post();
 
+			$srcset = ipq_get_theme_image( get_post_thumbnail_id( get_the_id() ), array(
+			        // array( 400, 400, true ),
+			        array( 200, 200, true ),
+			    ),
+			    array(
+			        'class' => 'profile-image-src'
+			    )
+			);
+
             $team .= '<div class="column column-block teacher" >
-	            	<a href="' . get_permalink() . '" class="profile-image">'.get_the_post_thumbnail().'</a>
+	            	<a href="' . get_permalink() . '" class="profile-image">'.$srcset.'</a>
 	            	<h3 class="entry-title"><a href="' . get_permalink() . '">' . get_the_title() . '</a></h3>
             	</div>';
 

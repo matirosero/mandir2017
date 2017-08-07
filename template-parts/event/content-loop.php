@@ -27,8 +27,8 @@ endif;
 			<?php
 			echo ipq_get_theme_image( get_post_thumbnail_id( get_the_id() ), array(
 			        array( 620, 324, true ),
-			        array( 1000, 524, true ),
-			        array( 1200, 628, true ),
+			        array( 397, 207, true ),
+			        array( 226, 118, true ),
 			    ),
 			    array(
 			        'class' => 'event-image'

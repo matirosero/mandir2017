@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying team content in page.php.
+ * Template part for displaying single team content.
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
@@ -13,7 +13,17 @@
 		<?php
 		if ( has_post_thumbnail() ) : ?>
 			<div class="profile-image">
-				<?php the_post_thumbnail(); ?>
+				<?php
+				$srcset = ipq_get_theme_image( get_post_thumbnail_id( get_the_id() ), array(
+				        array( 300, 300, true ),
+				        array( 200, 200, true ),
+				    ),
+				    array(
+				        'class' => 'profile-image-src'
+				    )
+				);
+				?>
+				<?php echo $srcset; ?>
 			</div>
 		<?php endif;
 		the_title( '<h1 class="entry-title">', '</h1>' ); ?>
