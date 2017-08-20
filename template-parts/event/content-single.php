@@ -29,17 +29,6 @@
 			$srcset = mandir_srcset($srcset_sizes, $sizes, $alt);
 			echo $srcset;
 
-			// echo ipq_get_theme_image( get_post_thumbnail_id( get_the_id() ), array(
-			//         array( 770, 402, true ),
-			//         array( 657, 343, true ),
-			//         array( 620, 324, true ),
-			//         array( 394, 206, true ),
-			//     ),
-			//     array(
-			//         'class' => 'event-image'
-			//     )
-			// );
-
 			echo '</div><!-- .event-featured-image -->';
 		endif;
 		?>
@@ -53,16 +42,8 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
-		<?php
-		// $meta = get_post_meta(get_the_ID());
-		// $custom = get_post_custom($post->ID);
-		// var_dump($meta);
-		// echo '<hr />';
-		// var_dump($custom);
-		?>
+
 		<?php the_content(); ?>
-
-
 
 		<?php
 		/**
