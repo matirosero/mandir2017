@@ -10,28 +10,31 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
+
 		<?php
 		if ( has_post_thumbnail() ) : ?>
-			<?php
-			$img1 = ipq_get_theme_image_url( get_post_thumbnail_id( get_the_id() ), array( 300, 300, true ) );
-			$img2 = ipq_get_theme_image_url( get_post_thumbnail_id( get_the_id() ), array( 200, 200, true ) );
-			// echo $img1.'<br />'.$img2;
-			?>
+
 			<div class="profile-image">
+
 				<?php
-				$srcset = ipq_get_theme_image( get_post_thumbnail_id( get_the_id() ), array(
-				        array( 300, 300, true ),
-				        array( 200, 200, true ),
-				    ),
-				    array(
-				        'class' => 'profile-image-src'
-				    )
-				);
+				$srcset_sizes = array(
+					array( 600, 600, true ),
+					array( 400, 400, true ),
+					array( 300, 300, true ),
+					array( 200, 200, true ),
+					);
+				$sizes = '(min-width: 640px) 300px, 200px';
+				$alt = get_the_title();
+				$srcset = mandir_srcset($srcset_sizes, $sizes, $alt);
+				echo $srcset;
 				?>
-				<?php echo $srcset; ?>
+
 			</div>
+
 		<?php endif;
+
 		the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
@@ -43,12 +46,13 @@
 		$img_id = get_post_meta($id, 'mro_team_secondary_image', true);
 		// $imgsrcset = wp_get_attachment_image($img_id, 'full');
 		$imgsrcset = ipq_get_theme_image( $img_id, array(
+				        array( 1280, 640, true ),
 				        array( 900, 450, true ),
-				        array( 619, 310, true ),
-				        array( 394, 197, true ),
+				        array( 640, 320, true ),
+				        array( 414, 207, true ),
 				    ),
 				    array(
-				        'class' => 'profile-image-src'
+				        'class' => ''
 				    )
 				);
 		echo '<div class="profile-image-secondary">'.$imgsrcset.'</div>';

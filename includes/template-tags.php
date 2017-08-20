@@ -146,3 +146,33 @@ function mandir_format_phone_link($n) {
 	$phone = preg_replace($patterns, $replacements, $n);
 	return $phone;
 }
+
+
+/**
+ * Returns img srcset.
+ *
+ * @return string with img srcset tag
+ */
+function mandir_srcset($srcset_sizes,$sizes,$alt) {
+	if ( !$srcset_sizes || !$sizes) {
+		return false;
+	} else {
+		$srcset = array();
+		$w = 0;
+		$default = '';
+		foreach ($srcset_sizes as $src_size) {
+			$src = ipq_get_theme_image_url( get_post_thumbnail_id( get_the_id() ), $src_size );
+			$srcset[] = $src . ' ' . $src_size[0] .'w';
+
+			if ( $src_size[0] > $w ) {
+				$default = $src;
+				$w = $src_size[0];
+			}
+		}
+		$srcset = implode(",", $srcset);
+
+		$img_srcset = '<img srcset="'.$srcset.'" sizes="'.$sizes.'" src="'.$default.'" alt="'.$alt.'" />';
+
+		return $img_srcset;
+	}
+}
