@@ -20,7 +20,18 @@ if ( $featured['info'] && count($featured['image']) != 0 ) :
 
 	if ( $featured['image'][0] !== '' ) :
 		$image_id = $featured['image'][0];
-		$featured_imgsrcset = wp_get_attachment_image($image_id, 'full');
+
+		$srcset_sizes = array(
+			array( 1280, 9999, false ),
+			array( 1024, 9999, false ),
+			array( 640, 9999, false ),
+			array( 512, 9999, false ),
+			array( 20, 20, true ),
+			);
+		$sizes = '(min-width: 640px) 50vw, 1vw';
+		$alt = get_the_title();
+		$featured_imgsrcset = mandir_srcset($srcset_sizes, $sizes, $alt, $image_id);
+		// $featured_imgsrcset = wp_get_attachment_image($image_id, 'full');
 	endif;
 
 endif;
