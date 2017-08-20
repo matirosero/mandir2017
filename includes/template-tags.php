@@ -153,15 +153,19 @@ function mandir_format_phone_link($n) {
  *
  * @return string with img srcset tag
  */
-function mandir_srcset($srcset_sizes,$sizes,$alt) {
+function mandir_srcset($srcset_sizes,$sizes,$alt,$id) {
 	if ( !$srcset_sizes || !$sizes) {
 		return false;
 	} else {
+		if ( !$id ) {
+			$id = get_post_thumbnail_id( get_the_id() );
+		} 
+
 		$srcset = array();
 		$w = 0;
 		$default = '';
 		foreach ($srcset_sizes as $src_size) {
-			$src = ipq_get_theme_image_url( get_post_thumbnail_id( get_the_id() ), $src_size );
+			$src = ipq_get_theme_image_url( $id, $src_size );
 			$srcset[] = $src . ' ' . $src_size[0] .'w';
 
 			if ( $src_size[0] > $w ) {

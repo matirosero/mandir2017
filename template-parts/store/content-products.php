@@ -15,7 +15,18 @@ $products = get_post_meta($id, 'mro_store_products', true);
 			<?php
 				$img_id = $product['image'][0];
 
-				$imgsrcset = wp_get_attachment_image($img_id, 'full');
+				$srcset_sizes = array(
+					// array( 1280, 852, true ),
+					// array( 1024, 681, true ),
+					array( 640, 426, true ),
+					// array( 512, 340, true ),
+					array( 290, 193, true ),
+					);
+				$sizes = '(min-width: 1200px) 570px, (min-width: 640px) 50vw, 100vw';
+				$alt = get_the_title();
+				$imgsrcset = mandir_srcset($srcset_sizes, $sizes, $alt, $img_id);
+
+				// $imgsrcset = wp_get_attachment_image($img_id, 'full');
 
 				echo '<div class="product-image">'.$imgsrcset.'</div>';
 			?>
