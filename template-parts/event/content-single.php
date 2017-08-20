@@ -17,16 +17,28 @@
 		if ( has_post_thumbnail() ) :
 			echo '<div class="event-featured-image">';
 			//the_post_thumbnail();
-			echo ipq_get_theme_image( get_post_thumbnail_id( get_the_id() ), array(
-			        array( 770, 402, true ),
-			        array( 657, 343, true ),
-			        array( 620, 324, true ),
-			        array( 394, 206, true ),
-			    ),
-			    array(
-			        'class' => 'event-image'
-			    )
-			);
+
+			$srcset_sizes = array(
+				array( 1540, 806, true ),
+				array( 1304, 682, true ),
+				array( 790, 413, true ),
+				array( 394, 206, true ),
+				);
+			$sizes = '(min-width: 1200px) 770px, (min-width: 640px) 66vw, 100vw';
+			$alt = get_the_title();
+			$srcset = mandir_srcset($srcset_sizes, $sizes, $alt);
+			echo $srcset;
+
+			// echo ipq_get_theme_image( get_post_thumbnail_id( get_the_id() ), array(
+			//         array( 770, 402, true ),
+			//         array( 657, 343, true ),
+			//         array( 620, 324, true ),
+			//         array( 394, 206, true ),
+			//     ),
+			//     array(
+			//         'class' => 'event-image'
+			//     )
+			// );
 
 			echo '</div><!-- .event-featured-image -->';
 		endif;
