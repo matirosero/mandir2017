@@ -12,6 +12,11 @@
 	<header class="entry-header">
 		<?php
 		if ( has_post_thumbnail() ) : ?>
+			<?php
+			$img1 = ipq_get_theme_image_url( get_post_thumbnail_id( get_the_id() ), array( 300, 300, true ) );
+			$img2 = ipq_get_theme_image_url( get_post_thumbnail_id( get_the_id() ), array( 200, 200, true ) );
+			// echo $img1.'<br />'.$img2;
+			?>
 			<div class="profile-image">
 				<?php
 				$srcset = ipq_get_theme_image( get_post_thumbnail_id( get_the_id() ), array(
@@ -36,7 +41,16 @@
 	<?php
 	if ( get_post_meta( $id, 'mro_team_secondary_image', true ) ) :
 		$img_id = get_post_meta($id, 'mro_team_secondary_image', true);
-		$imgsrcset = wp_get_attachment_image($img_id, 'full');
+		// $imgsrcset = wp_get_attachment_image($img_id, 'full');
+		$imgsrcset = ipq_get_theme_image( $img_id, array(
+				        array( 900, 450, true ),
+				        array( 619, 310, true ),
+				        array( 394, 197, true ),
+				    ),
+				    array(
+				        'class' => 'profile-image-src'
+				    )
+				);
 		echo '<div class="profile-image-secondary">'.$imgsrcset.'</div>';
 	endif;
 	?>
