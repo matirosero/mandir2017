@@ -25,7 +25,17 @@
 		<?php
 		if ( get_post_meta( $id, 'mro_about_secondary_image', true ) ) :
 			$img_id = get_post_meta($id, 'mro_about_secondary_image', true);
-			$imgsrcset = wp_get_attachment_image($img_id, 'full');
+			// $imgsrcset = wp_get_attachment_image($img_id, 'full');
+			$srcset_sizes = array(
+				array( 1280, 9999, false ),
+				array( 1024, 9999, false ),
+				array( 640, 9999, false ),
+				array( 512, 9999, false ),
+				array( 20, 20, true ),
+				);
+			$sizes = '(min-width: 1024px) 60vw, (min-width: 640px) 50vw, 1vw';
+			$alt = 'Los profes de Yoga Mandir';
+			$imgsrcset = mandir_srcset($srcset_sizes, $sizes, $alt, $img_id);
 			echo $imgsrcset;
 		endif;
 		?>
