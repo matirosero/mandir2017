@@ -73,7 +73,7 @@ function mro_list_team_shortcode($atts) {
 		while( $query->have_posts() ) : $query->the_post();
 
 			$srcset = ipq_get_theme_image( get_post_thumbnail_id( get_the_id() ), array(
-			        // array( 400, 400, true ),
+			        array( 400, 400, true ),
 			        array( 200, 200, true ),
 			    ),
 			    array(
