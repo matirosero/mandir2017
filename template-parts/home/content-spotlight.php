@@ -8,7 +8,7 @@ $directory_url = 'http://www.yoga-mandir.com/certificados/';
 			<img srcset="<?php echo get_stylesheet_directory_uri(); ?>/assets/dist/img/spotlight-directory-1280x850.jpg 1280w,
 			<?php echo get_stylesheet_directory_uri(); ?>/assets/dist/img/spotlight-directory-1024x680.jpg 1024w,
 			<?php echo get_stylesheet_directory_uri(); ?>/assets/dist/img/spotlight-directory-20.jpg 20w" 
-			sizes="(min-width: 640px) 50vw, 1vw" 
+			sizes="(min-width: 640px) 50vw, 100vw" 
 			src="<?php echo get_stylesheet_directory_uri(); ?>/assets/dist/img/spotlight-directory-1280x850.jpg" 
 			alt="Profesor en clase de yoga" />
 		</a>

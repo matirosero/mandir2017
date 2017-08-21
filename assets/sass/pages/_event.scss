@@ -22,7 +22,7 @@
 	}
 
 	#events-calendar & {
-		@include breakpoint(medium) {
+		@include breakpoint(large) {
 			@include scale-media-proportionally(26.2%);
 			float: left;
 			width: 50%;
@@ -37,7 +37,7 @@
 .event-info {
 	text-align: center;
 	#events-calendar & {
-		@include breakpoint(medium) {
+		@include breakpoint(large) {
 			width: 50%;
 			float: right;
 			padding-left: $global-padding;

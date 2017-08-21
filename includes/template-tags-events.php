@@ -48,19 +48,30 @@ function mandir_pretty_event_dates() {
 			return false;
 		else:
 
-			$dates = mandir_convert_dates_array( $dates );
+			// $dates = mandir_convert_dates_array( $dates );
 
 			$count = count($dates);
 
 			$is_date_range = get_post_meta($id, 'mro_daterange_checkbox', true);
 
 			if ( $is_date_range == 1 && $count == 2 ) :
-				$datestring = 'Del '.implode(' al ', $dates);
-			elseif ( $count == 1 ):
-				$datestring = $dates[0];
+				$month1 = date_i18n( 'F', strtotime( $dates[0] ) );
+				$month2 = date_i18n( 'F', strtotime( $dates[1] ) );
+				if ( $month1 == $month2 ) :
+					$day1 =  date_i18n( 'j', strtotime( $dates[0] ) );
+					$day2 =  date_i18n( 'j', strtotime( $dates[1] ) );
+					$datestring = 'Del '.$day1.' al '.$day2.' de '.$month1;
+				else :
+					$datestring = 'Del '.implode(' al ', $dates);
+				endif;
 			else:
-				$last_date = array_pop($dates);
-				$datestring = implode(', ', $dates).' y '.$last_date;
+				$dates = mandir_convert_dates_array( $dates );
+				if ( $count == 1 ):
+					$datestring = $dates[0];
+				else:
+					$last_date = array_pop($dates);
+					$datestring = implode(', ', $dates).' y '.$last_date;
+				endif;
 			endif;
 
 			return $datestring;

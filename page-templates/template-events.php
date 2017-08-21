@@ -92,7 +92,7 @@ get_header(); ?>
 
 						<h2 class="section-title"><?php echo $month; ?></h2>
 
-						<div class="events-calendar-month row medium-up-2">
+						<div class="events-calendar-month row medium-up-3 large-up-2">
 
 					<?php endif;
 

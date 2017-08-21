@@ -25,15 +25,27 @@ endif;
 		<a href="<?php echo $url; ?>" class="event-featured-image">
 			<?php //the_post_thumbnail(); ?>
 			<?php
-			echo ipq_get_theme_image( get_post_thumbnail_id( get_the_id() ), array(
-			        array( 620, 324, true ),
-			        array( 397, 207, true ),
-			        array( 226, 118, true ),
-			    ),
-			    array(
-			        'class' => 'event-image'
-			    )
-			);
+
+			if ( is_front_page() ) :
+				$sizes = '(min-width: 640px) 33vw, 100vw';
+			else:
+				$sizes = '(min-width: 1200px) 285px,(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 100vw';
+			endif;
+
+			$srcset_sizes = array(
+				array( 1280, 669, true ),
+				array( 690, 361, true ),
+				array( 640, 334, true ),
+				// array( 414, 216, true ),
+				array( 345, 180, true ), //medium 3
+				array( 285, 149, true ), //large 2
+				// array( 512, 340, true ),
+				);
+
+			$alt = get_the_title();
+			$imgsrcset = mandir_srcset($srcset_sizes, $sizes, $alt);
+			echo $imgsrcset;
+
 			?>
 		</a><!-- .featured-image -->
 	<?php else: ?>

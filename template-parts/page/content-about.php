@@ -33,7 +33,7 @@
 				// array( 512, 340, true ),
 				array( 20, 20, true ),
 				);
-			$sizes = '(min-width: 1024px) 60vw, (min-width: 640px) 50vw, 1vw';
+			$sizes = '(min-width: 1024px) 60vw, (min-width: 640px) 50vw, 100vw';
 			$alt = 'Los profes de Yoga Mandir';
 			$imgsrcset = mandir_srcset($srcset_sizes, $sizes, $alt, $img_id);
 			echo $imgsrcset;

@@ -28,7 +28,7 @@ if ( $featured['info'] && count($featured['image']) != 0 ) :
 			// array( 512, 340, true ),
 			array( 20, 20, true ),
 			);
-		$sizes = '(min-width: 640px) 50vw, 1vw';
+		$sizes = '(min-width: 640px) 50vw, 100vw';
 		$alt = get_the_title();
 		$featured_imgsrcset = mandir_srcset($srcset_sizes, $sizes, $alt, $image_id);
 		// $featured_imgsrcset = wp_get_attachment_image($image_id, 'full');
