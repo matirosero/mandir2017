@@ -22,10 +22,10 @@ if ( $featured['info'] && count($featured['image']) != 0 ) :
 		$image_id = $featured['image'][0];
 
 		$srcset_sizes = array(
-			array( 1280, 9999, false ),
-			array( 1024, 9999, false ),
-			array( 640, 9999, false ),
-			array( 512, 9999, false ),
+			array( 1280, 850, true ),
+			array( 1024, 680, true ),
+			// array( 640, 425, true ),
+			// array( 512, 340, true ),
 			array( 20, 20, true ),
 			);
 		$sizes = '(min-width: 640px) 50vw, 1vw';
