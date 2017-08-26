@@ -31,9 +31,7 @@ get_header(); ?>
 
 			<?php get_template_part( 'template-parts/home/content', 'spotlight' ); ?>
 
-
 		</main><!-- #main -->
 	</div><!-- #primary -->
-
 
 <?php get_footer();
