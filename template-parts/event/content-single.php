@@ -126,7 +126,14 @@
 				foreach ($datetimes as $date) { ?>
 					<li>
 						<span class="event-date"><?php echo $date['date']; ?></span>
-						<span class="event-time">De <?php echo $date['start']; ?> a <?php echo $date['end']; ?></span>
+
+						<?php
+						if( $date['start'] && $date['end'] ) : ?>
+
+							<span class="event-time">De <?php echo $date['start']; ?> a <?php echo $date['end']; ?></span>
+
+						<?php endif; ?>
+
 					</li>
 
 				<?php }
