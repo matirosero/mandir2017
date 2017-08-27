@@ -12,7 +12,7 @@ endif;
 
 <?php
 
-if ( is_page_template( 'page-templates/template-thai.php' ) || in_array( 'local', $bankinfo ) ) : ?>
+if ( !is_singular( 'mro-event' ) || ( is_singular( 'mro-event' ) && in_array( 'local', $bankinfo ) ) ) : ?>
 
 	<p><strong><?php _e('Make local bank transfers to:', 'mandir'); ?></strong></p>
 
@@ -21,7 +21,7 @@ if ( is_page_template( 'page-templates/template-thai.php' ) || in_array( 'local'
 
 endif;
 
-if ( is_page_template( 'page-templates/template-thai.php' )  || in_array( 'international', $bankinfo ) ) : ?>
+if ( is_page_template( 'page-templates/template-thai.php' )  || ( is_singular( 'mro-event' ) && in_array( 'international', $bankinfo ) ) ) : ?>
 
 	<p><strong><?php _e('For international payments:', 'mandir'); ?></strong></p>
 

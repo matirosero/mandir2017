@@ -153,7 +153,7 @@ function mandir_format_phone_link($n) {
  *
  * @return string with img srcset tag
  */
-function mandir_srcset($srcset_sizes,$sizes,$alt,$id) {
+function mandir_srcset($srcset_sizes,$sizes,$alt,$id=null) {
 	if ( !$srcset_sizes || !$sizes) {
 		return false;
 	} else {
