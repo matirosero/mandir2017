@@ -96,7 +96,7 @@
 
 			<?php wp_reset_postdata(); ?>
 
-		<?php endif; 
+		<?php endif;
 
 		// Payment
 		get_template_part( 'template-parts/page/content', 'payment' );
@@ -226,12 +226,17 @@
 
 	</div><!-- .sidebar -->
 
-	<div class="sidebar-form" role="complementary">
-		<h2 class="sidebar-title"><?php _e('Reserve your spot','mandir'); ?></h2>
-		<section class="sidebar-module">
-			<?php echo do_shortcode( '[caldera_form id="CF58e57f617099d"]' ); ?>
-		</section><!-- .sidebar-module -->
-	</div><!-- .sidebar -->
+	<?php
+	if ( get_post_meta($post->ID, 'mro_event_show_form', true) == 'yes' ) : ?>
+
+		<div class="sidebar-form" role="complementary">
+			<h2 class="sidebar-title"><?php _e('Reserve your spot','mandir'); ?></h2>
+			<section class="sidebar-module">
+				<?php echo do_shortcode( '[caldera_form id="CF58e57f617099d"]' ); ?>
+			</section><!-- .sidebar-module -->
+		</div><!-- .sidebar -->
+
+	<?php endif; ?>
 
 </div><!-- #secondary -->
 
