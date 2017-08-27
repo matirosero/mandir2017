@@ -98,8 +98,12 @@
 
 		<?php endif;
 
-		// Payment
-		get_template_part( 'template-parts/page/content', 'payment' );
+		if( get_post_meta($post->ID, 'mro_event_bankinfo', true) ) :
+
+			// Payment
+			get_template_part( 'template-parts/page/content', 'payment' );
+
+		endif;
 
 		?>
 	</div><!-- .entry-content -->
