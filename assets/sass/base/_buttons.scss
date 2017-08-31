@@ -2,4 +2,10 @@ input[type="submit"],
 input[type="button"],
 button {
   @include button;
+
+  &.cf-uploader-trigger {
+  	@include button-style(color('blue', 'light'), scale-color(color('blue', 'light'), $lightness: -15%);, $white);
+  }
 }
+
+
