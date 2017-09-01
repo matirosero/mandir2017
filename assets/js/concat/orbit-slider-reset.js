@@ -1,4 +1,20 @@
-// jQuery(document).ready(function($) {
+jQuery(document).ready(function($) {
+	var mroOrbit = $('.hero-header .orbit-container'),
+		mroOrbitImages = mroOrbit.find('.hero-slider-image img');
+		mroLoading = $('.hero-header .loading');
+
+	// mroOrbit.hide();
+	// mroLoading.hide();
+	// mroOrbitImages.hide();
+
+
+
+	Foundation.onImagesLoaded(mroOrbitImages, function() {
+		// alert('loaded');
+		mroLoading.hide();
+		mroOrbit.css('display','block');
+	});
+
 //   if ( $('body').hasClass('slider-active') ) {
 //     var windowWidth = $(window).width();
 
@@ -22,4 +38,4 @@
 //       // if (win.width() >= 1280) { /* ... */ }
 //     });
 //   }
-// });
+});

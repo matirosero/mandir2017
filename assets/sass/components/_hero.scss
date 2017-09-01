@@ -1,9 +1,9 @@
-.hero-header {
+.hero-header,
+.hero-slider-image {
 	position: relative;
-	// height: rem-calc(210);
-	height: 90vw;
 	overflow:hidden;
-	background: $black;
+	height: 90vw;
+	background: $black !important;
 	width: 100%;
 
 	img,
@@ -14,46 +14,42 @@
 	}
 
 	@include breakpoint(medium) {
-		// height: rem-calc(470);
 		height: 70vh;
 	}
 
-	@include breakpoint(large) {
-		// height: rem-calc(490);
-		height: 70vh;
+	.orbit-container {
+		display: none;
 	}
-	// @include breakpoint(xlarge) {
-	// 	// height: rem-calc(560);
-	// }
-	// @include breakpoint(xxlarge) {
-	// 	// height: rem-calc(640);
-	// }
 }
-
 
 
 .hero-slider-image {
-	position: relative;
-	overflow:hidden;
-	height: 90vw;
-	background: $black;
+	// position: relative;
+	// overflow:hidden;
+	// height: 90vw;
+	// background: $black;
 
-	img,
-	video,
-	iframe {
-		@include object-fit;
-		opacity: .7;
-	}
+	// img,
+	// video,
+	// iframe {
+	// 	@include object-fit;
+	// 	opacity: .7;
+	// }
 
-	@include breakpoint(medium) {
-		height: 70vh;
-	}
-
-	// @include breakpoint(large) {
-	// 	// height: 75vh;
+	// @include breakpoint(medium) {
+	// 	height: 70vh;
 	// }
 }
 
+.loading {
+	position: absolute;
+	top: 75%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: $white;
+	text-align: center;
+	@include text-shadow;
+}
 .hero-content {
 	position: absolute;
 	top: 50%;
