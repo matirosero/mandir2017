@@ -58,8 +58,16 @@
 	position: absolute;
 	top: 50%;
 	left: 50%;
+	width: 100%;
+    padding-left: 52px;
+    padding-right: 52px;
+    // background: rgba(0,0,0,0.25);
 	transform: translate(-50%, -50%);
 	color: $white;
 	text-align: center;
 	@include text-shadow;
+	@include breakpoint(medium) {
+	    padding-left: 100px;
+	    padding-right: 100px;
+	}
 }
