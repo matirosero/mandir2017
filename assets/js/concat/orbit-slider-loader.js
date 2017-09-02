@@ -7,7 +7,6 @@ jQuery(document).ready(function($) {
 		mroLoading.fadeTo( "slow" , 0, function() {
 			mroOrbit.fadeTo( "slow" , 1);
 		});
-
 	});
 
 });
