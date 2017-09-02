@@ -13,12 +13,21 @@
 		opacity: .7;
 	}
 
-	@include breakpoint(medium) {
-		height: 70vh;
-	}
+
 
 	.orbit-container {
 		opacity: 0;
+	}
+
+	body.home & {
+		@include breakpoint(medium) {
+			height: 70vh;
+		}
+	}
+	body:not(.home) & {
+		@include breakpoint(medium) {
+			height: 55vh;
+		}
 	}
 }
 
