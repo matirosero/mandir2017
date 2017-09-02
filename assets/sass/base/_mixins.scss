@@ -69,12 +69,12 @@
 @mixin main-headings($margin:$vertical-spacing) {
 	margin-bottom: $margin;
 
-	@include breakpoint(medium) {
-		margin-bottom: $margin*1.25;
-	}
+	// @include breakpoint(medium) {
+	// 	margin-bottom: $margin;
+	// }
 
 	@include breakpoint(large) {
-		margin-bottom: $margin*1.5;
+		margin-bottom: $margin*1.25;
 	}
 }
 

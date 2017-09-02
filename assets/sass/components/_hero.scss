@@ -26,7 +26,12 @@
 	}
 	body:not(.home) & {
 		@include breakpoint(medium) {
-			height: 55vh;
+			height: 60vh;
+		}
+	}
+	body.page-template-template-schedule & {
+		@include breakpoint(medium) {
+			height: 40vh;
 		}
 	}
 }
