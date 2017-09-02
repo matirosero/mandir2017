@@ -4,7 +4,6 @@ jQuery(document).ready(function($) {
 		mroLoading = $('.hero-header .loading');
 
 	Foundation.onImagesLoaded(mroOrbitImages, function() {
-		// alert('loaded');
 		mroLoading.fadeTo( "slow" , 0, function() {
 			mroOrbit.fadeTo( "slow" , 1);
 		});
