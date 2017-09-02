@@ -1,42 +1,10 @@
-.hero-header {
-	position: relative;
-	// height: rem-calc(210);
-	height: 90vw;
-	overflow:hidden;
-	background: $black;
-	width: 100%;
-
-	img,
-	video,
-	iframe {
-		@include object-fit;
-		opacity: .7;
-	}
-
-	@include breakpoint(medium) {
-		// height: rem-calc(470);
-		height: 70vh;
-	}
-
-	@include breakpoint(large) {
-		// height: rem-calc(490);
-		height: 70vh;
-	}
-	// @include breakpoint(xlarge) {
-	// 	// height: rem-calc(560);
-	// }
-	// @include breakpoint(xxlarge) {
-	// 	// height: rem-calc(640);
-	// }
-}
-
-
-
+.hero-header,
 .hero-slider-image {
 	position: relative;
 	overflow:hidden;
 	height: 90vw;
-	background: $black;
+	background: $black !important;
+	width: 100%;
 
 	img,
 	video,
@@ -49,25 +17,34 @@
 		height: 70vh;
 	}
 
-	// @include breakpoint(large) {
-	// 	// height: 75vh;
-	// }
+	.orbit-container {
+		opacity: 0;
+	}
 }
-
-.hero-content {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	width: 100%;
-    padding-left: 52px;
-    padding-right: 52px;
-    // background: rgba(0,0,0,0.25);
-	transform: translate(-50%, -50%);
-	color: $white;
-	text-align: center;
-	@include text-shadow;
-	@include breakpoint(medium) {
-	    padding-left: 100px;
-	    padding-right: 100px;
+.hero-header {
+	.loading {
+		position: absolute;
+		top: 75%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		color: $white;
+		text-align: center;
+		@include text-shadow;
+	}
+	.hero-content {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 100%;
+	    padding-left: 52px;
+	    padding-right: 52px;
+		transform: translate(-50%, -50%);
+		color: $white;
+		text-align: center;
+		@include text-shadow;
+		@include breakpoint(medium) {
+		    padding-left: 100px;
+		    padding-right: 100px;
+		}
 	}
 }
