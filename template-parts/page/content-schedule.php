@@ -86,7 +86,7 @@ endif;
 			<?php
 
 			//Grab all schedule options from DB
-			$schedule_settings = get_option('mro_class_schedule_settings');
+			$schedule_settings = get_option('mro_schedule_tabs');
 
 			//Start a counter
 			$i = 0;
