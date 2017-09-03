@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Mandir\n"
-"POT-Creation-Date: 2017-09-03 17:31-0600\n"
-"PO-Revision-Date: 2017-09-03 17:33-0600\n"
+"POT-Creation-Date: 2017-09-03 17:35-0600\n"
+"PO-Revision-Date: 2017-09-03 17:35-0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_MX\n"
@@ -16,8 +16,8 @@ msgstr ""
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
-"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
@@ -30,8 +30,8 @@ msgid "It looks like nothing was found at this location. Maybe try a search?"
 msgstr "Parece que no hay nada aquí. ¿Talvez haciendo una búsqueda?"
 
 #: 404.php:38
-msgid "Here are some suggestions:"
-msgstr "Aquí tenés algunas sugerencias:"
+msgid "Here are some suggestions"
+msgstr "Aquí tenés algunas sugerencias"
 
 #: 404.php:44
 msgid "We tried finding the matching what you're looking for:"

@@ -35,7 +35,7 @@ get_header(); ?>
 					        $loop = new WP_Query('post_type=any&s=' . $s);
 					    ?>
 
-					    <h2><?php esc_html_e( 'Here are some suggestions:', 'mandir' ); ?></h2>
+					    <h2><?php esc_html_e( 'Here are some suggestions', 'mandir' ); ?></h2>
 					    <div class="404-suggestions row">
 
 						    <?php if ($loop->have_posts()): ?>
