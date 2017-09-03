@@ -1,0 +1,17 @@
+.error404 {
+	.entry-title {
+		font-size: 2rem;
+	}
+	@include breakpoint(medium) {
+		input[type='search'] {
+			display: inline-block;
+			width: 350px;
+		}
+		label {
+			display: inline-block;
+		}
+		input[type="submit"], input[type="button"] {
+			vertical-align: baseline;
+		}
+	}
+}

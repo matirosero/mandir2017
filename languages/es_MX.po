@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Mandir\n"
-"POT-Creation-Date: 2017-08-02 23:22-0600\n"
-"PO-Revision-Date: 2017-08-02 23:24-0600\n"
+"POT-Creation-Date: 2017-09-03 17:31-0600\n"
+"PO-Revision-Date: 2017-09-03 17:33-0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_MX\n"
@@ -21,26 +21,25 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: 404.php:21
-msgid "Oops! That page can&rsquo;t be found."
-msgstr "¡Oops! Esa página no fue encontrada."
+#: 404.php:19
+msgid "The page you're looking for something doesn't exist."
+msgstr "La página que estás buscando algo no existe."
 
-#: 404.php:25
-msgid ""
-"It looks like nothing was found at this location. Maybe try one of the links "
-"below or a search?"
-msgstr ""
-"Parece que no hay nada aquí. ¿Talvez probando unos de los enlaces de abajo o "
-"una búsqueda?"
+#: 404.php:24
+msgid "It looks like nothing was found at this location. Maybe try a search?"
+msgstr "Parece que no hay nada aquí. ¿Talvez haciendo una búsqueda?"
 
-#: 404.php:35
-msgid "Most Used Categories"
-msgstr "Categorías más utilizadas"
+#: 404.php:38
+msgid "Here are some suggestions:"
+msgstr "Aquí tenés algunas sugerencias:"
 
-#: 404.php:52
-#, php-format
-msgid "Try looking in the monthly archives. %1$s"
-msgstr "Intentá buscar en los archivos mensuales. %1$s"
+#: 404.php:44
+msgid "We tried finding the matching what you're looking for:"
+msgstr "Intentamos encontrar lo que estás buscando:"
+
+#: 404.php:63
+msgid "Try some of our website's top pages:"
+msgstr "Probá algunas de las páginas principales de nuestro sitio web:"
 
 #: assets/vendors/image-processing-queue/vendor/a5hleyrich/wp-background-processing/classes/wp-background-process.php:422
 #, php-format
@@ -155,7 +154,7 @@ msgstr "% Comentarios"
 #: includes/template-tags.php:66
 #: template-parts/content-page-stripped-end.php:16
 #: template-parts/page/content-page.php:34
-#: template-parts/team/content-single.php:39
+#: template-parts/team/content-single.php:67
 #, php-format
 msgid "Edit %s"
 msgstr "Editar %s"
@@ -207,7 +206,7 @@ msgstr "Orientación"
 
 #: template-parts/certification/content-sidebar-pricing.php:9
 #: template-parts/certification/content-sidebar-training.php:50
-#: template-parts/event/content-single.php:160
+#: template-parts/event/content-single.php:164
 msgid "Cost"
 msgstr "Inversión"
 
@@ -286,51 +285,51 @@ msgstr "Páginas:"
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Seguir leyendo %s <span class=\"meta-nav\">&rarr;</span>"
 
-#: template-parts/event/content-loop.php:58
+#: template-parts/event/content-loop.php:78
 msgid "More information"
 msgstr "Más información"
 
-#: template-parts/event/content-single.php:120
+#: template-parts/event/content-single.php:117
 msgid "Important information"
 msgstr "Información importante"
 
-#: template-parts/event/content-single.php:123
+#: template-parts/event/content-single.php:120
 msgid "Dates"
 msgstr "Fechas"
 
-#: template-parts/event/content-single.php:141
+#: template-parts/event/content-single.php:145
 msgid "Venue"
 msgstr "Lugar"
 
-#: template-parts/event/content-single.php:167
+#: template-parts/event/content-single.php:171
 msgid "Free"
 msgstr "Gratis"
 
-#: template-parts/event/content-single.php:180
+#: template-parts/event/content-single.php:184
 msgid "Voluntary donation"
 msgstr "Donación voluntaria"
 
-#: template-parts/event/content-single.php:182
+#: template-parts/event/content-single.php:186
 msgid "Suggested: "
 msgstr "Sugerida: "
 
-#: template-parts/event/content-single.php:203
+#: template-parts/event/content-single.php:207
 msgid "Regular price"
 msgstr "Precio normal"
 
-#: template-parts/event/content-single.php:237
+#: template-parts/event/content-single.php:244
 msgid "Reserve your spot"
 msgstr "Reservá tu espacio"
 
-#: template-parts/page/content-payment.php:5
+#: template-parts/page/content-payment.php:11
 msgid "How to pay"
 msgstr "Cómo pagar"
 
-#: template-parts/page/content-payment.php:7
+#: template-parts/page/content-payment.php:17
 msgid "Make local bank transfers to:"
 msgstr "Para transferencias locales:"
 
-#: template-parts/page/content-payment.php:14
+#: template-parts/page/content-payment.php:26
 msgid "For international payments:"
 msgstr "Para pagos internacionales:"
 
@@ -406,11 +405,11 @@ msgstr "Viernes"
 msgid "Saturday"
 msgstr "Sábado"
 
-#: template-parts/store/content-products.php:8
+#: template-parts/store/content-products.php:7
 msgid "Other products"
 msgstr "Otros productos"
 
-#: template-parts/team/content-event-teacher.php:20
+#: template-parts/team/content-event-teacher.php:34
 msgid "Teacher:"
 msgstr "Profesor:"
 
@@ -481,6 +480,15 @@ msgstr ""
 #. Template Name of the plugin/theme
 msgid "Teacher Training"
 msgstr "Entrenamiento para profesores"
+
+#~ msgid "Oops! That page can&rsquo;t be found."
+#~ msgstr "¡Oops! Esa página no fue encontrada."
+
+#~ msgid "Most Used Categories"
+#~ msgstr "Categorías más utilizadas"
+
+#~ msgid "Try looking in the monthly archives. %1$s"
+#~ msgstr "Intentá buscar en los archivos mensuales. %1$s"
 
 #~ msgid "Subscribe to our newsletter"
 #~ msgstr "Suscribite a muestro boletín"

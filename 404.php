@@ -9,66 +9,94 @@
 
 get_header(); ?>
 
-<div class="row">
+<div id="primary" class="content-area">
+	<main id="main" class="site-main" role="main">
 
-	<div class="medium-8 columns">
+		<div class="row">
+			<div class="medium-10 medium-centered large-9 columns">
 
-		<div id="primary" class="content-area">
-
-			<main id="main" class="site-main" role="main">
-
-					<header class="page-header">
-						<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'mandir' ); ?></h1>
+					<header class="entry-header">
+						<h1 class="entry-title"><?php esc_html_e( 'The page you\'re looking for something doesn\'t exist.', 'mandir' ); ?></h1>
 					</header>
 
-					<div class="page-content">
-						<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'mandir' ); ?></p>
+					<div class="entry-content">
 
-						<?php
-						get_search_form();
+						<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try a search?', 'mandir' ); ?></p>
 
-						the_widget( 'WP_Widget_Recent_Posts' );
+						<p>
+							<?php get_search_form(); ?>
+						</p>
 
-						if ( mandir_categorized_blog() ) : // Only show the widget if site has multiple categories. ?>
 
-							<div class="widget widget_categories">
-								<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'mandir' ); ?></h2>
-								<ul>
-								<?php
-									wp_list_categories( array(
-										'orderby'    => 'count',
-										'order'      => 'DESC',
-										'show_count' => 1,
-										'title_li'   => '',
-										'number'     => 10,
-									) );
-								?>
-								</ul>
-							</div><!-- .widget -->
+					    <?php
+					        global $wp_query;
+					        $wp_query->query_vars['is_search'] = true;
+					        $s = str_replace("-", " ", $wp_query->query_vars['name']);
+					        $loop = new WP_Query('post_type=any&s=' . $s);
+					    ?>
 
-						<?php
-						endif;
+					    <h2><?php esc_html_e( 'Here are some suggestions:', 'mandir' ); ?></h2>
+					    <div class="404-suggestions row">
 
-						$archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'mandir' ), convert_smilies( ':)' ) ) . '</p>';
-						the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
+						    <?php if ($loop->have_posts()): ?>
 
-						the_widget( 'WP_Widget_Tag_Cloud' ); ?>
+					    		<div class="medium-6 column">
+							        <p><?php esc_html_e( 'We tried finding the matching what you\'re looking for:', 'mandir' ); ?></p>
+						            <ul>
+						                <?php while ($loop->have_posts()): $loop->the_post(); ?>
+						                    <li>
+						                        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+						                        <?php //the_excerpt(); ?>
+						                    </li>
+						                <?php endwhile; ?>
+						            </ul>
+						        </div>
+
+						        <div class="medium-6 column">
+
+						    <?php else: ?>
+
+						    	<div class="small-12 column">
+
+						    <?php endif; ?>
+
+						    	<p><?php esc_html_e( 'Try some of our website\'s top pages:', 'mandir' ); ?></p>
+
+						    	<ul>
+							    	<li>
+							    		<a href="<?php echo get_page_link(10); ?>">Nuestro horario de clases de yoga y tarifas</a>
+							    	</li>
+							    	<li>
+							    		<a href="<?php echo get_page_link(153); ?>">Calendario de actividades</a>
+							    	</li>
+							    	<li>
+							    		<a href="<?php echo get_page_link(12); ?>">Entrenamiento para profesores de yoga</a>
+							    	</li>
+							    	<li>
+							    		<a href="<?php echo get_page_link(14); ?>">Certificación en masaje tailandés</a>
+							    	</li>
+							    	<li>
+							    		<a href="<?php echo get_page_link(469); ?>">Contacto</a>
+							    	</li>
+						    	</ul>
+
+						    </div>
+
+
+
+					    </div>
+
+
+
+
 
 					</div><!-- .page-content -->
 
-			</main><!-- #main -->
+			</div><!-- .columns -->
+		</div><!-- .row -->
 
-		</div><!-- #primary -->
-
-	</div><!-- .columns -->
-
-	<div class="medium-4 columns">
-
-		<?php get_sidebar(); ?>
-
-	</div><!-- .columns -->
-
-</div><!-- .row -->
+	</main><!-- #main -->
+</div><!-- #primary -->
 
 <?php
 get_footer();
