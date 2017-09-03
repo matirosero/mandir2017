@@ -60,5 +60,4 @@ function mro_certificaction_render_schedule($schedule) {
 		De <?php echo $time_start; ?> a <?php echo $time_end; ?>.</p>
 	<p><?php if ( isset($schedule['notes']) ) { echo $notes; } ?></p>
 
-<?php } ?>
-
+<?php }

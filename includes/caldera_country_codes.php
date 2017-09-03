@@ -10,4 +10,3 @@ add_filter( 'caldera_forms_phone_js_options', function( $options){
 	// $options[ 'autoHideDialCode' ] = TRUE;
 	return $options;
 });
-
