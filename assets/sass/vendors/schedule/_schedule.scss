@@ -7,9 +7,9 @@
 @import 'layout'; // responsive grid and media queries
 
 
-/* -------------------------------- 
+/* --------------------------------
 
-Main Components 
+Main Components
 
 -------------------------------- */
 .mro-schedule {
@@ -17,7 +17,7 @@ Main Components
 	margin: 2em 0;
 
 	&::before {
-		/* never visible - this is used in js to check the current MQ */ 
+		/* never visible - this is used in js to check the current MQ */
 		content: 'mobile';
 		display: none;
 	}
@@ -152,12 +152,12 @@ Main Components
 		box-shadow: inset 0 -3px 0 rgba(#000, .2);
 		margin-right: 20px;
 		transition: opacity .2s, background .2s;
-		
+
 
 		&:last-of-type {
 			margin-right: 5%;
 		}
-		
+
 		a {
 			display: block;
 			height: 100%;
@@ -296,7 +296,7 @@ Main Components
 
 .mro-schedule .event-date {
 	/* they are not included in the the HTML but added using JavScript */
-	
+
 	// opacity: .7;
 	line-height: 1.2;
 	margin-bottom: .2em;
@@ -308,11 +308,11 @@ Main Components
 .mro-schedule .single-event[data-event^="event-"],
 .mro-schedule [data-event^="event-"] .header-bg {
 	/* this is used to set a background color for the event and the modal window */
-	background: color('blue', 'base');
+	background: $event-color-0;
 }
 
 .mro-schedule .single-event[data-event^="event-"]:hover {
-	background: lighten(color('blue', 'base'), 5%);
+	background: lighten($event-color-0, 5%);
 }
 
 .mro-schedule .single-event[data-event="event-1"],
@@ -350,6 +350,24 @@ Main Components
 
 .mro-schedule .single-event[data-event="event-4"]:hover {
 	background: lighten($event-color-4, 5%);
+}
+
+.mro-schedule .single-event[data-event="event-5"],
+.mro-schedule [data-event="event-5"] .header-bg {
+	background: $event-color-5;
+}
+
+.mro-schedule .single-event[data-event="event-5"]:hover {
+	background: lighten($event-color-5, 5%);
+}
+
+.mro-schedule .single-event[data-event="event-6"],
+.mro-schedule [data-event="event-6"] .header-bg {
+	background: $event-color-6;
+}
+
+.mro-schedule .single-event[data-event="event-6"]:hover {
+	background: lighten($event-color-6, 5%);
 }
 
 .mro-schedule .event-modal {

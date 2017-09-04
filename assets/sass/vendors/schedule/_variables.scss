@@ -5,12 +5,13 @@ $event-color-2: #443453; // Martinique
 $event-color-3: #A2B9B2; // Edward
 $event-color-4: #f6b067; // Rajah
 
-$event-color-1: lighten( color('blue', 'dark'), 10%); // Smalt Blue
-$event-color-2: darken( color('beige', 'base'), 20% ); // Martinique
-$event-color-3: color('gold', 'base'); // Edward
-$event-color-4: color('blue', 'light'); // Rajah
-$event-color-5: color('blue', 'light'); // Rajah
-$event-color-6: color('blue', 'base'); // Rajah
+$event-color-0: #aaa; // Smalt Blue
+$event-color-1: lighten(color('blue', 'dark'), 10%); // Smalt Blue
+$event-color-2: color('blue', 'base'); // Martinique
+$event-color-3: color('blue', 'med'); // Edward
+$event-color-4: color('blue', 'light'); // 
+$event-color-5: color('gold', 'dark'); // Rajah
+$event-color-6: color('gold', 'base'); // Rajah
 
 // $text-color: #222222;
 $schedule-border-color: $light-gray;
