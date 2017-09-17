@@ -8,10 +8,6 @@
  */
 ?>
 
-<?php
-$state = get_post_meta($post->ID, 'mro_training_state', true);
-?>
-
 <div class="entry-content">
 
 	<div class="medium-8 columns">

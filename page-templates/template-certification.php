@@ -8,7 +8,10 @@
  * @package Mandir
  */
 
-get_header(); ?>
+get_header();
+
+$enrollment = get_post_meta($post->ID, 'mro_training_state', true);
+?>
 
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
@@ -22,6 +25,12 @@ get_header(); ?>
 						<?php get_template_part( 'template-parts/page/content', 'header-intro' ); ?>
 					</div><!-- .column -->
 				</div><!-- .row -->
+
+				<?php
+				if ( $enrollment == 'url' || $enrollment == 'form' ) :
+					get_template_part( 'template-parts/certification/content', 'enrollment-open' );
+				endif;
+				?>
 
 				<div class="row">
 					<?php get_template_part( 'template-parts/certification/content', 'none' ); ?>

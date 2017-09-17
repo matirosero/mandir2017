@@ -35,6 +35,12 @@ if ( is_front_page() && $slider_active == 1 ) : ?>
 <?php endif;?>
 
 
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-52H3KSW"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
 <div class="off-canvas-wrapper">
   <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
 <!--     <div class="title-bar show-for-small-only">
