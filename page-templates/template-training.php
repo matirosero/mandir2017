@@ -23,9 +23,7 @@ get_header(); ?>
 					</div><!-- .column -->
 				</div><!-- .row -->
 
-				<div class="row">
-					<?php get_template_part( 'template-parts/certification/content', 'none' ); ?>
-				</div><!-- .row -->
+				<?php get_template_part( 'template-parts/certification/content', 'none' ); ?>
 
 			</article><!-- #post-## -->
 

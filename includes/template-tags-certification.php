@@ -22,14 +22,31 @@ function mro_certification_dates() {
 		$date_start = get_post_meta($post->ID, 'mro_training_date_start', true);
 
 		if ( $exact_dates ) :
-			$dateformatstring = 'j \d\e F';
-
+			
 			$date_end = get_post_meta($post->ID, 'mro_training_date_end', true);
+
+			$year_start = mandir_convert_date($date_start, 'Y');
+			$year_end = mandir_convert_date($date_end, 'Y');
+
+			if ( $year_start == $year_end ) : 
+
+				$dateformatstring = 'j \d\e F';
+
+			else :
+
+				$dateformatstring = 'j \d\e F, Y';
+
+			endif;
 
 			$date_start = mandir_convert_date($date_start, $dateformatstring);
 			$date_end = mandir_convert_date($date_end, $dateformatstring);
 
 			$dates = 'Del '.$date_start.' al '.$date_end;
+
+			if ( $year_start == $year_end ) :
+				$dates .= ', '.$year_start;
+			endif;
+			
 		else:
 			$dateformatstring = 'F Y';
 			$date_start = mandir_convert_date($date_start, $dateformatstring);
