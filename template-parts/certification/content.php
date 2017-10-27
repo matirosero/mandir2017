@@ -8,15 +8,10 @@
  */
 
 $enrollment = get_post_meta($post->ID, 'mro_training_state', true);
-if ( $enrollment == 1 ) : ?>
 
-	<div class="row">
-		<div class="small-12 columns">
-			Enrollment open!
-		</div>
-	</div><!-- .row -->
-
-<?php endif; ?>
+if ( $enrollment == 1 ) :
+	get_template_part( 'template-parts/certification/content', 'enrollment-open' );
+endif; ?>
 
 <div class="row">
 
@@ -25,9 +20,7 @@ if ( $enrollment == 1 ) : ?>
 		<div class="medium-8 columns">
 
 			<?php
-
 			the_content();
-
 
 			if ( !is_page_template( 'page-templates/template-thai.php' ) ) :
 

@@ -8,3 +8,12 @@
 	margin-top:1.25rem;
 }
 
+.enrollment-notice {
+	@extend .callout;
+	border: 0;
+	background-color: color('blue', 'light');
+	text-align: center;
+	margin-bottom: 2rem;
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+}

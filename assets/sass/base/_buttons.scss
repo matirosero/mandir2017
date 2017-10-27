@@ -1,4 +1,5 @@
 input[type="submit"],
-input[type="button"] {
+input[type="button"],
+.caldera-forms-modal {
   @include button;
 }
