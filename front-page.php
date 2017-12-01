@@ -29,7 +29,7 @@ get_header(); ?>
 
 			<?php get_template_part( 'template-parts/home/content', 'events' ); ?>
 
-			<?php //get_template_part( 'template-parts/home/content', 'spotlight' ); ?>
+			<?php get_template_part( 'template-parts/home/content', 'spotlight' ); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
