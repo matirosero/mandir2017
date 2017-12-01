@@ -23,7 +23,7 @@ $enroll_method = get_post_meta($post->ID, 'mro_training_enroll_how', true);
 			elseif ( $enroll_method == 'url' ) :
 
 				$enroll_url = get_post_meta($post->ID, 'mro_training_enroll_url', true); ?>
-				<p><a class="expanded button" href="<?php echo $enroll_url; ?>">Aplique aquí</a></p>
+				<p><a class="button" href="<?php echo $enroll_url; ?>">Aplique aquí</a></p>
 
 			<?php endif; ?>
 		</div>
