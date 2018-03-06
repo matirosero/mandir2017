@@ -7,12 +7,12 @@ namespace Mandir;
  */
 add_action( 'wp_enqueue_scripts', function() {
 
-	if (!is_admin()) {
-		// comment out the next two lines to load the local copy of jQuery
-		wp_deregister_script('jquery');
-		wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js', false, '3.0.0', true);
-		wp_enqueue_script('jquery');
-	}
+	// if (!is_admin()) {
+	// 	// comment out the next two lines to load the local copy of jQuery
+	// 	wp_deregister_script('jquery');
+	// 	wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js', false, '3.0.0', true);
+	// 	wp_enqueue_script('jquery');
+	// }
 
 	wp_enqueue_style(
 		'mandir_styles',
