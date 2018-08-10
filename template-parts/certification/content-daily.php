@@ -1,4 +1,8 @@
-<h2><?php _e('Daily schedule','mandir'); ?></h2>
+<?php if ( is_english() ) : ?>
+	<h2>Daily schedule</h2>
+<?php else : ?>
+	<h2><?php _e('Daily schedule','mandir'); ?></h2>
+<?php endif; ?>
 
 <?php
 

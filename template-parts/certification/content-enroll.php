@@ -7,7 +7,12 @@ if ( !empty($items[0]['point']) ) : ?>
 
 	<?php $count = count($items); ?>
 
-	<h2><?php _e('Enrollment process', 'mandir'); ?></h2>
+	<?php if ( is_english() ) : ?>
+		<h2>How to enroll</h2>
+	<?php else : ?>
+		<h2><?php _e('Enrollment process', 'mandir'); ?></h2>
+	<?php endif; ?>
+
 
 	<?php
 	if ( $count > 1 ) : ?>

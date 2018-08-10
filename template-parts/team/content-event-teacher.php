@@ -6,8 +6,7 @@
  *
  * @package Mandir
  */
-// var_dump($post);
-// setup_postdata( $post );
+
 ?>
 
 <div class="teacher-box">
@@ -31,7 +30,12 @@
 		</div>
 		<div class="medium-9 columns">
 			<h2>
-				<span class="heading-label"><?php _e('Teacher:','mandir'); ?></span>
+				<?php if ( is_english() ) : ?>
+					<span class="heading-label">Teacher:</span>
+				<?php else : ?>
+					<span class="heading-label"><?php _e('Teacher:','mandir'); ?></span>
+				<?php endif; ?>
+				
 				<?php the_title(); ?>
 			</h2>
 			<?php the_excerpt(); ?>

@@ -13,7 +13,12 @@ get_template_part( 'template-parts/certification/content', 'sidebar-orientation'
 if ( get_post_meta($post->ID, 'mro_training_duration', true) ) : ?>
 
 	<div class="sidebar-section">
-		<h3><?php _e('Duration','mandir'); ?></h3>
+
+		<?php if ( is_english() ) : ?>
+			<h3>Duration</h3>
+		<?php else : ?>
+			<h3><?php _e('Duration','mandir'); ?></h3>
+		<?php endif; ?>
 
 		<?php
 		$duration = nl2br( get_post_meta($post->ID, 'mro_training_duration', true) );
@@ -33,7 +38,12 @@ $schedule = get_post_meta($post->ID, 'mro_training_schedule', true);
 if ( !empty( $schedule['time_start'] ) ) : ?>
 
 	<div class="sidebar-section">
-		<h3><?php _e('Schedule','mandir'); ?></h3>
+
+		<?php if ( is_english() ) : ?>
+			<h3>Schedule</h3>
+		<?php else : ?>
+			<h3><?php _e('Schedule','mandir'); ?></h3>
+		<?php endif; ?>
 
 		<?php mro_certificaction_render_schedule($schedule); ?>
 

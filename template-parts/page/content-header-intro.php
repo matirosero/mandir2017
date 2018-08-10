@@ -16,6 +16,7 @@
 		endif;
 
 		echo wpautop( get_post_meta($post->ID, 'mro_page_intro', true) );
+
 		?>
 	</header><!-- .entry-header -->
 <?php endif; ?>

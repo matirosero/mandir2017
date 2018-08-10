@@ -24,7 +24,13 @@ if ( !empty($modules[0]['title']) ) :
 		<div class="module-meta">
 
 			<span class="module-dates">
-				<?php printf( esc_html__( 'From %1$s to %2$s', 'mandir' ), $module_start, $module_end ); ?>
+				<?php if ( is_english() ) :
+					echo 'From '.$module_start.' to '.$module_end;
+				else : ?>
+					<?php printf( esc_html__( 'From %1$s to %2$s', 'mandir' ), $module_start, $module_end ); ?>
+				<?php endif; ?>
+
+				
 			</span>
 
 			<?php
@@ -33,10 +39,19 @@ if ( !empty($modules[0]['title']) ) :
 
 			if ( !empty($issued_by[0]) ) { 
 				$last = array_pop($issued_by);
-				$issued_by = implode(', ', $issued_by).__(' and ', 'mandir').$last; ?>
+				if ( is_english() ) :
+					$issued_by = implode(', ', $issued_by).' and '.$last; 
+				else:
+					$issued_by = implode(', ', $issued_by).__(' and ', 'mandir').$last; 
+				endif; ?>
 
 				<span class="module-certificate">
-					<?php printf( esc_html__( 'Certificate issued by %1$s ', 'mandir' ), $issued_by ); ?>
+					<?php 
+					if ( is_english() ) : ?>
+						Certificate issued by <?php echo $issued_by; ?>
+					<?php else : 
+						printf( esc_html__( 'Certificate issued by %1$s ', 'mandir' ), $issued_by ); 
+					endif; ?>
 				</span>
 
 			<?php } ?>
@@ -46,7 +61,13 @@ if ( !empty($modules[0]['title']) ) :
 
 		<?php
 		if ( !empty( $module['who'] ) ) : ?>
-			<h3><?php _e('Who this course is for','mandir'); ?></h3>
+			<?php 
+			if ( is_english() ) : ?>
+				<h3>Who this course is for</h3>
+			<?php else : ?>
+				<h3><?php _e('Who this course is for','mandir'); ?></h3>
+			<?php endif; ?>
+			
 			<?php echo wpautop( $module['who'] ); ?>
 		<?php endif; ?>
 
@@ -75,7 +96,12 @@ if ( !empty($modules[0]['title']) ) :
 						<h3><?php echo $level['level_title']; ?></h3>
 
 						<p class="module-dates">
-							<?php printf( esc_html__( 'From %1$s to %2$s', 'mandir' ), $date_start, $date_end ); ?>
+							<?php if ( is_english() ) :
+								echo 'From '.$date_start.' to '.$date_end;
+							else : ?>
+								<?php printf( esc_html__( 'From %1$s to %2$s', 'mandir' ), $date_start, $date_end ); ?>
+							<?php endif; ?>
+
 						</p>
 
 						<?php echo wpautop( $level['curriculum'] ); ?>

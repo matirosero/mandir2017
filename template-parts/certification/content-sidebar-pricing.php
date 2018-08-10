@@ -6,7 +6,13 @@ $pricing_notes = get_post_meta($post->ID, 'mro_training_pricing_notes', true);
 if ( !empty($prices[0]['price']) ) : ?>
 
 	<div class="sidebar-section">
-		<h3><?php _e('Cost','mandir'); ?></h3>
+
+		<?php if ( is_english() ) : ?>
+			<h3>Cost</h3>
+		<?php else : ?>
+			<h3><?php _e('Cost','mandir'); ?></h3>
+		<?php endif; ?>
+
 
 		<ul>
 		<?php
