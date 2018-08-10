@@ -25,7 +25,7 @@ if ( !empty($modules[0]['title']) ) :
 
 			<span class="module-dates">
 				<?php if ( is_english() ) :
-					echo 'From '.$module_start.' to '.$module_end;
+					echo $module_start.' to '.$module_end;
 				else : ?>
 					<?php printf( esc_html__( 'From %1$s to %2$s', 'mandir' ), $module_start, $module_end ); ?>
 				<?php endif; ?>
@@ -97,7 +97,7 @@ if ( !empty($modules[0]['title']) ) :
 
 						<p class="module-dates">
 							<?php if ( is_english() ) :
-								echo 'From '.$date_start.' to '.$date_end;
+								echo $date_start.' to '.$date_end;
 							else : ?>
 								<?php printf( esc_html__( 'From %1$s to %2$s', 'mandir' ), $date_start, $date_end ); ?>
 							<?php endif; ?>

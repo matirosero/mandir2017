@@ -123,13 +123,20 @@ add_action( 'save_post',     'mandir_category_transient_flusher' );
  * @return string with nice dates
  */
 function mandir_convert_date($date, $dateformatstring = 'j \d\e F' ) {
+	global $post;
 
 	//Check that ID belongs to an event
 	if ( empty( $date ) ) :
 		return false;
 	else :
-		//Change to nice date format
-		$newdate = date_i18n( $dateformatstring, strtotime( $date ) );
+
+		if ( is_english() ) :
+			//Change to nice date format
+			$newdate = date("F j", strtotime($date));
+		else :
+			$newdate = date_i18n( $dateformatstring, strtotime( $date ) );
+		endif;
+
 		return $newdate;
 	endif;
 }
@@ -159,7 +166,7 @@ function mandir_srcset($srcset_sizes,$sizes,$alt,$id=null) {
 	} else {
 		if ( !$id ) {
 			$id = get_post_thumbnail_id( get_the_id() );
-		} 
+		}
 
 		$srcset = array();
 		$w = 0;

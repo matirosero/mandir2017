@@ -30,18 +30,29 @@ function mro_certification_dates() {
 
 			if ( $year_start == $year_end ) :
 
-				$dateformatstring = 'j \d\e F';
-
+				if (is_english()) :
+					$dateformatstring = 'j \d\e F';
+				else : 
+					$dateformatstring = 'F j';
+				endif;
 			else :
 
-				$dateformatstring = 'j \d\e F, Y';
+				if (is_english()) :
+					$dateformatstring = 'j \d\e F, Y';
+				else : 
+					$dateformatstring = 'F j, Y';
+				endif;
 
 			endif;
 
 			$date_start = mandir_convert_date($date_start, $dateformatstring);
 			$date_end = mandir_convert_date($date_end, $dateformatstring);
 
-			$dates = 'Del '.$date_start.' al '.$date_end;
+			if (is_english()) :
+				$dates = $date_start.' to '.$date_end;
+			else :
+				$dates = 'Del '.$date_start.' al '.$date_end;
+			endif;
 
 			if ( $year_start == $year_end ) :
 				$dates .= ', '.$year_start;
