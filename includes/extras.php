@@ -68,6 +68,11 @@ function mandir_is_tree($pid) {      // $pid = The ID of the page we're looking 
 // Replaces the excerpt "Read More" text by a link
 function mandir_excerpt_more($more) {
     global $post;
-	return '[...] <a class="moretag" href="'. get_permalink($post->ID) . '">'.__('Read more','mandir').'<i class="icon-right-open-small"></i></a>';
+    if ( is_english() ) {
+    	$text = 'Read more';
+    } else {
+    	$text = __('Read more','mandir');
+    }
+	return '[...] <a class="moretag" href="'. get_permalink($post->ID) . '">'.$text.'<i class="icon-right-open-small"></i></a>';
 }
 add_filter('excerpt_more', 'mandir_excerpt_more');

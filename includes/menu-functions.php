@@ -25,6 +25,9 @@ function mro_menu_top_item_classes( $classes, $item, $args ) {
 	if( is_singular( 'mro-event' ) && 'Actividades' == $item->title )
 		$classes[] = 'current-menu-item active';
 
+	if( is_page_template( 'page-templates/template-thai.php' ) && 'Masaje tai' == $item->title )
+		$classes[] = 'current-menu-item active';
+
 	// if( ( is_singular( 'code' ) || is_tax( 'code-tag' ) ) && 'Talleres' == $item->title )
 		// $classes[] = 'current-menu-item';
 
