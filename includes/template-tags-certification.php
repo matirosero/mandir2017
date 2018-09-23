@@ -31,9 +31,9 @@ function mro_certification_dates() {
 			if ( $year_start == $year_end ) :
 
 				if (is_english()) :
-					$dateformatstring = 'j \d\e F';
-				else : 
 					$dateformatstring = 'F j';
+				else : 
+					$dateformatstring = 'j \d\e F';
 				endif;
 			else :
 
