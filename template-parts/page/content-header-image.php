@@ -7,7 +7,7 @@
 <div class="hero-header">
 	<?php the_post_thumbnail(); ?>
 	<div class="hero-content">
-		<h1 class="entry-title"><?php the_title(); echo $subtitle; ?></h1>
+		<h1 class="entry-title"><?php the_title(); ?></h1>
 
 		<?php if ( get_post_meta($post->ID, 'mro_lang_alt_url', true) ) :
 			if ( is_english() ) :
