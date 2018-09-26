@@ -89,12 +89,14 @@ if ( count($types) > 0 ) : ?>
 
 			echo $option_title;
 
+			// Payment description: describes when to pay
 			$desc = $option['description'];
 
 			echo '<ul>';
 
 			foreach ($types as $type) {
-				$payment = ( $type['price']-$option['discount'] ) / $payments;
+				
+				$payment = ( $type['price'] - $option['discount'] - $reservation['price'] ) / $payments;
 				?>
 				<?php //var_dump($type); ?>
 				<li>
