@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Mandir\n"
-"POT-Creation-Date: 2017-04-07 18:42-0600\n"
+"POT-Creation-Date: 2018-10-11 21:02-0600\n"
 "PO-Revision-Date: 2017-04-07 18:41-0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0\n"
+"X-Generator: Poedit 2.1.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -21,23 +21,29 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: 404.php:21
-msgid "Oops! That page can&rsquo;t be found."
+#: 404.php:19
+msgid "The page you're looking for something doesn't exist."
 msgstr ""
 
-#: 404.php:25
-msgid ""
-"It looks like nothing was found at this location. Maybe try one of the links "
-"below or a search?"
+#: 404.php:24
+msgid "It looks like nothing was found at this location. Maybe try a search?"
 msgstr ""
 
-#: 404.php:35
-msgid "Most Used Categories"
+#: 404.php:38
+msgid "Here are some suggestions"
 msgstr ""
 
-#: 404.php:52
+#: 404.php:44
+msgid "We tried finding the matching what you're looking for:"
+msgstr ""
+
+#: 404.php:63
+msgid "Try some of our website's top pages:"
+msgstr ""
+
+#: assets/vendors/image-processing-queue/vendor/a5hleyrich/wp-background-processing/classes/wp-background-process.php:422
 #, php-format
-msgid "Try looking in the monthly archives. %1$s"
+msgid "Every %d Minutes"
 msgstr ""
 
 #: comments.php:31
@@ -64,12 +70,20 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
+#: footer.php:29
+msgid "All rights reserved"
+msgstr ""
+
 #: includes/customizer-socialmedia.php:34
 msgid "Social Media Icons"
 msgstr ""
 
 #: includes/customizer-socialmedia.php:36
 msgid "Add the URL for each of your social profiles."
+msgstr ""
+
+#: includes/extras.php:74 template-parts/page/content-schedule.php:196
+msgid "Read more"
 msgstr ""
 
 #: includes/setup.php:41
@@ -138,15 +152,10 @@ msgstr ""
 #. translators: %s: Name of current post
 #: includes/template-tags.php:66
 #: template-parts/content-page-stripped-end.php:16
-#: template-parts/content-page.php:31
-#: template-parts/page/content-schedule.php:95
-#: template-parts/team/content-single.php:25
+#: template-parts/page/content-page.php:34
+#: template-parts/team/content-single.php:67
 #, php-format
 msgid "Edit %s"
-msgstr ""
-
-#: page-templates/template-events.php:120
-msgid "More information"
 msgstr ""
 
 #: search.php:22
@@ -154,7 +163,91 @@ msgstr ""
 msgid "Search Results for: %s"
 msgstr ""
 
-#: template-parts/content-announcementbar.php:38
+#: template-parts/certification/content-certificate.php:10
+msgctxt "Heading for certificate info in template"
+msgid "Certificate"
+msgstr ""
+
+#: template-parts/certification/content-curriculum.php:7
+msgid "Curriculum"
+msgstr ""
+
+#: template-parts/certification/content-daily.php:4
+msgid "Daily schedule"
+msgstr ""
+
+#: template-parts/certification/content-enroll.php:13
+msgid "Enrollment process"
+msgstr ""
+
+#: template-parts/certification/content-enrollment-open.php:14
+#, php-format
+msgid "Enrollment open for %1$s %2$s"
+msgstr ""
+
+#: template-parts/certification/content-includes.php:13
+msgid "Each level includes"
+msgstr ""
+
+#: template-parts/certification/content-includes.php:17
+msgctxt "Certification includes"
+msgid "Includes"
+msgstr ""
+
+#: template-parts/certification/content-recs.php:10
+msgid "Recommendation"
+msgid_plural "Recommendations"
+msgstr[0] ""
+msgstr[1] ""
+
+#: template-parts/certification/content-sidebar-india.php:19
+msgid "Trip dates"
+msgstr ""
+
+#: template-parts/certification/content-sidebar-orientation.php:26
+msgid "Orientation"
+msgstr ""
+
+#: template-parts/certification/content-sidebar-pricing.php:13
+#: template-parts/certification/content-sidebar-training.php:50
+#: template-parts/event/content-single.php:164
+msgid "Cost"
+msgstr ""
+
+#: template-parts/certification/content-sidebar-training.php:37
+#: template-parts/certification/content-sidebar.php:45
+msgid "Schedule"
+msgstr ""
+
+#: template-parts/certification/content-sidebar.php:20
+msgid "Duration"
+msgstr ""
+
+#: template-parts/certification/content-teachers.php:31
+#: template-parts/certification/content-teachers.php:39
+msgid "Teachers"
+msgstr ""
+
+#: template-parts/certification/content-thai.php:30
+#: template-parts/certification/content-thai.php:102
+#, php-format
+msgid "From %1$s to %2$s"
+msgstr ""
+
+#: template-parts/certification/content-thai.php:45
+msgid " and "
+msgstr ""
+
+#: template-parts/certification/content-thai.php:53
+#, php-format
+msgid "Certificate issued by %1$s "
+msgstr ""
+
+#: template-parts/certification/content-thai.php:68
+msgid "Who this course is for"
+msgstr ""
+
+#: template-parts/content-announcementbar.php:39
 msgid "x"
 msgstr ""
 
@@ -180,9 +273,8 @@ msgid ""
 "searching can help."
 msgstr ""
 
-#: template-parts/content-page.php:20 template-parts/content-single.php:24
-#: template-parts/content.php:34 template-parts/event/content-loop.php:24
-#: template-parts/event/content-single.php:42
+#: template-parts/content-single.php:24 template-parts/content.php:34
+#: template-parts/page/content-page.php:23
 msgid "Pages:"
 msgstr ""
 
@@ -192,29 +284,132 @@ msgstr ""
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: template-parts/event/content-single.php:110
+#: template-parts/event/content-loop.php:78
+msgid "More information"
+msgstr ""
+
+#: template-parts/event/content-single.php:117
 msgid "Important information"
 msgstr ""
 
-#: template-parts/event/content-single.php:113
+#: template-parts/event/content-single.php:120
 msgid "Dates"
 msgstr ""
 
-#: template-parts/event/content-single.php:135
+#: template-parts/event/content-single.php:145
 msgid "Venue"
 msgstr ""
 
-#: template-parts/event/content-single.php:154
-msgid "Costs"
+#: template-parts/event/content-single.php:171
+msgid "Free"
 msgstr ""
 
-#: template-parts/event/content-single.php:195
-msgid "Reservation"
+#: template-parts/event/content-single.php:184
+msgid "Voluntary donation"
 msgstr ""
 
-#: template-parts/page/content-schedule.php:11
-#: template-parts/page/content-schedule.php:82
+#: template-parts/event/content-single.php:186
+msgid "Suggested: "
+msgstr ""
+
+#: template-parts/event/content-single.php:207
+msgid "Regular price"
+msgstr ""
+
+#: template-parts/event/content-single.php:244
+msgid "Reserve your spot"
+msgstr ""
+
+#: template-parts/page/content-payment.php:14
+msgid "How to pay"
+msgstr ""
+
+#: template-parts/page/content-payment.php:26
+msgid "Make local bank transfers to:"
+msgstr ""
+
+#: template-parts/page/content-payment.php:39
+msgid "For international payments:"
+msgstr ""
+
+#: template-parts/page/content-pricing.php:13
+msgid "Pricing"
+msgstr ""
+
+#: template-parts/page/content-pricing.php:31
+msgid "1 class per week"
+msgstr ""
+
+#: template-parts/page/content-pricing.php:32
+msgid "4 classes per month"
+msgstr ""
+
+#: template-parts/page/content-pricing.php:40
+msgid "2 classes per week"
+msgstr ""
+
+#: template-parts/page/content-pricing.php:41
+msgid "8 classes per month"
+msgstr ""
+
+#: template-parts/page/content-pricing.php:49
+msgid "3 classes per week"
+msgstr ""
+
+#: template-parts/page/content-pricing.php:50
+msgid "12 classes per month"
+msgstr ""
+
+#: template-parts/page/content-pricing.php:58
+msgid "Unlimited classes"
+msgstr ""
+
+#: template-parts/page/content-pricing.php:69
+msgid "Single class"
+msgstr ""
+
+#: template-parts/page/content-pricing.php:73
+msgid "1 class"
+msgstr ""
+
+#: template-parts/page/content-pricing.php:77
+msgid "Membership"
+msgstr ""
+
+#: template-parts/page/content-pricing.php:81
+msgid "Per year"
+msgstr ""
+
+#: template-parts/page/content-schedule.php:12
 msgid "Monday"
+msgstr ""
+
+#: template-parts/page/content-schedule.php:13
+msgid "Tuesday"
+msgstr ""
+
+#: template-parts/page/content-schedule.php:14
+msgid "Wednesday"
+msgstr ""
+
+#: template-parts/page/content-schedule.php:15
+msgid "Thursday"
+msgstr ""
+
+#: template-parts/page/content-schedule.php:16
+msgid "Friday"
+msgstr ""
+
+#: template-parts/page/content-schedule.php:17
+msgid "Saturday"
+msgstr ""
+
+#: template-parts/store/content-products.php:7
+msgid "Other products"
+msgstr ""
+
+#: template-parts/team/content-event-teacher.php:36
+msgid "Teacher:"
 msgstr ""
 
 #. Theme Name of the plugin/theme

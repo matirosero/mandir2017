@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Mandir\n"
-"POT-Creation-Date: 2017-10-26 22:36-0600\n"
-"PO-Revision-Date: 2017-10-26 22:36-0600\n"
+"POT-Creation-Date: 2018-10-11 21:02-0600\n"
+"PO-Revision-Date: 2018-10-11 21:03-0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_MX\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.0.4\n"
+"X-Generator: Poedit 2.1.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -83,7 +83,7 @@ msgid "Add the URL for each of your social profiles."
 msgstr ""
 "Agregá la dirección URL para cada uno de tus perfiles de redes sociales."
 
-#: includes/extras.php:71 template-parts/page/content-schedule.php:196
+#: includes/extras.php:74 template-parts/page/content-schedule.php:196
 msgid "Read more"
 msgstr "Seguir leyendo"
 
@@ -173,24 +173,24 @@ msgstr "Reconocimiento"
 msgid "Curriculum"
 msgstr "Currículum"
 
-#: template-parts/certification/content-daily.php:1
+#: template-parts/certification/content-daily.php:4
 msgid "Daily schedule"
 msgstr "Horario de Clase"
 
-#: template-parts/certification/content-enroll.php:10
+#: template-parts/certification/content-enroll.php:13
 msgid "Enrollment process"
 msgstr "Proceso de matrícula"
 
 #: template-parts/certification/content-enrollment-open.php:14
 #, php-format
-msgid "Enrollment open for %d teacher training"
-msgstr "Matrícula abierta para entrenamiento para profesores %d"
+msgid "Enrollment open for %1$s %2$s"
+msgstr "Matrícula abierta para %1$s %2$s"
 
-#: template-parts/certification/content-includes.php:11
+#: template-parts/certification/content-includes.php:13
 msgid "Each level includes"
 msgstr "Cada nivel incluye"
 
-#: template-parts/certification/content-includes.php:13
+#: template-parts/certification/content-includes.php:17
 msgctxt "Certification includes"
 msgid "Includes"
 msgstr "Incluye"
@@ -205,22 +205,22 @@ msgstr[1] "Recomendaciones"
 msgid "Trip dates"
 msgstr "Fechas del viaje"
 
-#: template-parts/certification/content-sidebar-orientation.php:12
+#: template-parts/certification/content-sidebar-orientation.php:26
 msgid "Orientation"
 msgstr "Orientación"
 
-#: template-parts/certification/content-sidebar-pricing.php:9
+#: template-parts/certification/content-sidebar-pricing.php:13
 #: template-parts/certification/content-sidebar-training.php:50
 #: template-parts/event/content-single.php:164
 msgid "Cost"
 msgstr "Inversión"
 
 #: template-parts/certification/content-sidebar-training.php:37
-#: template-parts/certification/content-sidebar.php:36
+#: template-parts/certification/content-sidebar.php:45
 msgid "Schedule"
 msgstr "Horario"
 
-#: template-parts/certification/content-sidebar.php:16
+#: template-parts/certification/content-sidebar.php:20
 msgid "Duration"
 msgstr "Duración"
 
@@ -229,22 +229,22 @@ msgstr "Duración"
 msgid "Teachers"
 msgstr "Profesorado"
 
-#: template-parts/certification/content-thai.php:27
-#: template-parts/certification/content-thai.php:78
+#: template-parts/certification/content-thai.php:30
+#: template-parts/certification/content-thai.php:102
 #, php-format
 msgid "From %1$s to %2$s"
 msgstr "Del %1$s al %2$s"
 
-#: template-parts/certification/content-thai.php:36
+#: template-parts/certification/content-thai.php:45
 msgid " and "
 msgstr " y "
 
-#: template-parts/certification/content-thai.php:39
+#: template-parts/certification/content-thai.php:53
 #, php-format
 msgid "Certificate issued by %1$s "
 msgstr "Certificado por %1$s "
 
-#: template-parts/certification/content-thai.php:49
+#: template-parts/certification/content-thai.php:68
 msgid "Who this course is for"
 msgstr "Para quién es este curso"
 
@@ -326,15 +326,15 @@ msgstr "Precio normal"
 msgid "Reserve your spot"
 msgstr "Reservá tu espacio"
 
-#: template-parts/page/content-payment.php:11
+#: template-parts/page/content-payment.php:14
 msgid "How to pay"
 msgstr "Cómo pagar"
 
-#: template-parts/page/content-payment.php:17
+#: template-parts/page/content-payment.php:26
 msgid "Make local bank transfers to:"
 msgstr "Para transferencias locales:"
 
-#: template-parts/page/content-payment.php:26
+#: template-parts/page/content-payment.php:39
 msgid "For international payments:"
 msgstr "Para pagos internacionales:"
 
@@ -414,7 +414,7 @@ msgstr "Sábado"
 msgid "Other products"
 msgstr "Otros productos"
 
-#: template-parts/team/content-event-teacher.php:34
+#: template-parts/team/content-event-teacher.php:36
 msgid "Teacher:"
 msgstr "Profesor:"
 
@@ -438,53 +438,32 @@ msgstr ""
 msgid "http://matilderosero.com"
 msgstr ""
 
-#. Template Name of the plugin/theme
-msgid "About Us"
-msgstr "Sobre nosotros"
+#~ msgid "About Us"
+#~ msgstr "Sobre nosotros"
 
-#. Template Name of the plugin/theme
-msgid "Certificación"
-msgstr ""
+#~ msgid "Event calendar"
+#~ msgstr "Calendario de eventos"
 
-#. Template Name of the plugin/theme
-msgid "Event calendar"
-msgstr "Calendario de eventos"
+#~ msgid "Featured Product"
+#~ msgstr "Producto destacado"
 
-#. Template Name of the plugin/theme
-msgid "Featured Product"
-msgstr "Producto destacado"
+#~ msgid "Full Width (full 12 columns)"
+#~ msgstr "Ancho completo (12 columnas)"
 
-#. Template Name of the plugin/theme
-msgid "Full Width (full 12 columns)"
-msgstr "Ancho completo (12 columnas)"
+#~ msgid "Class Schedule"
+#~ msgstr "Horario de Clase"
 
-#. Template Name of the plugin/theme
-msgid "India"
-msgstr ""
+#~ msgid "Sidebar Left"
+#~ msgstr "Barra lateral izquierda"
 
-#. Template Name of the plugin/theme
-msgid "Class Schedule"
-msgstr "Horario de Clase"
+#~ msgid "Sidebar Right"
+#~ msgstr "Barra lateral derecha"
 
-#. Template Name of the plugin/theme
-msgid "Sidebar Left"
-msgstr "Barra lateral izquierda"
+#~ msgid "Store"
+#~ msgstr "Tienda"
 
-#. Template Name of the plugin/theme
-msgid "Sidebar Right"
-msgstr "Barra lateral derecha"
-
-#. Template Name of the plugin/theme
-msgid "Store"
-msgstr "Tienda"
-
-#. Template Name of the plugin/theme
-msgid "Masaje Tai"
-msgstr ""
-
-#. Template Name of the plugin/theme
-msgid "Teacher Training"
-msgstr "Entrenamiento para profesores"
+#~ msgid "Teacher Training"
+#~ msgstr "Entrenamiento para profesores"
 
 #~ msgid "Oops! That page can&rsquo;t be found."
 #~ msgstr "¡Oops! Esa página no fue encontrada."

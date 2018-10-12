@@ -11,7 +11,7 @@ $enroll_method = get_post_meta($post->ID, 'mro_training_enroll_how', true);
 <div class="row">
 	<div class="small-12 columns">
 		<div class="enrollment-notice">
-			<h2><?php printf( esc_html__( 'Enrollment open for %d teacher training', 'mandir' ), $year_start ); ?></h2>
+			<h2><?php printf( esc_html__( 'Enrollment open for %1$s %2$s', 'mandir' ), get_the_title(), $year_start ); ?></h2>
 			<p>Lea cuidadosamente la información en esta página, y llene el formulario de aplicación.</p>
 
 			<?php
