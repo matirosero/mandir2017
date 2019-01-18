@@ -1,0 +1,123 @@
+.spinner {
+	height: 100%;
+	display: flex;
+  	justify-content: center;
+  	align-items: center;
+}
+
+.filter-sort {
+	padding-bottom: 1.5rem;
+	label {
+		display:block;
+		font-weight: bold;
+		line-height: 1.5rem;
+	}
+	.label.secondary {
+		background-color: $white;
+		border: 1px solid $secondary-color;
+		border-radius: 1000px;
+
+		&.selected {
+			background-color: $secondary-color;
+		}
+
+		&:hover {
+			background-color: color('red', 'base');
+			border: 1px solid color('red', 'base');
+			color: $white;
+		}
+
+	}
+}
+
+
+@include breakpoint(small only) {
+
+	.filter {
+		margin-bottom: 1rem;
+
+		input[type=search] {
+			margin-bottom: .5rem;
+		}
+	}
+}
+
+@include breakpoint(medium) {
+	.filter {
+		padding-bottom: 1.5rem;
+		
+		[type="date"], [type="datetime-local"], [type="datetime"], [type="month"], [type="number"], [type="search"], [type="text"], [type="time"], [type="url"], textarea {
+			margin-bottom: 0;
+		}
+	}
+	.filter-sort label {
+		display:block;
+		font-weight: bold;
+		line-height: 1.5rem;
+		float:left;
+		margin-right: rem-calc(20);
+
+		&.filters-label {
+			line-height: 2.3125rem;
+			width: $filters-label-width;
+			margin-right: 0;
+		}
+	}
+
+	#puravida-search,
+	.filter-options select {
+		float:left;
+		width:16rem;
+	}
+	.filter-options select {
+		margin-right: rem-calc(20);
+	}
+
+	.post-type-archive-tedxvideo #puravida-search {
+		margin-left: $filters-label-width;
+		width: 532px;
+	}
+}
+
+@include breakpoint(large) {
+	.filter {
+		select {
+			margin-bottom: 0;
+		}
+	}
+	.post-type-archive-tedxvideo #puravida-search {
+		float:left;
+		width:16rem;
+		margin-left: 0;
+	}
+}
+
+
+.sort {
+	clear:both;
+}
+
+.sort-links {
+	list-style: none;
+	margin:0;
+	padding: 0;
+
+	li {
+		float: left;
+		margin-right: 1rem;
+	}
+}
+
+
+#clear-filters {
+	color: $medium-gray;
+	font-size: .9rem;
+	&:hover {
+		color: color('red', 'base');
+	}
+	@include breakpoint(medium) {
+		clear: both;
+		display: block;
+		margin-left: $filters-label-width;
+	}
+}
