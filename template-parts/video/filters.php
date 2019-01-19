@@ -17,7 +17,31 @@
 				<option value="0">Todos las colecciones</option>
 
 				<?php
-			    $terms = get_terms( 'mro_video_collection' );
+				$args = [
+				    'taxonomy'     => 'mro_video_subject',
+				    'parent'        => 0,
+				    // 'number'        => 10,
+				    'hide_empty'    => true           
+				];
+			    $terms = get_terms( $args );
+
+			    if ( count( $terms ) > 0 ): ?>
+			        <div class="evento">
+			        <?php
+			        foreach ( $terms as $term ) {
+			            // $term_link = get_term_link( $term );
+			            echo '<option value="' . $term->slug . '">' . $term->name . '</option>';
+			        } ?>
+			        </div>
+			    <?php endif;
+				?>
+			</select> <!-- end .select-event -->
+
+			<select id="select-event">
+				<option value="0">Todos los instructores</option>
+
+				<?php
+			    $terms = get_terms( 'mro_video_instructor' );
 
 			    if ( count( $terms ) > 0 ): ?>
 			        <div class="evento">
@@ -32,10 +56,12 @@
 			</select> <!-- end .select-event -->
 
 
-			<form role="search" id="puravida-search"  method="get" action="<?php echo home_url('/'); ?>">
+			<form role="search" id="video-search"  method="get" action="<?php echo home_url('/'); ?>">
 				<input type="search" value="" name="s" id="s" placeholder="Buscar">
-				<input type="hidden" name="post_type" value="tedxvideo" />
-				<input type="submit" id="searchsubmit" value="<?php esc_attr_e('Search', 'reverie'); ?>">
+
+				<!-- Shouldn't be needed, should be hard coded -->
+				<input type="hidden" name="post_type" value="mro_video" />
+				<input type="submit" id="searchsubmit" value="<?php esc_attr_e('Search', 'mandir'); ?>">
 			</form> <!-- end #puravida-search -->
 
 

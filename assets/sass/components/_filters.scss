@@ -64,7 +64,7 @@
 		}
 	}
 
-	#puravida-search,
+	#video-search,
 	.filter-options select {
 		float:left;
 		width:16rem;
@@ -73,7 +73,7 @@
 		margin-right: rem-calc(20);
 	}
 
-	.post-type-archive-tedxvideo #puravida-search {
+	.post-type-archive-mro_video #video-search {
 		margin-left: $filters-label-width;
 		width: 532px;
 	}
@@ -85,7 +85,7 @@
 			margin-bottom: 0;
 		}
 	}
-	.post-type-archive-tedxvideo #puravida-search {
+	.post-type-archive-mro_video #video-search {
 		float:left;
 		width:16rem;
 		margin-left: 0;
